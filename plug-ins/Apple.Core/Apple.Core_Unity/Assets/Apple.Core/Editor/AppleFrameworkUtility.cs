@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR_OSX
+﻿#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
 using System;
 using System.IO;
 using UnityEditor;
@@ -41,6 +41,23 @@ namespace Apple.Core
                 {
                     return libraryPath;
                 }
+            }
+
+            // try without the .framework, Unity.2022 AssetDatabase.FindAssets fails with ".frameworks" 
+            if( libraryName.EndsWith(".framework") )
+            {
+                string libraryNameWithoutFramework = libraryName.Substring( 0, libraryName.LastIndexOf(".framework") );
+                results = AssetDatabase.FindAssets(libraryNameWithoutFramework);
+                foreach (string currGUID in results)
+                {
+                    string libraryPath = AssetDatabase.GUIDToAssetPath(currGUID);
+                    string[] folders = libraryPath.Split('/');
+                    if (Array.IndexOf(folders, platformString) > -1)
+                    {
+                        return libraryPath;
+                    }
+                }
+
             }
 
             return string.Empty;
