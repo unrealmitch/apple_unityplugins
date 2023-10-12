@@ -38,6 +38,19 @@ namespace Apple.GameKit
         }
         #endregion
         
+        #region PlayerId
+        [DllImport(InteropUtility.DLLName)]
+        private static extern string GKPlayer_GetPlayerId(IntPtr pointer);
+
+        /// <summary>
+        /// A unique identifier for a player of the game.
+        /// </summary>
+        public string PlayerId
+        {
+            get => GKPlayer_GetPlayerId(Pointer);
+        }
+        #endregion
+        
         #region TeamPlayerId
         [DllImport(InteropUtility.DLLName)]
         private static extern string GKPlayer_GetTeamPlayerId(IntPtr pointer);
