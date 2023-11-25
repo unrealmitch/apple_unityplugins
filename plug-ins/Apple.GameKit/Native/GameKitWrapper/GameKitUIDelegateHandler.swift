@@ -20,7 +20,7 @@ public class GameKitUIDelegateHandler : NSObject {
 
 extension GameKitUIDelegateHandler : GKGameCenterControllerDelegate {
     public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
             gameCenterViewController.dismiss(animated: true, completion: {
                 self._onSuccess?(self._taskId!);
             });

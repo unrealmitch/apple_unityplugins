@@ -58,7 +58,7 @@ public func GKMatchmakerViewController_GetCanStartWithMinimumPlayers
 ) -> Bool
 {
     let target = Unmanaged<GKMatchmakerViewController>.fromOpaque(pointer).takeUnretainedValue();
-    if #available(iOS 15, tvOS 15, macOS 12.0, *) {
+    if #available(iOS 15, tvOS 15, macOS 12.0, visionOS 1.0, *) {
         return target.canStartWithMinimumPlayers
     } else {
         return false;
@@ -73,7 +73,7 @@ public func GKMatchmakerViewController_SetCanStartWithMinimumPlayers
 )
 {
     let target = Unmanaged<GKMatchmakerViewController>.fromOpaque(pointer).takeUnretainedValue();
-    if #available(iOS 15, tvOS 15, macOS 12.0, *) {
+    if #available(iOS 15, tvOS 15, macOS 12.0, visionOS 1.0, *) {
         target.canStartWithMinimumPlayers = value
     }
 }
@@ -128,7 +128,7 @@ public func GKMatchmakerViewController_Present
 {
     let target = Unmanaged<GKMatchmakerViewController>.fromOpaque(pointer).takeUnretainedValue();
     
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     let viewController = UIApplication.shared.windows.first!.rootViewController;
     viewController?.present(target, animated: true);
 #else
@@ -142,7 +142,7 @@ public func GKMatchmakerViewController_Dismiss
     viewController: GKMatchmakerViewController
 )
 {
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
         viewController.dismiss(animated: true);
     #else
         GKDialogController.shared().dismiss(viewController);

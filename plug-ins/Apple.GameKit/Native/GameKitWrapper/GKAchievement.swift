@@ -216,5 +216,5 @@ public func GKAchievement_ChallengeComposeController
 {
     let target = Unmanaged<GKAchievement>.fromOpaque(pointer).takeUnretainedValue();
     let players = Unmanaged<NSArray>.fromOpaque(playersPtr).takeUnretainedValue() as! [GKPlayer];
-    target.challengeComposeController(withMessage: message.toString(), players: players);
+    // target.challengeComposeController(withMessage: message.toString(), players: players);
 }

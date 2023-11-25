@@ -29,7 +29,7 @@ public func GKLocalPlayer_Authenticate
         
         // Always show the viewController if provided...
         if gcAuthVC != nil {
-            #if os(iOS) || os(tvOS)
+            #if os(iOS) || os(tvOS) || os(visionOS)
                 let viewController = UIApplication.shared.windows.first!.rootViewController;
                 viewController?.present(gcAuthVC!, animated: true)
             #else
