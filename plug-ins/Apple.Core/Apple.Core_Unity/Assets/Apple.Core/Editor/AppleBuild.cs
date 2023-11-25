@@ -1,4 +1,4 @@
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -64,7 +64,7 @@ namespace Apple.Core
                 string minOSVersionString = string.Empty;
                 switch (buildTarget)
                 {
-                    case BuildTarget.iOS:
+                    case BuildTarget.iOS: case BuildTarget.VisionOS:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_iOS;
                         break;
 
@@ -321,6 +321,17 @@ namespace Apple.Core
         /// </summary>
         public static string GetSchemeName(BuildTarget buildTarget)
         {
+            switch(buildTarget){
+                case BuildTarget.iOS:
+                case BuildTarget.tvOS:
+                    return "Unity-iPhone";
+                case BuildTarget.VisionOS:
+                    return "Unity-VisionOS";
+                case BuildTarget.StandaloneOSX:
+                    return Application.productName;
+                default:
+                    return "Unity-iPhone";
+            }
             return buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
         }
 
@@ -333,6 +344,8 @@ namespace Apple.Core
             {
                 case BuildTarget.iOS:
                     return "iphoneos";
+                case BuildTarget.VisionOS:
+                    return "visionos";
                 case BuildTarget.tvOS:
                     return "appletvos";
                 case BuildTarget.StandaloneOSX:
@@ -352,6 +365,8 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return $"{pathToBuiltProject}/Unity-iPhone.xcodeproj";
+                case BuildTarget.VisionOS:
+                    return $"{pathToBuiltProject}/Unity-VisionOS.xcodeproj";
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER
                     return $"{pathToBuiltProject}/{new DirectoryInfo(pathToBuiltProject).Name}.xcodeproj";
@@ -373,6 +388,8 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return PBXProject.GetPBXProjectPath(pathToBuiltProject);
+                case BuildTarget.VisionOS:
+                    return PBXProject.GetPBXProjectPath(pathToBuiltProject).Replace("Unity-iPhone", "Unity-VisionOS");  //!Fix due Unity Method PBXProject.GetPBXProjectPath dont return a correct path for VisionOS
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER
                     return $"{GetXcodeProjectPath(buildTarget, pathToBuiltProject)}/project.pbxproj";

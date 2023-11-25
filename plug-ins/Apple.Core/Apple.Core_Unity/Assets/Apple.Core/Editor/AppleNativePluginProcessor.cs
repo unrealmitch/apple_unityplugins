@@ -1,4 +1,4 @@
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using System;
 using System.IO;
 using System.Collections;
@@ -128,6 +128,7 @@ public class AppleNativePluginProcessor : AssetPostprocessor
                         importer.SetCompatibleWithPlatform(BuildTarget.iOS, true);
                         importer.SetCompatibleWithPlatform(BuildTarget.tvOS, false);
                         importer.SetCompatibleWithPlatform(BuildTarget.StandaloneOSX, false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.VisionOS, false);
                     }
                     else if (Array.IndexOf(folders, "tvOS") > -1)
                     {
@@ -139,6 +140,7 @@ public class AppleNativePluginProcessor : AssetPostprocessor
                         importer.SetCompatibleWithPlatform(BuildTarget.iOS, false);
                         importer.SetCompatibleWithPlatform(BuildTarget.tvOS, true);
                         importer.SetCompatibleWithPlatform(BuildTarget.StandaloneOSX, false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.VisionOS, false);
                     }
                     else if (Array.IndexOf(folders, "macOS") > -1)
                     {
@@ -150,6 +152,17 @@ public class AppleNativePluginProcessor : AssetPostprocessor
                         importer.SetCompatibleWithPlatform(BuildTarget.iOS, false);
                         importer.SetCompatibleWithPlatform(BuildTarget.tvOS, false);
                         importer.SetCompatibleWithPlatform(BuildTarget.StandaloneOSX, true);
+                        importer.SetCompatibleWithPlatform(BuildTarget.VisionOS, false);
+                    }else if (Array.IndexOf(folders, "visionOS") > -1){
+                        logMessages.AddLast($"{Tabs(2)}Updating Apple plug-in library metadata: Set compatible with visionOS, incompatible with all other platforms.");
+                        
+                        PluginImporter importer = AssetImporter.GetAtPath(currAssetPath) as PluginImporter;
+                        importer.SetCompatibleWithEditor(false);
+                        importer.SetCompatibleWithAnyPlatform(false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.iOS, false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.tvOS, false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.StandaloneOSX, false);
+                        importer.SetCompatibleWithPlatform(BuildTarget.VisionOS, true);
                     }
                 }
             }

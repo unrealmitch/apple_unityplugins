@@ -59,6 +59,8 @@ namespace Apple.Core
             public const string tvOSBuildTargetName = "tvOS";
 
             public const string macOSBuildTargetName = "macOS";
+
+            public const string visionOSBuildTargetName = "VisionOS";
         }
 
         public void OnEnable()
@@ -102,6 +104,9 @@ namespace Apple.Core
                     break;
                 case BuildTarget.tvOS:
                     buildTargetName = UIStrings.tvOSBuildTargetName;
+                    break;
+                case BuildTarget.VisionOS:
+                    buildTargetName = UIStrings.visionOSBuildTargetName;
                     break;
                 case BuildTarget.StandaloneOSX:
                     buildTargetName = UIStrings.macOSBuildTargetName;

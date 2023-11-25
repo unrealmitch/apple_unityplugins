@@ -26,6 +26,7 @@ plugin_id_all = "all"
 platform_id_ios = "iOS"
 platform_id_macos = "macOS"
 platform_id_tvos = "tvOS"
+platform_id_visionos = "visionOS"
 
 # (Default)
 platform_id_all = "all"
@@ -82,6 +83,7 @@ apple_core_library_path_table = {
     platform_id_ios : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/iOS/AppleCoreNative.framework"),
     platform_id_macos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/macOS/AppleCoreNativeMac.bundle"),
     platform_id_tvos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/tvOS/AppleCoreNative.framework"),
+    platform_id_visionos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/visionOS/AppleCoreNative.framework"),
 }
 
 # Script will search this path for instances of Unity.app to track their versions and executable paths
@@ -92,7 +94,7 @@ default_unity_install_root_path = pathlib.Path("/Applications/Unity")
 
 argument_parser = argparse.ArgumentParser(description="Builds all native libraries, packages plug-ins, and moves packages to build folder.")
 argument_parser.add_argument("-p", "--plugin-list", dest="plugin_list", nargs='*', default=[plugin_id_all], help=f"Selects the plug-ins to process. Possible values are: {plugin_id_accessibility}, {plugin_id_apple_core}, {plugin_id_core_haptics}, {plugin_id_game_controller}, {plugin_id_game_kit}, {plugin_id_phase}, or {plugin_id_all}. Default is: {plugin_id_all}")
-argument_parser.add_argument("-m", "--platforms", dest="platform_list", nargs='*', default=[platform_id_all], help=f"Selects the desired platforms to target when building native libraries. Possible values are: {platform_id_ios}, {platform_id_macos}, {platform_id_tvos}, or {platform_id_all}. Default is: {platform_id_all}")
+argument_parser.add_argument("-m", "--platforms", dest="platform_list", nargs='*', default=[platform_id_all], help=f"Selects the desired platforms to target when building native libraries. Possible values are: {platform_id_ios}, {platform_id_macos}, {platform_id_tvos}, {platform_id_visionos} or {platform_id_all}. Default is: {platform_id_all}")
 argument_parser.add_argument("-b", "--build-action", dest="build_actions", nargs='*', default=[build_action_native_build, build_action_pack], help=f"Sets the build actions for the selected plug-ins. Possible values are: {build_action_native_build}, {build_action_pack}, {build_action_none} or {build_action_all}. Defaults are: {build_action_native_build}, {build_action_pack}")
 argument_parser.add_argument("-u", "--unity-installation-root", dest="unity_installation_root", default=default_unity_install_root_path, help="Root path to search for Unity installations. Note: performs a full recursive search of the given directory.")
 argument_parser.add_argument("-d", "--debug", dest="debug", action="store_true", help=f"Compiles debug native libraries for the selected plug-ins.")
@@ -160,6 +162,7 @@ if __name__ == '__main__':
         platform_id_ios: False,
         platform_id_macos: False,
         platform_id_tvos: False,
+        platform_id_visionos: False
     }
 
     valid_platform_found = False
@@ -173,7 +176,7 @@ if __name__ == '__main__':
             valid_platform_found = True  
             selected_platforms[platform_id] = True
         else:
-            utility.WarningMessage(f"Ignoring unknown platform '{platform_id}'. Valid options are {platform_id_ios}, {platform_id_macos}, {platform_id_tvos}, or {platform_id_all} (Default)")
+            utility.WarningMessage(f"Ignoring unknown platform '{platform_id}'. Valid options are {platform_id_ios}, {platform_id_macos}, {platform_id_tvos}, {platform_id_visionos} or {platform_id_all} (Default)")
 
     if not valid_platform_found:
         utility.WarningMessage(f"No valid platform passed to build script. Using default argument: {platform_id_all}")

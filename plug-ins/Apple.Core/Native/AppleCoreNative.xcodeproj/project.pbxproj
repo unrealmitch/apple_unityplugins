@@ -14,6 +14,7 @@
 			);
 			dependencies = (
 				CFE533DE263B6E7400078448 /* PBXTargetDependency */,
+				F6B0D0AB2AFE4350008956AB /* PBXTargetDependency */,
 				CFE533DC263B6E7300078448 /* PBXTargetDependency */,
 				CFE533DA263B6E7200078448 /* PBXTargetDependency */,
 			);
@@ -47,6 +48,14 @@
 		CFE53435263B77BB00078448 /* AppleCoreNative.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFE5338C263B6CCC00078448 /* AppleCoreNative.framework */; };
 		CFE53437263B77E300078448 /* AppleCoreNative.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFE533AA263B6E2200078448 /* AppleCoreNative.framework */; };
 		CFE53439263B77ED00078448 /* AppleCoreNativeMac.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */; };
+		F6B0D0992AFE4325008956AB /* AppleCoreNative.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE5338F263B6CCC00078448 /* AppleCoreNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6B0D09B2AFE4325008956AB /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212727DEA521007479CE /* NSArray.swift */; };
+		F6B0D09C2AFE4325008956AB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE53398263B6D1400078448 /* Logger.swift */; };
+		F6B0D09D2AFE4325008956AB /* NSDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212827DEA521007479CE /* NSDictionary.swift */; };
+		F6B0D09E2AFE4325008956AB /* AppleCoreRuntimeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212227DEA517007479CE /* AppleCoreRuntimeShared.swift */; };
+		F6B0D09F2AFE4325008956AB /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212627DEA521007479CE /* NSError.swift */; };
+		F6B0D0A02AFE4325008956AB /* NSMutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212927DEA521007479CE /* NSMutableArray.swift */; };
+		F6B0D0AC2AFE4438008956AB /* AppleCoreNative.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6B0D0A82AFE4325008956AB /* AppleCoreNative.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +79,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CFE5338B263B6CCC00078448;
 			remoteInfo = "AppleCoreNativeWrapper iOS";
+		};
+		F6B0D0AA2AFE4350008956AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFE53383263B6CCC00078448 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6B0D0972AFE4325008956AB;
+			remoteInfo = AppleCoreNative_visionOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,6 +120,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6B0D0A32AFE4325008956AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(PROJECT_DIR)/../Apple.Core_Unity/Assets/Apple.Core/Plugins/visionOS";
+			dstSubfolderSpec = 0;
+			files = (
+				F6B0D0AC2AFE4438008956AB /* AppleCoreNative.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +144,8 @@
 		CFE533AA263B6E2200078448 /* AppleCoreNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleCoreNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleCoreNativeMac.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE53442263B7A2A00078448 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6B0D0A82AFE4325008956AB /* AppleCoreNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleCoreNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B0D0A92AFE4326008956AB /* AppleCoreNative_iOS copy4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AppleCoreNative_iOS copy4-Info.plist"; path = "/Users/xoia/Documents/Mitch/apple_unityplugins/plug-ins/Apple.Core/Native/AppleCoreNative_iOS copy4-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +170,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6B0D0A12AFE4325008956AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -150,6 +185,7 @@
 			children = (
 				CFE5338E263B6CCC00078448 /* AppleCoreNative */,
 				CFE5338D263B6CCC00078448 /* Products */,
+				F6B0D0A92AFE4326008956AB /* AppleCoreNative_iOS copy4-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +195,7 @@
 				CFE5338C263B6CCC00078448 /* AppleCoreNative.framework */,
 				CFE533AA263B6E2200078448 /* AppleCoreNative.framework */,
 				CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */,
+				F6B0D0A82AFE4325008956AB /* AppleCoreNative.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE5341B263B702100078448 /* AppleCoreNative.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6B0D0982AFE4325008956AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6B0D0992AFE4325008956AB /* AppleCoreNative.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +310,25 @@
 			productReference = CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		F6B0D0972AFE4325008956AB /* AppleCoreNative_visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6B0D0A52AFE4325008956AB /* Build configuration list for PBXNativeTarget "AppleCoreNative_visionOS" */;
+			buildPhases = (
+				F6B0D0982AFE4325008956AB /* Headers */,
+				F6B0D09A2AFE4325008956AB /* Sources */,
+				F6B0D0A12AFE4325008956AB /* Frameworks */,
+				F6B0D0A22AFE4325008956AB /* Resources */,
+				F6B0D0A32AFE4325008956AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleCoreNative_visionOS;
+			productName = AppleCoreNativeWrapper;
+			productReference = F6B0D0A82AFE4325008956AB /* AppleCoreNative.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,6 +363,7 @@
 			projectRoot = "";
 			targets = (
 				CFE5338B263B6CCC00078448 /* AppleCoreNative_iOS */,
+				F6B0D0972AFE4325008956AB /* AppleCoreNative_visionOS */,
 				CFE5339F263B6E2200078448 /* AppleCoreNative_tvOS */,
 				CFE533C4263B6E4800078448 /* AppleCoreNative_Mac */,
 				CFE533D1263B6E6E00078448 /* All */,
@@ -322,6 +387,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CFE533C3263B6E4800078448 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6B0D0A22AFE4325008956AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,6 +442,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6B0D09A2AFE4325008956AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6B0D09B2AFE4325008956AB /* NSArray.swift in Sources */,
+				F6B0D09C2AFE4325008956AB /* Logger.swift in Sources */,
+				F6B0D09D2AFE4325008956AB /* NSDictionary.swift in Sources */,
+				F6B0D09E2AFE4325008956AB /* AppleCoreRuntimeShared.swift in Sources */,
+				F6B0D09F2AFE4325008956AB /* NSError.swift in Sources */,
+				F6B0D0A02AFE4325008956AB /* NSMutableArray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -387,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = CFE5338B263B6CCC00078448 /* AppleCoreNative_iOS */;
 			targetProxy = CFE533DD263B6E7400078448 /* PBXContainerItemProxy */;
+		};
+		F6B0D0AB2AFE4350008956AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6B0D0972AFE4325008956AB /* AppleCoreNative_visionOS */;
+			targetProxy = F6B0D0AA2AFE4350008956AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -683,22 +773,93 @@
 		CFE533D3263B6E6E00078448 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator";
+				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
 			};
 			name = Debug;
 		};
 		CFE533D4263B6E6E00078448 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator";
+				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
+			};
+			name = Release;
+		};
+		F6B0D0A62AFE4325008956AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AppleCoreNative_iOS copy4-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleCoreNative-visionOS";
+				PRODUCT_NAME = AppleCoreNative;
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		F6B0D0A72AFE4325008956AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AppleCoreNative_iOS copy4-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleCoreNative-visionOS";
+				PRODUCT_NAME = AppleCoreNative;
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = "";
 			};
 			name = Release;
 		};
@@ -746,6 +907,15 @@
 			buildConfigurations = (
 				CFE533D3263B6E6E00078448 /* Debug */,
 				CFE533D4263B6E6E00078448 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6B0D0A52AFE4325008956AB /* Build configuration list for PBXNativeTarget "AppleCoreNative_visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6B0D0A62AFE4325008956AB /* Debug */,
+				F6B0D0A72AFE4325008956AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

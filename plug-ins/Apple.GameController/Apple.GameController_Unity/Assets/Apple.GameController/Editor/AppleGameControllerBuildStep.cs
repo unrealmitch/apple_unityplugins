@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using UnityEditor.iOS.Xcode;
 #endif
 
@@ -18,6 +18,7 @@ namespace Apple.GameController.Editor
         {
             {BuildTarget.iOS, "GameControllerWrapper.framework"},
             {BuildTarget.tvOS, "GameControllerWrapper.framework"},
+            {BuildTarget.VisionOS, "GameControllerWrapper.framework"},
             {BuildTarget.StandaloneOSX, "GameControllerWrapper.bundle"}
         };
 
@@ -25,7 +26,7 @@ namespace Apple.GameController.Editor
         public bool SupportsMicroGamePad = true;
         public bool SupportsExtendedGamePad = true;
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
         public override void OnProcessInfoPlist(AppleBuildProfile _, BuildTarget buildTarget, string pathToBuiltTarget, PlistDocument infoPlist)
         {
             // Notify that we support controllers...
@@ -37,7 +38,7 @@ namespace Apple.GameController.Editor
             // Support device profiles...
             PlistElementArray supportedControllers = null;
 
-            if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.StandaloneOSX)
+            if (buildTarget == BuildTarget.iOS || buildTarget.BuildTarget.VisionOS || buildTarget == BuildTarget.StandaloneOSX)
             {
                 supportedControllers = infoPlist.root.CreateArray("GCSupportedGameControllers");
             }

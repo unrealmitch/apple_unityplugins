@@ -166,7 +166,8 @@ class UnityManager:
         path_name_to_platform_table = {
             'iOS': 'iOS',
             'tvOS': 'tvOS',
-            'macOS': 'StandaloneOSX'
+            'macOS': 'StandaloneOSX',
+            'visionOS': 'visionOS'
         }
 
         unity_project.supported_platforms.clear()

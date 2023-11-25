@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+﻿#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using System;
 using System.IO;
 using UnityEditor;
@@ -27,6 +27,9 @@ namespace Apple.Core
                     break;
                 case BuildTarget.StandaloneOSX:
                     platformString = "macOS";
+                    break;
+                case BuildTarget.VisionOS:
+                    platformString = "visionOS";
                     break;
                 default:
                     return string.Empty;
@@ -121,7 +124,7 @@ namespace Apple.Core
             if (searchString == string.Empty)
             {
                 string relativeTargetCopyName;
-                if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.tvOS)
+                if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.tvOS || buildTarget == BuildTarget.VisionOS)
                 {
                     relativeTargetCopyName = "Frameworks";
                 }
