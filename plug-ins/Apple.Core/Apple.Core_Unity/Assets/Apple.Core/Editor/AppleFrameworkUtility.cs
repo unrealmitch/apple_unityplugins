@@ -157,6 +157,7 @@ namespace Apple.Core
                 var expectedInstallPath = source.Substring(source.LastIndexOf(searchString) + searchString.Length);
                 Debug.Log($"CopyAndEmbed - Expected install path for {frameworkName}: {expectedInstallPath}");
                 fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Frameworks", expectedInstallPath));
+                fileGuid ??= AssetDatabase.AssetPathToGUID(searchString + expectedInstallPath);
                 if (string.IsNullOrEmpty(fileGuid))
                 {
                     fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Libraries", expectedInstallPath));
@@ -170,7 +171,7 @@ namespace Apple.Core
 
 
             // Now embed the framework into the main target
-            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
+            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : buildTarget != BuildTarget.VisionOS ? "Unity-iPhone" : "Unity-VisionOS";
             var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
             Debug.Log($"CopyAndEmbed embedding {frameworkName} into target {projectTargetName}");
             PBXProjectExtensions.AddFileToEmbedFrameworks(pbxProject, targetGuid, fileGuid);
