@@ -14,9 +14,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFE5338B263B6CCC00078448"
+               BlueprintIdentifier = "F6B0D0972AFE4325008956AB"
                BuildableName = "AppleCoreNative.framework"
-               BlueprintName = "AppleCoreNative_iOS"
+               BlueprintName = "AppleCoreNative_visionOS"
                ReferencedContainer = "container:AppleCoreNative.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFE5338B263B6CCC00078448"
+            BlueprintIdentifier = "F6B0D0972AFE4325008956AB"
             BuildableName = "AppleCoreNative.framework"
-            BlueprintName = "AppleCoreNative_iOS"
+            BlueprintName = "AppleCoreNative_visionOS"
             ReferencedContainer = "container:AppleCoreNative.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -145,7 +145,6 @@
 		CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleCoreNativeMac.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE53442263B7A2A00078448 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6B0D0A82AFE4325008956AB /* AppleCoreNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleCoreNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6B0D0A92AFE4326008956AB /* AppleCoreNative_iOS copy4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AppleCoreNative_iOS copy4-Info.plist"; path = "/Users/xoia/Documents/Mitch/apple_unityplugins/plug-ins/Apple.Core/Native/AppleCoreNative_iOS copy4-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +184,6 @@
 			children = (
 				CFE5338E263B6CCC00078448 /* AppleCoreNative */,
 				CFE5338D263B6CCC00078448 /* Products */,
-				F6B0D0A92AFE4326008956AB /* AppleCoreNative_iOS copy4-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -802,7 +800,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "AppleCoreNative_iOS copy4-Info.plist";
+				INFOPLIST_FILE = AppleCoreNative/Info.plist;
 				INFOPLIST_OUTPUT_FORMAT = XML;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -838,7 +836,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "AppleCoreNative_iOS copy4-Info.plist";
+				INFOPLIST_FILE = AppleCoreNative/Info.plist;
 				INFOPLIST_OUTPUT_FORMAT = XML;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
