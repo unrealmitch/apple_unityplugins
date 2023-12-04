@@ -21,7 +21,7 @@ namespace Apple.Core
             {BuildTarget.VisionOS, "AppleCoreNative.framework"}
         };
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)
         public override void OnFinalizePostProcess(AppleBuildProfile appleBuildProfile, BuildTarget buildTarget, string pathToBuiltProject)
         {
             Debug.Log($"AppleBuild: disabling Bitcode for framework and app targets.");

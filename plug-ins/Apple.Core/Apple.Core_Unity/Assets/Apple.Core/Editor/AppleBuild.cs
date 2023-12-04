@@ -118,6 +118,7 @@ namespace Apple.Core
 
             var pbxProject = GetPbxProject(buildTarget, pathToBuiltProject);
             var pbxProjectPath = GetPbxProjectPath(buildTarget, pathToBuiltProject);
+            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(Application.productName) : pbxProject.GetUnityMainTargetGuid();
 
             if (appleBuildProfile.AutomateEntitlements)
             {
@@ -172,7 +173,6 @@ namespace Apple.Core
                 if (pbxProject != null)
                 {
                     var entitlementsXCodePath = buildTarget == BuildTarget.StandaloneOSX ? $"{Application.productName}/{Application.productName}.entitlements" : $"{Application.productName}.entitlements";
-                    var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(Application.productName) : pbxProject.GetUnityMainTargetGuid();
                     pbxProject.AddBuildProperty(targetGuid, "CODE_SIGN_ENTITLEMENTS", entitlementsXCodePath);
 
                     Debug.Log($"AppleBuild: Writing changes to PBXProject {pbxProjectPath}...");
@@ -184,6 +184,16 @@ namespace Apple.Core
 
             #endregion // Process Entitlements
 
+            //!Hack: Kluge Fix for VisionOS (in order to automatic set visionOS platform in XCode instead of xrsimulator)
+            if (buildTarget == BuildTarget.VisionOS &&
+                pbxProject != null &&
+                PlayerSettings.VisionOS.sdkVersion == VisionOSSdkVersion.Simulator &&
+                AppleBuildProfileEditor.ShouldSetPlatformVisionOsOnSimulator())
+            {
+                pbxProject.SetBuildProperty(targetGuid, "SUPPORTED_PLATFORMS", "xrsimulator xros");
+                // pbxProject.SetBuildProperty(targetGuid,"SUPPORTED_PLATFORMS","xrsimulator xros visionOS");
+            }
+            
             #region Process Frameworks
 
             Debug.Log($"AppleBuild: OnProcessFrameworks begin...");
@@ -205,7 +215,7 @@ namespace Apple.Core
             Debug.Log($"AppleBuild: OnProcessFrameworks end.");
 
             #endregion // Process Frameworks
-
+            
             #region Finalize Post Process
 
             Debug.Log($"AppleBuild: OnFinalizePostProcess begin...");

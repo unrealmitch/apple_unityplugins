@@ -25,7 +25,7 @@ namespace Apple.GameKit.Editor
 #if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
         public override void OnProcessEntitlements(AppleBuildProfile _, BuildTarget buildTarget, string _1, PlistDocument entitlements)
         {
-            if(buildTarget == BuildTarget.StandaloneOSX)
+            if(buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS)
             {
                 entitlements.root.SetBoolean("com.apple.developer.game-center", true);
             }

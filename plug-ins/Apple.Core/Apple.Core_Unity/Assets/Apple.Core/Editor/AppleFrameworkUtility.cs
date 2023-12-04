@@ -35,7 +35,12 @@ namespace Apple.Core
                     return string.Empty;
             }
 
-            string[] results = AssetDatabase.FindAssets(libraryName);
+            int suffix_index = libraryName.LastIndexOf(".");
+            string libraryNameStem = suffix_index == -1 ? libraryName : libraryName.Substring(0, suffix_index);
+            string[] results = AssetDatabase.FindAssets(libraryNameStem);
+            
+            // string[] results = AssetDatabase.FindAssets(libraryName); // Unity.2022 AssetDatabase.FindAssets fails with ".frameworks"
+            
             foreach (string currGUID in results)
             {
                 string libraryPath = AssetDatabase.GUIDToAssetPath(currGUID);
@@ -80,9 +85,26 @@ namespace Apple.Core
             if (buildTarget == BuildTarget.StandaloneOSX
                 && !AppleBuild.IsXcodeGeneratedMac())
                 return;
+            
+            var projectTargetName = "Unity-iPhone";
 
-            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
-            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
+            switch (buildTarget)
+            {
+                case BuildTarget.StandaloneOSX:
+                    projectTargetName = Application.productName;
+                    break; 
+                case BuildTarget.VisionOS:
+                    projectTargetName = "Unity-VisionOS";
+                    break;
+                case BuildTarget.iOS:
+                    projectTargetName = "Unity-iPhone";
+                    break;
+                default:
+                    projectTargetName = "Unity-iPhone";
+                    break;
+            }
+            
+            var targetGuid = buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
 
             pbxProject.AddFrameworkToProject(targetGuid, framework, weak);
         }
@@ -157,6 +179,7 @@ namespace Apple.Core
                 var expectedInstallPath = source.Substring(source.LastIndexOf(searchString) + searchString.Length);
                 Debug.Log($"CopyAndEmbed - Expected install path for {frameworkName}: {expectedInstallPath}");
                 fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Frameworks", expectedInstallPath));
+                fileGuid ??= pbxProject.FindFileGuidByProjectPath(Path.Combine("Frameworks", "ARM64", "Assets", expectedInstallPath));
                 if (string.IsNullOrEmpty(fileGuid))
                 {
                     fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Libraries", expectedInstallPath));
@@ -170,10 +193,25 @@ namespace Apple.Core
 
 
             // Now embed the framework into the main target
-            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
-            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
-            Debug.Log($"CopyAndEmbed embedding {frameworkName} into target {projectTargetName}");
-            PBXProjectExtensions.AddFileToEmbedFrameworks(pbxProject, targetGuid, fileGuid);
+            var projectTargetName = buildTarget switch
+            {
+                BuildTarget.StandaloneOSX => Application.productName,
+                BuildTarget.VisionOS => "Unity-VisionOS",
+                _ => "Unity-iPhone"
+            };
+            
+            var targetGuid = buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
+            if (!pbxProject.ContainsFramework(targetGuid, fileGuid))
+            {
+                Debug.Log($"CopyAndEmbed embedding {frameworkName} into target {projectTargetName}");
+                pbxProject.AddFileToEmbedFrameworks(targetGuid, fileGuid);
+            }
+            else
+            {
+                Debug.Log($"CopyAndEmbed {frameworkName} already embedded into target {projectTargetName}");
+            
+            }
+
         }
 
         /// <summary>
