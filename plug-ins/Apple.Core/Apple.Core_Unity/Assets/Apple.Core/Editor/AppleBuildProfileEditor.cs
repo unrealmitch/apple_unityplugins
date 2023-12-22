@@ -25,10 +25,11 @@ namespace Apple.Core
 
         private static Dictionary<Editor, bool> _editorFoldouts = new Dictionary<Editor, bool>();
         private static Dictionary<ScriptableObject, Editor> _editors = new Dictionary<ScriptableObject, Editor>();
-        
-        private bool setPlatformVisionOsOnSimulator = true;
+
+        private const bool DefaultSetPlatformVisionOsOnSimulator = false;
+        private bool setPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
         private const string SetPlatformVisionOsOnSimulatorKey = "PlatformVisionOsOnSimulatorKey";
-        private bool previousSetPlatformVisionOsOnSimulator = true;
+        private bool previousSetPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
 
         class UIStrings
         {
@@ -80,6 +81,8 @@ namespace Apple.Core
 
             _serializedAutomateEntitlements = serializedObject.FindProperty("AutomateEntitlements");
             _serializedDefaultEntitlements = serializedObject.FindProperty("DefaultEntitlements");
+
+            LoadEditorPrefs();
         }
 
         /// <summary>
@@ -327,7 +330,7 @@ namespace Apple.Core
         
         private void LoadEditorPrefs()
         {
-            setPlatformVisionOsOnSimulator = EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, true);
+            setPlatformVisionOsOnSimulator = EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
             previousSetPlatformVisionOsOnSimulator = setPlatformVisionOsOnSimulator;
         }
         
@@ -338,7 +341,7 @@ namespace Apple.Core
         
         public static bool ShouldSetPlatformVisionOsOnSimulator()
         {
-            return EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, true);
+            return EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
         }
     }
 }

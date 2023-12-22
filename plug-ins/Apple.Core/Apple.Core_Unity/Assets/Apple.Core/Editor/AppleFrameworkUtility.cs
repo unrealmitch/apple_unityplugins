@@ -34,12 +34,16 @@ namespace Apple.Core
                 default:
                     return string.Empty;
             }
+            
+            bool isForSimulator = PlayerSettings.VisionOS.sdkVersion == VisionOSSdkVersion.Simulator;
+            if(isForSimulator && buildTarget == BuildTarget.VisionOS)
+            {
+                platformString = "visionOS-sim";
+            }
 
             int suffix_index = libraryName.LastIndexOf(".");
             string libraryNameStem = suffix_index == -1 ? libraryName : libraryName.Substring(0, suffix_index);
             string[] results = AssetDatabase.FindAssets(libraryNameStem);
-            
-            // string[] results = AssetDatabase.FindAssets(libraryName); // Unity.2022 AssetDatabase.FindAssets fails with ".frameworks"
             
             foreach (string currGUID in results)
             {
