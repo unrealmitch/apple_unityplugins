@@ -28,6 +28,16 @@ public func GKPlayer_GetTeamPlayerId
     return player.teamPlayerID.toCharPCopy();
 }
 
+@_cdecl("GKPlayer_GetPlayerId")
+public func GKPlayer_GetPlayerId
+(
+    pointer : UnsafeMutableRawPointer
+) -> char_p
+{
+    let player = Unmanaged<GKPlayer>.fromOpaque(pointer).takeUnretainedValue();
+    return player.playerID.toCharPCopy();
+}
+
 @_cdecl("GKPlayer_GetScopedIDsArePersistent")
 public func GKPlayer_GetScopedIDsArePersistent
 (
