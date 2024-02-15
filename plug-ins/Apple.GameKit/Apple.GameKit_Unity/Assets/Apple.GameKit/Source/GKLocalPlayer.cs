@@ -52,9 +52,17 @@ namespace Apple.GameKit
             return tcs.Task;
         }
 
-        [MonoPInvokeCallback(typeof(SuccessTaskCallback<GKIdentityVerificationResponse>))]
-        private static void OnFetchItems(long taskId, GKIdentityVerificationResponse response)
+        [MonoPInvokeCallback(typeof(SuccessTaskFetchItemsCallback))]
+        private static void OnFetchItems(long taskId, ulong timestamp,
+            IntPtr publicKeyUrl, int publicKeyUrlLength, 
+            IntPtr signature, int signatureLength, 
+            IntPtr salt, int saltLength)
         {
+            var response = new GKIdentityVerificationResponse(timestamp,
+                publicKeyUrl, publicKeyUrlLength, 
+                signature, signatureLength, 
+                salt, saltLength);
+
             InteropTasks.TrySetResultAndRemove(taskId, response);
         }
 
@@ -64,7 +72,7 @@ namespace Apple.GameKit
             InteropTasks.TrySetExceptionAndRemove<GKIdentityVerificationResponse>(taskId, new GameKitException(errorPointer));
         }
         #endregion
-        
+ 
         #region Authenticate
 
         /// <summary>
