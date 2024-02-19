@@ -56,7 +56,7 @@ python3 build.py -p Core GameKit GameController
 ### Platform Selection
 - **Flag:** `--platforms`
 - **Short version:** `-m`
-- **Possible values:** `all`, `iOS`, `macOS`, `tvOS`
+- **Possible values:** `all`, `iOS`, `macOS`, `tvOS, visionOS`
 - **Default value:** `all`
 - **Description:** Selects the desired platforms that the plug-ins will target, which also limits which native libraries will be compiled. For example, if you want to build all plug-ins but only target iOS and macOS, do the following:
 

@@ -21,12 +21,6 @@ build_script_version = "2.0.0"
 
 prompt_theme = utility.PromptTheme()
 
-# Selection identifiers for which platforms target when building.
-# platform_id_ios = "iOS"
-# platform_id_macos = "macOS"
-# platform_id_tvos = "tvOS"
-# platform_id_visionos = "visionOS"
-
 # Set to false to disable all colors in your terminal emulator.
 prompt_theme_enable = True
 
@@ -71,25 +65,6 @@ CTX = BuildContext(Path().resolve(__file__))
 
 # Store prompt theme
 CTX.printer = Printer(prompt_theme)
-
-
-
-# INCOMING PRE-2.0.0 CORE/GAMEKIG LEFTOVER
-# ----------------
-# Configure paths
-
-# build_script_path = pathlib.Path().resolve(__file__)
-# default_build_path = build_script_path.joinpath("Build")
-# top_level_plugin_path = build_script_path.joinpath("plug-ins")
-# default_test_build_path = build_script_path.joinpath("TestBuilds")
-# apple_core_library_path_table = {
-#     platform_id_ios : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/iOS/AppleCoreNative.framework"),
-#     platform_id_macos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/macOS/AppleCoreNativeMac.bundle"),
-#     platform_id_tvos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/tvOS/AppleCoreNative.framework"),
-#     platform_id_visionos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/visionOS/AppleCoreNative.framework"),
-# }
-
-
 
 # ------------------------
 # Handle command line args
