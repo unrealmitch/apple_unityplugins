@@ -14,7 +14,7 @@ namespace Apple.Accessibility
         {
             if (!__registeredBeforeSplashScreen)
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 SceneManager.activeSceneChanged += SceneChanged;
 #endif
                 __registeredBeforeSplashScreen = true;
@@ -27,7 +27,7 @@ namespace Apple.Accessibility
         {
             if (!__registeredAfterSceneLoad)
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 _UnityAX_PostUnityViewChanged();
 #endif
                 __registeredAfterSceneLoad = true;
@@ -36,13 +36,13 @@ namespace Apple.Accessibility
 
         #endregion
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         [DllImport("__Internal")] private static extern void _UnityAX_PostUnityViewChanged();
 #endif
 
         static void SceneChanged(Scene pre, Scene post)
         {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             _UnityAX_PostUnityViewChanged();
 #endif
         }

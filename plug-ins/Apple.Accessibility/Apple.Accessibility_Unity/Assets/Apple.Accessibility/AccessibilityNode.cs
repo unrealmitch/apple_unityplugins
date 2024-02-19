@@ -404,7 +404,7 @@ namespace Apple.Accessibility
             {
                 parentId = parent.gameObject.GetInstanceID();
             }
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             _UnityAX_RegisterElementWithIdentifier(obj.gameObject.GetInstanceID(), parentId, parent != null);
 #endif
         }
@@ -412,7 +412,7 @@ namespace Apple.Accessibility
         static internal void UnregisterAXElement(AccessibilityNode obj)
         {
             axElements.Remove(obj.gameObject.GetInstanceID());
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             _UnityAX_UnregisterElementWithIdentifier(obj.gameObject.GetInstanceID());
 #endif
         }
@@ -842,7 +842,7 @@ namespace Apple.Accessibility
         {
             if (!__registered)
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 _UnityAX_InitializeAXRuntime();
                 _UnityAX_registerAccessibilityFrame(_UnityAX_accessibilityFrame);
                 _UnityAX_registerAccessibilityLabel(_UnityAX_accessibilityLabel);
@@ -867,7 +867,7 @@ namespace Apple.Accessibility
             }
         }
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         [DllImport("__Internal")] private static extern void _UnityAX_InitializeAXRuntime();
         [DllImport("__Internal")] private static extern void _UnityAX_RegisterElementWithIdentifier(int identifier, int parentIdentifier, bool hasParent);
         [DllImport("__Internal")] private static extern void _UnityAX_UnregisterElementWithIdentifier(int identifier);
@@ -1113,7 +1113,7 @@ namespace Apple.Accessibility
             }
             return false;
         }
-#endif // (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#endif // (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
 
         #endregion // Native Bridge
     }

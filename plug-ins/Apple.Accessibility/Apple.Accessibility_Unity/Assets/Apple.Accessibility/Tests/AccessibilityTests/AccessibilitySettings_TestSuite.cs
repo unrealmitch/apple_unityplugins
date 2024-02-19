@@ -17,7 +17,7 @@ namespace Apple.Accessibility.UnitTests
 
             AccessibilitySettings.onIsVoiceOverRunningChanged += onUIAccessibilityIsVoiceOverRunningChanged;
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             AccessibilityTests.PostFeatureEnabledNotification("UIAccessibilityVoiceOverTouchStatusChanged", true);
             new WaitForSeconds(0.1f);
 
@@ -27,7 +27,7 @@ namespace Apple.Accessibility.UnitTests
 
             new WaitForSeconds(0.1f);
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             UnityEngine.Assertions.Assert.IsTrue(_voiceOverOnChangedValue);
             UnityEngine.Assertions.Assert.IsTrue(AccessibilitySettings.IsVoiceOverRunning);
 #endif
@@ -36,7 +36,7 @@ namespace Apple.Accessibility.UnitTests
             AccessibilitySettings.onIsVoiceOverRunningChanged.Invoke();
 
             new WaitForSeconds(0.1f);
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             UnityEngine.Assertions.Assert.IsFalse(_voiceOverOnChangedValue);
             UnityEngine.Assertions.Assert.IsFalse(AccessibilitySettings.IsVoiceOverRunning);
 #endif

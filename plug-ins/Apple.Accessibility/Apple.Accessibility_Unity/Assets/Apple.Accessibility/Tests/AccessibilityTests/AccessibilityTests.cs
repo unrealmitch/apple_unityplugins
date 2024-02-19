@@ -14,7 +14,7 @@ namespace Apple.Accessibility.UnitTests
 
         public static bool RuniOSUnitTestWithName(string name)
         {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             return _UnityAX_RuniOSSideUnitTestWithName(name);
 #else
             return true;
@@ -23,7 +23,7 @@ namespace Apple.Accessibility.UnitTests
 
         public static bool RuniOSSideUnitTestWithKeyPathExpectingStringResult(int identifier, string keyPath, string expected)
         {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
             return _UnityAX_RuniOSSideUnitTestWithKeyPathExpectingStringResult( identifier, keyPath, expected);
 #else
             return true;
