@@ -342,7 +342,6 @@ namespace Apple.Core
                 default:
                     return "Unity-iPhone";
             }
-            return buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
         }
 
         /// <summary>

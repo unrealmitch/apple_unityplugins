@@ -6,7 +6,7 @@ namespace Apple.Core
     /// <summary>
     /// IntroducedAttribute is used to indicate for which OS a given API was introduced and became available.
     /// Note: Attributes should be declared with named parameters and a version string which represents the major.minor version of the desired platform SDK
-    /// Example: [Apple.Core.Introduced(iOS: "13.5")] or [Apple.Core.Introduced(iOS: "14", macOS: "11", visionOS: "1")]
+    /// Example: [Apple.Core.Introduced(iOS: "13.5")] or [Apple.Core.Introduced(iOS: "14", macOS: "11")]
     /// </summary>
     [System.AttributeUsage(System.AttributeTargets.All)]
     public class IntroducedAttribute : Attribute
@@ -15,7 +15,7 @@ namespace Apple.Core
         public RuntimeVersion? iOS { get => _osVersions[RuntimeOperatingSystem.iOS]; }
         public RuntimeVersion? macOS { get => _osVersions[RuntimeOperatingSystem.macOS]; }
         public RuntimeVersion? tvOS { get => _osVersions[RuntimeOperatingSystem.tvOS]; }
-        public RuntimeVersion? visionOS { get => _osVersions[RuntimeOperatingSystem.visionOSOS]; }
+        public RuntimeVersion? visionOS { get => _osVersions[RuntimeOperatingSystem.visionOS]; }
 
         // Access by OperatingSystem
         public RuntimeVersion? OperatingSystemVersion(RuntimeOperatingSystem operatingSystem)
@@ -30,7 +30,7 @@ namespace Apple.Core
 
         protected SortedList<RuntimeOperatingSystem, RuntimeVersion?> _osVersions;
 
-        public IntroducedAttribute(string iOS = "", string macOS = "", string tvOS = "")
+        public IntroducedAttribute(string iOS = "", string macOS = "", string tvOS = "", string visionOS = "")
         {
             _osVersions = new SortedList<RuntimeOperatingSystem, RuntimeVersion?>();
             
