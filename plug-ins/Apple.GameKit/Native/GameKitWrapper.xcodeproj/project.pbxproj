@@ -27,6 +27,7 @@
 		249884252953BCD6003E9DB7 /* GameKitWrapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A9B815324A4FC3800FB2FE8 /* GameKitWrapper.framework */; };
 		249884272953C081003E9DB7 /* GameKitWrapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AE5BBA22502C0DD00BDBEDA /* GameKitWrapper.framework */; };
 		249884292953C09D003E9DB7 /* GameKitWrapper.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A7E439624B508D40086FB7A /* GameKitWrapper.bundle */; };
+		61286A832B8393F70091BB8F /* GKErrorCodeExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FB7384C92ADE05A200616362 /* GKErrorCodeExtension.h */; };
 		69A254122B12705D0045F1DD /* GameKitWrapper.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 69D04C222B126F3500C74B42 /* GameKitWrapper.framework */; };
 		69D04BF42B126F3500C74B42 /* GameKitWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A9B815624A4FC3800FB2FE8 /* GameKitWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69D04BF52B126F3500C74B42 /* AppleCoreRuntimeShared.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A486BA926A09D7A00255BD5 /* AppleCoreRuntimeShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,7 +45,7 @@
 		69D04C022B126F3500C74B42 /* GKGameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A894465272F2C7D0008D820 /* GKGameCenterViewController.swift */; };
 		69D04C032B126F3500C74B42 /* AccessPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ADFE924DDF23400664BD3 /* AccessPoint.swift */; };
 		69D04C042B126F3500C74B42 /* GKBasePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A630054271F30EC00C40BC1 /* GKBasePlayer.swift */; };
-		69D04C052B126F3500C74B42 /* NSArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8ADD3272B308300D3F909 /* NSArrayExtensions.swift */; };
+		69D04C052B126F3500C74B42 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		69D04C062B126F3500C74B42 /* GKAchievementChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89445D272DECBA0008D820 /* GKAchievementChallenge.swift */; };
 		69D04C072B126F3500C74B42 /* GKLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8ADCE272B2D0A00D3F909 /* GKLeaderboardEntry.swift */; };
 		69D04C082B126F3500C74B42 /* GKTurnBasedExchangeReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8ADA6272AF66300D3F909 /* GKTurnBasedExchangeReply.swift */; };
@@ -429,6 +430,7 @@
 				69D04BF42B126F3500C74B42 /* GameKitWrapper.h in Headers */,
 				69D04BF52B126F3500C74B42 /* AppleCoreRuntimeShared.h in Headers */,
 				69D04BF62B126F3500C74B42 /* AccessPoint_BridgingHeader.h in Headers */,
+				61286A832B8393F70091BB8F /* GKErrorCodeExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,7 +639,7 @@
 				69D04C022B126F3500C74B42 /* GKGameCenterViewController.swift in Sources */,
 				69D04C032B126F3500C74B42 /* AccessPoint.swift in Sources */,
 				69D04C042B126F3500C74B42 /* GKBasePlayer.swift in Sources */,
-				69D04C052B126F3500C74B42 /* NSArrayExtensions.swift in Sources */,
+				69D04C052B126F3500C74B42 /* (null) in Sources */,
 				69D04C062B126F3500C74B42 /* GKAchievementChallenge.swift in Sources */,
 				69D04C072B126F3500C74B42 /* GKLeaderboardEntry.swift in Sources */,
 				69D04C082B126F3500C74B42 /* GKTurnBasedExchangeReply.swift in Sources */,

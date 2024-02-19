@@ -236,7 +236,8 @@ namespace Apple.GameKit.Sample
                     var isRarityPropertyAvailable = 
                         Availability.Available(RuntimeOperatingSystem.macOS, 14, 0) ||
                         Availability.Available(RuntimeOperatingSystem.iOS, 17, 2) ||
-                        Availability.Available(RuntimeOperatingSystem.tvOS, 17, 2);
+                        Availability.Available(RuntimeOperatingSystem.tvOS, 17, 2) ||
+                        Availability.Available(RuntimeOperatingSystem.visionOS, 1, 0);
 
                     var builder = new StringBuilder();
                     builder.AppendLine("Achievement descriptions:");
