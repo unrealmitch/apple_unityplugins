@@ -153,7 +153,9 @@ public class AppleNativePluginProcessor : AssetPostprocessor
                         importer.SetCompatibleWithPlatform(BuildTarget.tvOS, false);
                         importer.SetCompatibleWithPlatform(BuildTarget.StandaloneOSX, true);
                         importer.SetCompatibleWithPlatform(BuildTarget.VisionOS, false);
-                    }else if (Array.IndexOf(folders, "visionOS") > -1){
+                    }
+                    else if (Array.IndexOf(folders, "visionOS") > -1)
+                    {
                         logMessages.AddLast($"{Tabs(2)}Updating Apple plug-in library metadata: Set compatible with visionOS, incompatible with all other platforms.");
                         
                         PluginImporter importer = AssetImporter.GetAtPath(currAssetPath) as PluginImporter;

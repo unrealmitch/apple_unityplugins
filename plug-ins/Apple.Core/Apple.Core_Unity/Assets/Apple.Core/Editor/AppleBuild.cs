@@ -64,7 +64,7 @@ namespace Apple.Core
                 string minOSVersionString = string.Empty;
                 switch (buildTarget)
                 {
-                    case BuildTarget.iOS: case BuildTarget.VisionOS:
+                    case BuildTarget.iOS:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_iOS;
                         break;
 
@@ -74,6 +74,10 @@ namespace Apple.Core
 
                     case BuildTarget.StandaloneOSX:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_macOS;
+                        break;
+
+                    case BuildTarget.VisionOS:
+                        minOSVersionString = appleBuildProfile.MinimumOSVersion_visionOS;
                         break;
 
                     default:
@@ -335,10 +339,13 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return "Unity-iPhone";
+
                 case BuildTarget.VisionOS:
                     return "Unity-VisionOS";
+
                 case BuildTarget.StandaloneOSX:
                     return Application.productName;
+
                 default:
                     return "Unity-iPhone";
             }
