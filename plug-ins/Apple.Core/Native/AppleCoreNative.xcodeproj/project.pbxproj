@@ -851,22 +851,22 @@
 		CFE533D3263B6E6E00078448 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
+				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator xros xrsimulator";
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
+				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator xrsimulator xros";
 			};
 			name = Debug;
 		};
 		CFE533D4263B6E6E00078448 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
+				ADDITIONAL_SDKS = "macosx appletvos appletvsimulator iphoneos iphonesimulator xros xrsimulator";
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator visionos xrsimulator";
+				SUPPORTED_PLATFORMS = "macosx appletvos appletvsimulator iphoneos iphonesimulator xrsimulator xros";
 			};
 			name = Release;
 		};
