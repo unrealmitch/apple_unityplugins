@@ -5,7 +5,7 @@ from pathlib import Path
 from scripts.upi_utility import Printer
 from scripts.upi_cli_argument_options import PlatformID
 
-SIMULATOR_PLATFORMS = [PlatformID.IOS, PlatformID.TVOS]
+SIMULATOR_PLATFORMS = [PlatformID.IOS, PlatformID.TVOS, PlatformID.VISIONOS]
 
 # Common context data for building the plug-ins.
 class BuildContext:

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using UnityEditor.iOS.Xcode;
 #endif
 
@@ -18,13 +18,14 @@ namespace Apple.GameKit.Editor
         {
             {BuildTarget.iOS, "GameKitWrapper.framework"},
             {BuildTarget.tvOS, "GameKitWrapper.framework"},
+            {BuildTarget.VisionOS, "GameKitWrapper.framework"},
             {BuildTarget.StandaloneOSX, "GameKitWrapper.bundle"}
         };
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
         public override void OnProcessEntitlements(AppleBuildProfile _, BuildTarget buildTarget, string _1, PlistDocument entitlements)
         {
-            if(buildTarget == BuildTarget.StandaloneOSX)
+            if(buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS)
             {
                 entitlements.root.SetBoolean("com.apple.developer.game-center", true);
             }

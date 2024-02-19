@@ -26,6 +26,11 @@ namespace Apple.Core
         private static Dictionary<Editor, bool> _editorFoldouts = new Dictionary<Editor, bool>();
         private static Dictionary<ScriptableObject, Editor> _editors = new Dictionary<ScriptableObject, Editor>();
 
+        private const bool DefaultSetPlatformVisionOsOnSimulator = false;
+        private bool setPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
+        private const string SetPlatformVisionOsOnSimulatorKey = "PlatformVisionOsOnSimulatorKey";
+        private bool previousSetPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
+
         class UIStrings
         {
             public const string UnityBuildConfigSectionLabelText = "Unity Build Configuration";
@@ -59,6 +64,8 @@ namespace Apple.Core
             public const string tvOSBuildTargetName = "tvOS";
 
             public const string macOSBuildTargetName = "macOS";
+
+            public const string visionOSBuildTargetName = "VisionOS";
         }
 
         public void OnEnable()
@@ -74,6 +81,8 @@ namespace Apple.Core
 
             _serializedAutomateEntitlements = serializedObject.FindProperty("AutomateEntitlements");
             _serializedDefaultEntitlements = serializedObject.FindProperty("DefaultEntitlements");
+
+            LoadEditorPrefs();
         }
 
         /// <summary>
@@ -102,6 +111,9 @@ namespace Apple.Core
                     break;
                 case BuildTarget.tvOS:
                     buildTargetName = UIStrings.tvOSBuildTargetName;
+                    break;
+                case BuildTarget.VisionOS:
+                    buildTargetName = UIStrings.visionOSBuildTargetName;
                     break;
                 case BuildTarget.StandaloneOSX:
                     buildTargetName = UIStrings.macOSBuildTargetName;
@@ -298,8 +310,38 @@ namespace Apple.Core
 
             // Restore EditorGUIUtility's default label width
             EditorGUIUtility.labelWidth = 0f;
-
+            
+            GUILayout.Space(VerticalUIPadding * 2);
+            
+            GUILayout.Label("Custom Kluge Settings", EditorStyles.boldLabel);
+            GUILayout.Space(VerticalUIPadding);
+            GUILayout.Label("Set automatic Platform Vision OS with Simulator SDK in XCode Project", EditorStyles.label);
+            setPlatformVisionOsOnSimulator = EditorGUILayout.Toggle("    Set Platform Vision OS", setPlatformVisionOsOnSimulator);
+            
+            if (setPlatformVisionOsOnSimulator != previousSetPlatformVisionOsOnSimulator)
+            {
+                SaveEditorPrefs();
+                previousSetPlatformVisionOsOnSimulator = setPlatformVisionOsOnSimulator;
+            }
+            
+            
             serializedObject.ApplyModifiedProperties();
+        }
+        
+        private void LoadEditorPrefs()
+        {
+            setPlatformVisionOsOnSimulator = EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
+            previousSetPlatformVisionOsOnSimulator = setPlatformVisionOsOnSimulator;
+        }
+        
+        private void SaveEditorPrefs()
+        {
+            EditorPrefs.SetBool(SetPlatformVisionOsOnSimulatorKey, setPlatformVisionOsOnSimulator);
+        }
+        
+        public static bool ShouldSetPlatformVisionOsOnSimulator()
+        {
+            return EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
         }
     }
 }

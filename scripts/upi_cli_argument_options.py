@@ -18,6 +18,7 @@ class PlatformID:
     IOS = "iOS"
     MACOS = "macOS"
     TVOS = "tvOS"
+    VISIONOS = "visionOS"
     ALL = "all"
 
 # Platform config identifiers (-d, --debug)

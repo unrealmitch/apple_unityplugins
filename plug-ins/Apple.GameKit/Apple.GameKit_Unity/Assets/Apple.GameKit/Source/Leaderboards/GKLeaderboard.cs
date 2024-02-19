@@ -147,29 +147,53 @@ namespace Apple.GameKit.Leaderboards
         /// <returns></returns>
         public static Task<NSArray<GKLeaderboard>> LoadLeaderboards(params string[] identifiers)
         {
-            var tcs = InteropTasks.Create<NSArray<GKLeaderboard>>(out var taskId);
-            
-            // Prepare identifiers array...
-            var ids = new NSMutableArray<NSString>();
-            foreach (var identifier in identifiers)
+            try
             {
-                ids.Add(new NSString(identifier));
+                var tcs = InteropTasks.Create<NSArray<GKLeaderboard>>(out var taskId);
+                
+                // Prepare identifiers array...
+                var ids = new NSMutableArray<NSString>();
+                foreach (var identifier in identifiers)
+                {
+                    ids.Add(new NSString(identifier));
+                }
+                
+                Interop.GKLeaderboard_LoadLeaderboards(ids.Pointer, taskId, OnLoadLeaderboards, OnLoadLoaderboardsError);
+                return tcs.Task;
             }
-            
-            Interop.GKLeaderboard_LoadLeaderboards(ids.Pointer, taskId, OnLoadLeaderboards, OnLoadLoaderboardsError);
-            return tcs.Task;
+            catch (Exception e)
+            {
+                Debug.LogWarning("[SOCIAL FW] Error LoadingLeaderboards");
+                Debug.LogError(e);
+                return null;
+            }
         }
 
         [MonoPInvokeCallback(typeof(SuccessTaskCallback<IntPtr>))]
         private static void OnLoadLeaderboards(long taskId, IntPtr pointer)
         {
-            InteropTasks.TrySetResultAndRemove(taskId, PointerCast<NSArray<GKLeaderboard>>(pointer));
+            try
+            {
+                InteropTasks.TrySetResultAndRemove(taskId, PointerCast<NSArray<GKLeaderboard>>(pointer));
+            }
+            catch(Exception e)
+            {
+                Debug.Log(e);
+            }
         }
 
         [MonoPInvokeCallback(typeof(NSErrorTaskCallback))]
         private static void OnLoadLoaderboardsError(long taskId, IntPtr errorPointer)
         {
-            InteropTasks.TrySetExceptionAndRemove<NSArray<GKLeaderboard>>(taskId, new GameKitException(errorPointer));
+            try
+            {
+                InteropTasks.TrySetExceptionAndRemove<NSArray<GKLeaderboard>>(taskId,
+                    new GameKitException(errorPointer));
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
         }
         #endregion
         

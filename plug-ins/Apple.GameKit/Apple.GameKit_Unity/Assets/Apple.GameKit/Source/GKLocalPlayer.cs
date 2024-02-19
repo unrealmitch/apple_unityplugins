@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AOT;
 using Apple.Core.Runtime;
 using Apple.GameKit.Players;
+using UnityEngine;
 
 namespace Apple.GameKit
 {
@@ -86,7 +87,17 @@ namespace Apple.GameKit
         public static Task<GKLocalPlayer> Authenticate()
         {
             var tcs = InteropTasks.Create<GKLocalPlayer>(out var taskId);
-            Interop.GKLocalPlayer_Authenticate(taskId, OnAuthenticate, OnAuthenticateError);
+            
+            try
+            {
+                GKLocalPlayer_Authenticate(taskId, OnAuthenticate, OnAuthenticateError);
+            }
+            catch(Exception e)
+            {
+                Debug.LogError(e);
+                InteropTasks.TrySetExceptionAndRemove<GKLocalPlayer>(taskId, e);
+            }
+
             return tcs.Task;
         }
 

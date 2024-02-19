@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)
+﻿#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using System;
 using System.IO;
 using UnityEditor;
@@ -28,8 +28,17 @@ namespace Apple.Core
                 case BuildTarget.StandaloneOSX:
                     platformString = "macOS";
                     break;
+                case BuildTarget.VisionOS:
+                    platformString = "visionOS";
+                    break;
                 default:
                     return string.Empty;
+            }
+            
+            bool isForSimulator = PlayerSettings.VisionOS.sdkVersion == VisionOSSdkVersion.Simulator;
+            if(isForSimulator && buildTarget == BuildTarget.VisionOS)
+            {
+                platformString = "visionOS-sim";
             }
 
 #if UNITY_2022_1_OR_NEWER
@@ -86,9 +95,26 @@ namespace Apple.Core
             if (buildTarget == BuildTarget.StandaloneOSX
                 && !AppleBuild.IsXcodeGeneratedMac())
                 return;
+            
+            var projectTargetName = "Unity-iPhone";
 
-            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
-            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
+            switch (buildTarget)
+            {
+                case BuildTarget.StandaloneOSX:
+                    projectTargetName = Application.productName;
+                    break; 
+                case BuildTarget.VisionOS:
+                    projectTargetName = "Unity-VisionOS";
+                    break;
+                case BuildTarget.iOS:
+                    projectTargetName = "Unity-iPhone";
+                    break;
+                default:
+                    projectTargetName = "Unity-iPhone";
+                    break;
+            }
+            
+            var targetGuid = buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
 
             pbxProject.AddFrameworkToProject(targetGuid, framework, weak);
         }
@@ -130,7 +156,7 @@ namespace Apple.Core
             if (searchString == string.Empty)
             {
                 string relativeTargetCopyName;
-                if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.tvOS)
+                if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.tvOS || buildTarget == BuildTarget.VisionOS)
                 {
                     relativeTargetCopyName = "Frameworks";
                 }
@@ -163,6 +189,7 @@ namespace Apple.Core
                 var expectedInstallPath = source.Substring(source.LastIndexOf(searchString) + searchString.Length);
                 Debug.Log($"CopyAndEmbed - Expected install path for {frameworkName}: {expectedInstallPath}");
                 fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Frameworks", expectedInstallPath));
+                fileGuid ??= pbxProject.FindFileGuidByProjectPath(Path.Combine("Frameworks", "ARM64", "Assets", expectedInstallPath));
                 if (string.IsNullOrEmpty(fileGuid))
                 {
                     fileGuid = pbxProject.FindFileGuidByProjectPath(Path.Combine("Libraries", expectedInstallPath));
@@ -176,10 +203,25 @@ namespace Apple.Core
 
 
             // Now embed the framework into the main target
-            var projectTargetName = buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
-            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
-            Debug.Log($"CopyAndEmbed embedding {frameworkName} into target {projectTargetName}");
-            PBXProjectExtensions.AddFileToEmbedFrameworks(pbxProject, targetGuid, fileGuid);
+            var projectTargetName = buildTarget switch
+            {
+                BuildTarget.StandaloneOSX => Application.productName,
+                BuildTarget.VisionOS => "Unity-VisionOS",
+                _ => "Unity-iPhone"
+            };
+            
+            var targetGuid = buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS ? pbxProject.TargetGuidByName(projectTargetName) : pbxProject.GetUnityMainTargetGuid();
+            if (!pbxProject.ContainsFramework(targetGuid, fileGuid))
+            {
+                Debug.Log($"CopyAndEmbed embedding {frameworkName} into target {projectTargetName}");
+                pbxProject.AddFileToEmbedFrameworks(targetGuid, fileGuid);
+            }
+            else
+            {
+                Debug.Log($"CopyAndEmbed {frameworkName} already embedded into target {projectTargetName}");
+            
+            }
+
         }
 
         /// <summary>

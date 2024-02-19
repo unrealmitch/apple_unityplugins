@@ -5,7 +5,8 @@
         "Editor",
         "iOS",
         "macOSStandalone",
-        "tvOS"
+        "tvOS",
+        "VisionOS"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -21,6 +21,12 @@ build_script_version = "2.0.0"
 
 prompt_theme = utility.PromptTheme()
 
+# Selection identifiers for which platforms target when building.
+# platform_id_ios = "iOS"
+# platform_id_macos = "macOS"
+# platform_id_tvos = "tvOS"
+# platform_id_visionos = "visionOS"
+
 # Set to false to disable all colors in your terminal emulator.
 prompt_theme_enable = True
 
@@ -66,12 +72,31 @@ CTX = BuildContext(Path().resolve(__file__))
 # Store prompt theme
 CTX.printer = Printer(prompt_theme)
 
+
+
+# INCOMING PRE-2.0.0 CORE/GAMEKIG LEFTOVER
+# ----------------
+# Configure paths
+
+# build_script_path = pathlib.Path().resolve(__file__)
+# default_build_path = build_script_path.joinpath("Build")
+# top_level_plugin_path = build_script_path.joinpath("plug-ins")
+# default_test_build_path = build_script_path.joinpath("TestBuilds")
+# apple_core_library_path_table = {
+#     platform_id_ios : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/iOS/AppleCoreNative.framework"),
+#     platform_id_macos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/macOS/AppleCoreNativeMac.bundle"),
+#     platform_id_tvos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/tvOS/AppleCoreNative.framework"),
+#     platform_id_visionos : top_level_plugin_path.joinpath("Apple.Core/Apple.Core_Unity/Assets/Apple.Core/Plugins/visionOS/AppleCoreNative.framework"),
+# }
+
+
+
 # ------------------------
 # Handle command line args
 
 argument_parser = argparse.ArgumentParser(description="Builds all native libraries, packages plug-ins, and moves packages to build folder.")
 argument_parser.add_argument("-p", "--plugin-list", dest="plugin_list", nargs='*', default=[PluginID.ALL], help=f"Selects the plug-ins to process. Possible values are: {PluginID.ACCESSIBILITY}, {PluginID.CORE}, {PluginID.CORE_HAPTICS}, {PluginID.GAME_CONTROLLER}, {PluginID.GAME_KIT}, {PluginID.PHASE}, or {PluginID.ALL}. Default is: {PluginID.ALL}")
-argument_parser.add_argument("-m", "--platforms", dest="platform_list", nargs='*', default=[PlatformID.ALL], help=f"Selects the desired platforms to target when building native libraries. Possible values are: {PlatformID.IOS}, {PlatformID.MACOS}, {PlatformID.TVOS}, or {PlatformID.ALL}. Default is: {PlatformID.ALL}")
+argument_parser.add_argument("-m", "--platforms", dest="platform_list", nargs='*', default=[PlatformID.ALL], help=f"Selects the desired platforms to target when building native libraries. Possible values are: {PlatformID.IOS}, {PlatformID.MACOS}, {PlatformID.TVOS}, {PlatformID.VISIONOS} or {PlatformID.ALL}. Default is: {PlatformID.ALL}")
 argument_parser.add_argument("-b", "--build-action", dest="build_actions", nargs='*', default=[BuildActionID.BUILD, BuildActionID.PACK], help=f"Sets the build actions for the selected plug-ins. Possible values are: {BuildActionID.BUILD}, {BuildActionID.PACK}, {BuildActionID.NONE} or {BuildActionID.ALL}. Defaults are: {BuildActionID.BUILD}, {BuildActionID.PACK}")
 argument_parser.add_argument("-s", "--simulator-build", dest="simulator_build", action="store_true", help=f"Builds simulator-compatible libraries for supported platforms.")
 argument_parser.add_argument("-c", "--codesign-identity", dest="codesign_identity", default=str(), help=f"String which uniquely identifies your codesign identity, typically represented by a hash. Only applied if build actions include {BuildActionID.BUILD}")
@@ -153,7 +178,8 @@ def Main():
     CTX.platforms = {
         PlatformID.IOS: False,
         PlatformID.MACOS: False,
-        PlatformID.TVOS: False
+        PlatformID.TVOS: False,
+        PlatformID.VISIONOS: False
     }
 
     valid_platform_found = False
@@ -167,7 +193,7 @@ def Main():
             valid_platform_found = True  
             CTX.platforms[platform_id] = True
         else:
-            CTX.printer.WarningMessage(f"Ignoring unknown platform '{platform_id}'. Valid options are {PlatformID.IOS}, {PlatformID.MACOS}, {PlatformID.TVOS}, or {PlatformID.ALL} (Default)")
+            CTX.printer.WarningMessage(f"Ignoring unknown platform '{platform_id}'. Valid options are {PlatformID.IOS}, {PlatformID.MACOS}, {PlatformID.TVOS}, {PlatformID.VISIONOS} or {PlatformID.ALL} (Default)")
 
     if not valid_platform_found:
         CTX.printer.WarningMessage(f"No valid platform passed to build script. Using default argument: {PlatformID.ALL}")

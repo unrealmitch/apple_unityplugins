@@ -1,4 +1,4 @@
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -64,7 +64,7 @@ namespace Apple.Core
                 string minOSVersionString = string.Empty;
                 switch (buildTarget)
                 {
-                    case BuildTarget.iOS:
+                    case BuildTarget.iOS: case BuildTarget.VisionOS:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_iOS;
                         break;
 
@@ -118,6 +118,7 @@ namespace Apple.Core
 
             var pbxProject = GetPbxProject(buildTarget, pathToBuiltProject);
             var pbxProjectPath = GetPbxProjectPath(buildTarget, pathToBuiltProject);
+            var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(Application.productName) : pbxProject.GetUnityMainTargetGuid();
 
             if (appleBuildProfile.AutomateEntitlements)
             {
@@ -172,7 +173,6 @@ namespace Apple.Core
                 if (pbxProject != null)
                 {
                     var entitlementsXCodePath = buildTarget == BuildTarget.StandaloneOSX ? $"{Application.productName}/{Application.productName}.entitlements" : $"{Application.productName}.entitlements";
-                    var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(Application.productName) : pbxProject.GetUnityMainTargetGuid();
                     pbxProject.AddBuildProperty(targetGuid, "CODE_SIGN_ENTITLEMENTS", entitlementsXCodePath);
 
                     Debug.Log($"AppleBuild: Writing changes to PBXProject {pbxProjectPath}...");
@@ -184,6 +184,16 @@ namespace Apple.Core
 
             #endregion // Process Entitlements
 
+            //!Hack: Kluge Fix for VisionOS (in order to automatic set visionOS platform in XCode instead of xrsimulator)
+            if (buildTarget == BuildTarget.VisionOS &&
+                pbxProject != null &&
+                PlayerSettings.VisionOS.sdkVersion == VisionOSSdkVersion.Simulator &&
+                AppleBuildProfileEditor.ShouldSetPlatformVisionOsOnSimulator())
+            {
+                pbxProject.SetBuildProperty(targetGuid, "SUPPORTED_PLATFORMS", "xrsimulator xros");
+                // pbxProject.SetBuildProperty(targetGuid,"SUPPORTED_PLATFORMS","xrsimulator xros visionOS");
+            }
+            
             #region Process Frameworks
 
             Debug.Log($"AppleBuild: OnProcessFrameworks begin...");
@@ -205,7 +215,7 @@ namespace Apple.Core
             Debug.Log($"AppleBuild: OnProcessFrameworks end.");
 
             #endregion // Process Frameworks
-
+            
             #region Finalize Post Process
 
             Debug.Log($"AppleBuild: OnFinalizePostProcess begin...");
@@ -321,6 +331,17 @@ namespace Apple.Core
         /// </summary>
         public static string GetSchemeName(BuildTarget buildTarget)
         {
+            switch(buildTarget){
+                case BuildTarget.iOS:
+                case BuildTarget.tvOS:
+                    return "Unity-iPhone";
+                case BuildTarget.VisionOS:
+                    return "Unity-VisionOS";
+                case BuildTarget.StandaloneOSX:
+                    return Application.productName;
+                default:
+                    return "Unity-iPhone";
+            }
             return buildTarget == BuildTarget.StandaloneOSX ? Application.productName : "Unity-iPhone";
         }
 
@@ -333,6 +354,8 @@ namespace Apple.Core
             {
                 case BuildTarget.iOS:
                     return "iphoneos";
+                case BuildTarget.VisionOS:
+                    return "visionos";
                 case BuildTarget.tvOS:
                     return "appletvos";
                 case BuildTarget.StandaloneOSX:
@@ -352,6 +375,8 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return $"{pathToBuiltProject}/Unity-iPhone.xcodeproj";
+                case BuildTarget.VisionOS:
+                    return $"{pathToBuiltProject}/Unity-VisionOS.xcodeproj";
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER
                     return $"{pathToBuiltProject}/{new DirectoryInfo(pathToBuiltProject).Name}.xcodeproj";
@@ -373,6 +398,8 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return PBXProject.GetPBXProjectPath(pathToBuiltProject);
+                case BuildTarget.VisionOS:
+                    return PBXProject.GetPBXProjectPath(pathToBuiltProject).Replace("Unity-iPhone", "Unity-VisionOS");  //!Fix due Unity Method PBXProject.GetPBXProjectPath dont return a correct path for VisionOS
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER
                     return $"{GetXcodeProjectPath(buildTarget, pathToBuiltProject)}/project.pbxproj";
