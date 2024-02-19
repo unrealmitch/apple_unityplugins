@@ -49,22 +49,13 @@ namespace Apple.GameKit
         public Task<GKIdentityVerificationResponse> FetchItems()
         {
             var tcs = InteropTasks.Create<GKIdentityVerificationResponse>(out var taskId);
-            Interop.GKLocalPlayer_FetchItems(taskId, OnFetchItems, OnFetchItemsError);
+            Interop.GKLocalPlayer_FetchItems(Pointer, taskId, OnFetchItems, OnFetchItemsError);
             return tcs.Task;
         }
 
-        public delegate void FetchItemsCallback(long taskId, string publicKeyUrl, IntPtr Signature, int signatureLength, IntPtr Salt, int SaltLength, ulong Timestamp);
-
-        [MonoPInvokeCallback(typeof(FetchItemsCallback))]
-        private static void OnFetchItems(long taskId, string publicUrl, IntPtr Signature, int signatureLength, IntPtr Salt, int SaltLength, ulong Timestamp)
+        [MonoPInvokeCallback(typeof(SuccessTaskCallback<GKIdentityVerificationResponse>))]
+        private static void OnFetchItems(long taskId, GKIdentityVerificationResponse response)
         {
-            GKIdentityVerificationResponse response = new GKIdentityVerificationResponse();
-            response.Salt = Salt;
-            response.Signature = Signature;
-            response.Timestamp = Timestamp;
-            response.SaltLength = SaltLength;
-            response.SignatureLength = signatureLength;
-            response.PublicKeyUrl = publicUrl;
             InteropTasks.TrySetResultAndRemove(taskId, response);
         }
 
@@ -74,7 +65,7 @@ namespace Apple.GameKit
             InteropTasks.TrySetExceptionAndRemove<GKIdentityVerificationResponse>(taskId, new GameKitException(errorPointer));
         }
         #endregion
- 
+        
         #region Authenticate
 
         /// <summary>
@@ -87,10 +78,10 @@ namespace Apple.GameKit
         public static Task<GKLocalPlayer> Authenticate()
         {
             var tcs = InteropTasks.Create<GKLocalPlayer>(out var taskId);
-            
+
             try
             {
-                GKLocalPlayer_Authenticate(taskId, OnAuthenticate, OnAuthenticateError);
+                Interop.GKLocalPlayer_Authenticate(taskId, OnAuthenticate, OnAuthenticateError);
             }
             catch(Exception e)
             {
@@ -213,7 +204,7 @@ namespace Apple.GameKit
             [DllImport(InteropUtility.DLLName)]
             public static extern IntPtr GKLocalPlayer_GetLocal();
             [DllImport(InteropUtility.DLLName)]
-            public static extern void GKLocalPlayer_FetchItems(long taskId, FetchItemsCallback onSuccess, NSErrorTaskCallback onError);
+            public static extern void GKLocalPlayer_FetchItems(IntPtr pointer, long taskId, SuccessTaskCallback<GKIdentityVerificationResponse> onSuccess, NSErrorTaskCallback onError);
             [DllImport(InteropUtility.DLLName)]
             public static extern void GKLocalPlayer_Authenticate(long taskId, SuccessTaskCallback<IntPtr> onSuccess, NSErrorTaskCallback onError);
             [DllImport(InteropUtility.DLLName)]
