@@ -1,4 +1,5 @@
 iOS/
 tvOS/
 macOS/
+visionOS/
 *.meta

@@ -21,7 +21,7 @@ The first step is to download or clone the [Apple-Unity Plug-ins repository](htt
 | Apple.PHASE | [Apple.PHASE Documentation](../plug-ins/Apple.PHASE/Apple.PHASE_Unity/Assets/Documentation~/Apple.PHASE.md) | 
 
 ## 2. Build
-After downloading the plug-in(s), you will need to build the native libraries. If you are familiar with Unity plug-ins, these are compiled assets found in a Unity project's `Assets/.../Plugins/{iOS, macOS, tvOS}/` directories. Along with some C# bridging scripts, they enable communication with Apple devices' native technologies.
+After downloading the plug-in(s), you will need to build the native libraries. If you are familiar with Unity plug-ins, these are compiled assets found in a Unity project's `Assets/.../Plugins/{iOS, macOS, tvOS, visionOS}/` directories. Along with some C# bridging scripts, they enable communication with Apple devices' native technologies.
 
 For your convenience, there is a Python3 script included in this repo. It requires that you have Xcode, python3, npm, and Unity installed and makes building and managing the native libraries simple. If you don't already have Xcode installed, you can find it [here](https://developer.apple.com/xcode/). This script, `build.py`, is located at the root directory of the repo. The easiest way to build the plug-ins is by running:
 

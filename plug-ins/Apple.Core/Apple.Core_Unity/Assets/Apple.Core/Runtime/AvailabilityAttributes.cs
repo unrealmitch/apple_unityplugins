@@ -6,7 +6,7 @@ namespace Apple.Core
     /// <summary>
     /// IntroducedAttribute is used to indicate for which OS a given API was introduced and became available.
     /// Note: Attributes should be declared with named parameters and a version string which represents the major.minor version of the desired platform SDK
-    /// Example: [Apple.Core.Introduced(iOS: "13.5")] or [Apple.Core.Introduced(iOS: "14", macOS: "11")]
+    /// Example: [Apple.Core.Introduced(iOS: "13.5")] or [Apple.Core.Introduced(iOS: "14", macOS: "11", visionOS: "1")]
     /// </summary>
     [System.AttributeUsage(System.AttributeTargets.All)]
     public class IntroducedAttribute : Attribute
@@ -15,6 +15,7 @@ namespace Apple.Core
         public RuntimeVersion? iOS { get => _osVersions[RuntimeOperatingSystem.iOS]; }
         public RuntimeVersion? macOS { get => _osVersions[RuntimeOperatingSystem.macOS]; }
         public RuntimeVersion? tvOS { get => _osVersions[RuntimeOperatingSystem.tvOS]; }
+        public RuntimeVersion? visionOS { get => _osVersions[RuntimeOperatingSystem.visionOSOS]; }
 
         // Access by OperatingSystem
         public RuntimeVersion? OperatingSystemVersion(RuntimeOperatingSystem operatingSystem)
@@ -36,6 +37,7 @@ namespace Apple.Core
             _osVersions[RuntimeOperatingSystem.iOS] = RuntimeVersion.FromString(iOS);
             _osVersions[RuntimeOperatingSystem.macOS] = RuntimeVersion.FromString(macOS);
             _osVersions[RuntimeOperatingSystem.tvOS] = RuntimeVersion.FromString(tvOS);
+            _osVersions[RuntimeOperatingSystem.visionOS] = RuntimeVersion.FromString(visionOS);
         }
     }
 
@@ -65,7 +67,7 @@ namespace Apple.Core
         protected string _message;
         public string Message { get => _message; }
 
-        public DeprecatedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "") : base(iOS, macOS, tvOS)
+        public DeprecatedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "", string visionOS = "") : base(iOS, macOS, tvOS, visionOS)
         {
             _message = message;
         }
@@ -78,7 +80,7 @@ namespace Apple.Core
     [System.AttributeUsage(System.AttributeTargets.All)]
     public class RenamedAttribute : DeprecatedAttribute
     {
-        public RenamedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "") : base(message, iOS, macOS, tvOS) {}
+        public RenamedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "", string visionOS = "") : base(message, iOS, macOS, tvOS, visionOS) {}
     }    
 
     /// <summary>
@@ -88,6 +90,6 @@ namespace Apple.Core
     [System.AttributeUsage(System.AttributeTargets.All)]
     public class ObsoletedAttribute : DeprecatedAttribute
     {
-        public ObsoletedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "") : base(message, iOS, macOS, tvOS) {}
+        public ObsoletedAttribute(string message, string iOS = "", string macOS = "", string tvOS = "", string visionOS = "") : base(message, iOS, macOS, tvOS, visionOS) {}
     }
 }

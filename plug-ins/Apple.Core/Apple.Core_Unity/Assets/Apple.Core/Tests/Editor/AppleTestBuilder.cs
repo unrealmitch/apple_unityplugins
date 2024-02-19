@@ -10,7 +10,7 @@ using UnityEditor.TestTools;
 
 /*
  * Build the UnitTest player with:
- * /path/to/Unity.app/Contents/MacOS/Unity -runTests -batchmode -projectPath /path/to/unity_project -testPlatform [iOS, macOS, tvOS] -assemblyNames [your_test_assembly]
+ * /path/to/Unity.app/Contents/MacOS/Unity -runTests -batchmode -projectPath /path/to/unity_project -testPlatform [iOS, macOS, tvOS, visionOS] -assemblyNames [your_test_assembly]
  */
 
 

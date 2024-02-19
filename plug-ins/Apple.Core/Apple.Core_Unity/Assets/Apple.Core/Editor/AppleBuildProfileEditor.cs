@@ -20,6 +20,7 @@ namespace Apple.Core
         private SerializedProperty _serializedMinimumOSVersion_iOS;
         private SerializedProperty _serializedMinimumOSVersion_tvOS;
         private SerializedProperty _serializedMinimumOSVersion_macOS;
+        private SerializedProperty _serializedMinimumOSVersion_visionOS;
         private SerializedProperty _serializedAutomateEntitlements;
         private SerializedProperty _serializedDefaultEntitlements;
 
@@ -49,9 +50,11 @@ namespace Apple.Core
             public const string DefaultInfoPlistTooltip = "(Optional) An Info.plist file used to configure your Xcode app.";
 
             public const string DefaultMinimumMacOSVersionText = "10.15.0";
+            public const string DefaultMinimumVisionOSVersionText = "1.0";
             public const string MinimumOSVersionFieldLabelText_iOS = "Minimum iOS Version";
             public const string MinimumOSVersionFieldLabelText_tvOS = "Minimum tvOS Version";
             public const string MinimumOSVersionFieldLabelText_macOS = "Minimum macOS Version";
+            public const string MinimumOSVersionFieldLabelText_visionOS = "Minimum visionOS Version";
 
             public const string AutomateEntitlementsToggleLabelText = "Automate Entitlements";
             public const string AutomateEntitlementsTooltip = "Automatically add an entitlements file to your Xcode project.";
@@ -78,6 +81,7 @@ namespace Apple.Core
             _serializedMinimumOSVersion_iOS = serializedObject.FindProperty("MinimumOSVersion_iOS");
             _serializedMinimumOSVersion_macOS = serializedObject.FindProperty("MinimumOSVersion_macOS");
             _serializedMinimumOSVersion_tvOS = serializedObject.FindProperty("MinimumOSVersion_tvOS");
+            _serializedMinimumOSVersion_visionOS = serializedObject.FindProperty("MinimumOSVersion_visionOS");
 
             _serializedAutomateEntitlements = serializedObject.FindProperty("AutomateEntitlements");
             _serializedDefaultEntitlements = serializedObject.FindProperty("DefaultEntitlements");
@@ -141,6 +145,13 @@ namespace Apple.Core
             if (_serializedMinimumOSVersion_macOS.stringValue == string.Empty)
             {
                 _serializedMinimumOSVersion_macOS.stringValue = UIStrings.DefaultMinimumMacOSVersionText;
+                serializedObject.ApplyModifiedProperties();
+            }
+
+
+            if (_serializedMinimumOSVersion_visionOS.stringValue == string.Empty)
+            {
+                _serializedMinimumOSVersion_visionOS.stringValue = UIStrings.DefaultMinimumVisionOSVersionText;
                 serializedObject.ApplyModifiedProperties();
             }
 
@@ -213,8 +224,8 @@ namespace Apple.Core
                 var minimumOSVersionLabel_macOS = new GUIContent(UIStrings.MinimumOSVersionFieldLabelText_macOS);
                 EditorGUILayout.PropertyField(_serializedMinimumOSVersion_macOS, minimumOSVersionLabel_macOS, GUILayout.MinWidth(_minLabelWidth));
 
-
-
+                var minimumOSVersionLabel_visionOS = new GUIContent(UIStrings.MinimumOSVersionFieldLabelText_visionOS);
+                EditorGUILayout.PropertyField(_serializedMinimumOSVersion_visionOS, minimumOSVersionLabel_visionOS, GUILayout.MinWidth(_minLabelWidth));
             }
 
             EditorGUI.indentLevel--;

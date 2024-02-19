@@ -23,6 +23,7 @@ namespace Apple.Core
         public string MinimumOSVersion_iOS = string.Empty;
         public string MinimumOSVersion_tvOS = string.Empty;
         public string MinimumOSVersion_macOS = string.Empty;
+        public string MinimumOSVersion_visionOS = string.Empty;
 
         public bool AppUsesNonExemptEncryption = false;
 
