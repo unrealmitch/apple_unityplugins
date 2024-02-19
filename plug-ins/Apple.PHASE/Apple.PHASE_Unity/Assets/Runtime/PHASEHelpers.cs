@@ -14,7 +14,7 @@ namespace Apple.PHASE
         /// </summary>
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX
         public const string PluginDllName = "AudioPluginPHASE";
-#elif UNITY_IOS || UNITY_TVOS
+#elif UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
         public const string PluginDllName = "__Internal";
 #endif
 
