@@ -209,7 +209,7 @@ class NativeUnityPluginManager:
 
         # Determine supported Unity platforms (see: https://docs.unity3d.com/ScriptReference/BuildTarget.html for relevant Apple platform target names)
         CTX.printer.StatusMessage("Scanning for supported platforms.", f"\n{CTX.printer.Indent(1)}")
-        unity_platform_name_table = {"iOS":"iOS", "tvOS":"tvOS", "macOS":"StandaloneOSX"}
+        unity_platform_name_table = {"iOS":"iOS", "tvOS":"tvOS", "macOS":"StandaloneOSX", "visionOS":"VisionOS"}
         native_plugin.unity_project.supported_platforms.clear()
 
         for platform_path in native_plugin.unity_project.plugin_asset_path.iterdir():
