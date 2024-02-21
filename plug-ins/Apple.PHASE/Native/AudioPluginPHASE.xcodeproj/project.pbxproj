@@ -13,6 +13,8 @@
 			buildPhases = (
 			);
 			dependencies = (
+				616942CC2B86292F00630D1C /* PBXTargetDependency */,
+				616942CA2B86292C00630D1C /* PBXTargetDependency */,
 				6489AD2C25FC281300DC5874 /* PBXTargetDependency */,
 				6489AD2E25FC281300DC5874 /* PBXTargetDependency */,
 			);
@@ -25,6 +27,8 @@
 			buildPhases = (
 			);
 			dependencies = (
+				616942D02B86293600630D1C /* PBXTargetDependency */,
+				616942CE2B86293400630D1C /* PBXTargetDependency */,
 				649B736D276D2F06004E0B8E /* PBXTargetDependency */,
 				649B736F276D2F06004E0B8E /* PBXTargetDependency */,
 			);
@@ -90,6 +94,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = FF98C0041F220DA10043047A;
 			remoteInfo = "AudioPluginPHASE-iOS";
+		};
+		616942C92B86292C00630D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 611270A32B86263200D6A23B;
+			remoteInfo = "AudioPluginPHASE-tvOS";
+		};
+		616942CB2B86292F00630D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 618C81732B8623BF001D2F9A;
+			remoteInfo = "AudioPluginPHASE-visionOS";
+		};
+		616942CD2B86293400630D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 611270A32B86263200D6A23B;
+			remoteInfo = "AudioPluginPHASE-tvOS";
+		};
+		616942CF2B86293600630D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 618C81732B8623BF001D2F9A;
+			remoteInfo = "AudioPluginPHASE-visionOS";
 		};
 		6489AD2B25FC281300DC5874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -645,6 +677,26 @@
 			platformFilter = ios;
 			target = FF98C0041F220DA10043047A /* AudioPluginPHASE-iOS */;
 			targetProxy = 302D376423621CA40030DA9A /* PBXContainerItemProxy */;
+		};
+		616942CA2B86292C00630D1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 611270A32B86263200D6A23B /* AudioPluginPHASE-tvOS */;
+			targetProxy = 616942C92B86292C00630D1C /* PBXContainerItemProxy */;
+		};
+		616942CC2B86292F00630D1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 618C81732B8623BF001D2F9A /* AudioPluginPHASE-visionOS */;
+			targetProxy = 616942CB2B86292F00630D1C /* PBXContainerItemProxy */;
+		};
+		616942CE2B86293400630D1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 611270A32B86263200D6A23B /* AudioPluginPHASE-tvOS */;
+			targetProxy = 616942CD2B86293400630D1C /* PBXContainerItemProxy */;
+		};
+		616942D02B86293600630D1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 618C81732B8623BF001D2F9A /* AudioPluginPHASE-visionOS */;
+			targetProxy = 616942CF2B86293600630D1C /* PBXContainerItemProxy */;
 		};
 		6489AD2C25FC281300DC5874 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
