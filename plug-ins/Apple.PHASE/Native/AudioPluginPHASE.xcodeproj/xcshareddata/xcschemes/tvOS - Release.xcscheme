@@ -14,9 +14,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "241B6AAD2947E2F000EC7B7A"
-               BuildableName = "tvOS_sentinel"
-               BlueprintName = "tvOS_sentinel"
+               BlueprintIdentifier = "611270A32B86263200D6A23B"
+               BuildableName = "AudioPluginPHASE-tvOS.a"
+               BlueprintName = "AudioPluginPHASE-tvOS"
                ReferencedContainer = "container:AudioPluginPHASE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "241B6AAD2947E2F000EC7B7A"
-            BuildableName = "tvOS_sentinel"
-            BlueprintName = "tvOS_sentinel"
+            BlueprintIdentifier = "611270A32B86263200D6A23B"
+            BuildableName = "AudioPluginPHASE-tvOS.a"
+            BlueprintName = "AudioPluginPHASE-tvOS"
             ReferencedContainer = "container:AudioPluginPHASE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
