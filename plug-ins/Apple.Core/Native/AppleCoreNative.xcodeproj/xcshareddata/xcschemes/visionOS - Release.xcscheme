@@ -7,15 +7,15 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F6B0D0972AFE4325008956AB"
-               BuildableName = "AppleCoreNative_visionOS"
+               BlueprintIdentifier = "61C46FE32B9F32ED000A5EE5"
+               BuildableName = "AppleCoreNative_visionOS.framework"
                BlueprintName = "AppleCoreNative_visionOS"
                ReferencedContainer = "container:AppleCoreNative.xcodeproj">
             </BuildableReference>
@@ -50,8 +50,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F6B0D0972AFE4325008956AB"
-            BuildableName = "AppleCoreNative_visionOS"
+            BlueprintIdentifier = "61C46FE32B9F32ED000A5EE5"
+            BuildableName = "AppleCoreNative_visionOS.framework"
             BlueprintName = "AppleCoreNative_visionOS"
             ReferencedContainer = "container:AppleCoreNative.xcodeproj">
          </BuildableReference>

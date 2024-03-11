@@ -7,14 +7,14 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "618C81732B8623BF001D2F9A"
+               BlueprintIdentifier = "61FBFF802B9F388000AB1455"
                BuildableName = "AudioPluginPHASE-visionOS.a"
                BlueprintName = "AudioPluginPHASE-visionOS"
                ReferencedContainer = "container:AudioPluginPHASE.xcodeproj">
@@ -50,7 +50,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "618C81732B8623BF001D2F9A"
+            BlueprintIdentifier = "61FBFF802B9F388000AB1455"
             BuildableName = "AudioPluginPHASE-visionOS.a"
             BlueprintName = "AudioPluginPHASE-visionOS"
             ReferencedContainer = "container:AudioPluginPHASE.xcodeproj">

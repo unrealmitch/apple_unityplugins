@@ -21,6 +21,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		61540D812B9F33E800239B45 /* AppleAccessibilityElementOrdering.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4627432564009BB169 /* AppleAccessibilityElementOrdering.h */; };
+		61540D822B9F33E800239B45 /* AppleAccessibilitySafeOverride.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4427432564009BB169 /* AppleAccessibilitySafeOverride.h */; };
+		61540D832B9F33E800239B45 /* AppleAccessibilityBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D592743270D009BB169 /* AppleAccessibilityBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61540D842B9F33E800239B45 /* AppleAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4127432564009BB169 /* AppleAccessibilityElement.h */; };
+		61540D852B9F33E800239B45 /* AppleAccessibilityRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4C27432564009BB169 /* AppleAccessibilityRuntime.h */; };
+		61540D862B9F33E800239B45 /* AppleAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D3C274324FC009BB169 /* AppleAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61540D882B9F33E800239B45 /* AppleAccessibilitySafeOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4B27432564009BB169 /* AppleAccessibilitySafeOverride.m */; };
+		61540D892B9F33E800239B45 /* AppleAccessibilityElementOrdering.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4827432564009BB169 /* AppleAccessibilityElementOrdering.m */; };
+		61540D8A2B9F33E800239B45 /* AppleAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4927432564009BB169 /* AppleAccessibilityElement.m */; };
+		61540D8B2B9F33E800239B45 /* UnityViewAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4527432564009BB169 /* UnityViewAccessibility.m */; };
+		61540D8C2B9F33E800239B45 /* AppleAccessibilityBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4727432564009BB169 /* AppleAccessibilityBridge.m */; };
+		61540D8D2B9F33E800239B45 /* AppleAccessibilityRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C9729D4A27432564009BB169 /* AppleAccessibilityRuntime.m */; };
 		C9729D3D274324FC009BB169 /* AppleAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D3C274324FC009BB169 /* AppleAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9729D4D27432564009BB169 /* AppleAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4127432564009BB169 /* AppleAccessibilityElement.h */; };
 		C9729D5027432564009BB169 /* AppleAccessibilitySafeOverride.h in Headers */ = {isa = PBXBuildFile; fileRef = C9729D4427432564009BB169 /* AppleAccessibilitySafeOverride.h */; };
@@ -49,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		240646122B61FC3C00246067 /* Accessibility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Accessibility.xcconfig; sourceTree = "<group>"; };
+		61540D932B9F33E800239B45 /* AppleAccessibility_visionOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleAccessibility_visionOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9155832273CDDB5007DF564 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9155834273CDDBC007DF564 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS16.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9729D3A274324FC009BB169 /* AppleAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		61540D8E2B9F33E800239B45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9729D37274324FC009BB169 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +120,7 @@
 			children = (
 				C9729D3A274324FC009BB169 /* AppleAccessibility.framework */,
 				C9729E2827434953009BB169 /* AppleAccessibility.framework */,
+				61540D932B9F33E800239B45 /* AppleAccessibility_visionOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +164,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		61540D802B9F33E800239B45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61540D812B9F33E800239B45 /* AppleAccessibilityElementOrdering.h in Headers */,
+				61540D822B9F33E800239B45 /* AppleAccessibilitySafeOverride.h in Headers */,
+				61540D832B9F33E800239B45 /* AppleAccessibilityBase.h in Headers */,
+				61540D842B9F33E800239B45 /* AppleAccessibilityElement.h in Headers */,
+				61540D852B9F33E800239B45 /* AppleAccessibilityRuntime.h in Headers */,
+				61540D862B9F33E800239B45 /* AppleAccessibility.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9729D35274324FC009BB169 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +206,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		61540D7F2B9F33E800239B45 /* AppleAccessibility_visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61540D902B9F33E800239B45 /* Build configuration list for PBXNativeTarget "AppleAccessibility_visionOS" */;
+			buildPhases = (
+				61540D802B9F33E800239B45 /* Headers */,
+				61540D872B9F33E800239B45 /* Sources */,
+				61540D8E2B9F33E800239B45 /* Frameworks */,
+				61540D8F2B9F33E800239B45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleAccessibility_visionOS;
+			productName = AppleAccessibility;
+			productReference = 61540D932B9F33E800239B45 /* AppleAccessibility_visionOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C9729D39274324FC009BB169 /* AppleAccessibility_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9729D40274324FC009BB169 /* Build configuration list for PBXNativeTarget "AppleAccessibility_iOS" */;
@@ -239,12 +291,20 @@
 			targets = (
 				C9729D39274324FC009BB169 /* AppleAccessibility_iOS */,
 				C9729E1127434953009BB169 /* AppleAccessibility_tvOS */,
+				61540D7F2B9F33E800239B45 /* AppleAccessibility_visionOS */,
 				241B6AA82947AC5500EC7B7A /* macOS_sentinel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		61540D8F2B9F33E800239B45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9729D38274324FC009BB169 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +345,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		61540D872B9F33E800239B45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61540D882B9F33E800239B45 /* AppleAccessibilitySafeOverride.m in Sources */,
+				61540D892B9F33E800239B45 /* AppleAccessibilityElementOrdering.m in Sources */,
+				61540D8A2B9F33E800239B45 /* AppleAccessibilityElement.m in Sources */,
+				61540D8B2B9F33E800239B45 /* UnityViewAccessibility.m in Sources */,
+				61540D8C2B9F33E800239B45 /* AppleAccessibilityBridge.m in Sources */,
+				61540D8D2B9F33E800239B45 /* AppleAccessibilityRuntime.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9729D36274324FC009BB169 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,6 +404,60 @@
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		61540D912B9F33E800239B45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646122B61FC3C00246067 /* Accessibility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleAccessibility-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		61540D922B9F33E800239B45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646122B61FC3C00246067 /* Accessibility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleAccessibility-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -552,6 +679,15 @@
 			buildConfigurations = (
 				241B6AA92947AC5500EC7B7A /* Debug */,
 				241B6AAA2947AC5500EC7B7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61540D902B9F33E800239B45 /* Build configuration list for PBXNativeTarget "AppleAccessibility_visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61540D912B9F33E800239B45 /* Debug */,
+				61540D922B9F33E800239B45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

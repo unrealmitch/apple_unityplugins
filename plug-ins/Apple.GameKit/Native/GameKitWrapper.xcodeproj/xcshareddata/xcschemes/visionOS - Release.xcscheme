@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6110C9D02B9F208D00B336EB"
+               BlueprintIdentifier = "611D6CE92B9F375B0072C120"
                BuildableName = "GameKitWrapper visionOS.framework"
                BlueprintName = "GameKitWrapper visionOS"
                ReferencedContainer = "container:GameKitWrapper.xcodeproj">
@@ -50,7 +50,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6110C9D02B9F208D00B336EB"
+            BlueprintIdentifier = "611D6CE92B9F375B0072C120"
             BuildableName = "GameKitWrapper visionOS.framework"
             BlueprintName = "GameKitWrapper visionOS"
             ReferencedContainer = "container:GameKitWrapper.xcodeproj">

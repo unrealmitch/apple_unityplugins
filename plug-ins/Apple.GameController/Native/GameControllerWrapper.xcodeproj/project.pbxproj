@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		619DEF802B9F364500924B6D /* GameControllerWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A55184924E2FC09004CDB45 /* GameControllerWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		619DEF812B9F364500924B6D /* Controller_BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A55185F24E6FA7F004CDB45 /* Controller_BridgingHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		619DEF832B9F364500924B6D /* General_CallbackTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186124E6FBA0004CDB45 /* General_CallbackTypeDefinitions.swift */; };
+		619DEF842B9F364500924B6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186624E70042004CDB45 /* Extensions.swift */; };
+		619DEF852B9F364500924B6D /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55185C24E6FA61004CDB45 /* Controller.swift */; };
+		619DEF862B9F364500924B6D /* ControllerDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A849D7D2548CB1C00EF55D8 /* ControllerDictionary.swift */; };
+		619DEF872B9F364500924B6D /* ControllerHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB23DF724E72E2300596226 /* ControllerHaptics.swift */; };
 		7A55184B24E2FC09004CDB45 /* GameControllerWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A55184924E2FC09004CDB45 /* GameControllerWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A55185D24E6FA61004CDB45 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55185C24E6FA61004CDB45 /* Controller.swift */; };
 		7A55185E24E6FA61004CDB45 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55185C24E6FA61004CDB45 /* Controller.swift */; };
@@ -32,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		240646142B62D48400246067 /* GameController.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GameController.xcconfig; sourceTree = "<group>"; };
+		619DEF8D2B9F364500924B6D /* GameControllerWrapper_visionOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameControllerWrapper_visionOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A55184624E2FC09004CDB45 /* GameControllerWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameControllerWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A55184924E2FC09004CDB45 /* GameControllerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameControllerWrapper.h; sourceTree = "<group>"; };
 		7A55184A24E2FC09004CDB45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +55,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		619DEF882B9F364500924B6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A55184324E2FC09004CDB45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +101,7 @@
 				7A55184624E2FC09004CDB45 /* GameControllerWrapper.framework */,
 				7A55185524E2FF56004CDB45 /* GameControllerWrapper.bundle */,
 				7AE5BB812502C06C00BDBEDA /* GameControllerWrapper.framework */,
+				619DEF8D2B9F364500924B6D /* GameControllerWrapper_visionOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +133,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		619DEF7F2B9F364500924B6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				619DEF802B9F364500924B6D /* GameControllerWrapper.h in Headers */,
+				619DEF812B9F364500924B6D /* Controller_BridgingHeader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A55184124E2FC09004CDB45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +172,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		619DEF7E2B9F364500924B6D /* GameControllerWrapper_visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 619DEF8A2B9F364500924B6D /* Build configuration list for PBXNativeTarget "GameControllerWrapper_visionOS" */;
+			buildPhases = (
+				619DEF7F2B9F364500924B6D /* Headers */,
+				619DEF822B9F364500924B6D /* Sources */,
+				619DEF882B9F364500924B6D /* Frameworks */,
+				619DEF892B9F364500924B6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameControllerWrapper_visionOS;
+			productName = GameControllerWrapper;
+			productReference = 619DEF8D2B9F364500924B6D /* GameControllerWrapper_visionOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		7A55184524E2FC09004CDB45 /* GameControllerWrapper_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A55184E24E2FC09004CDB45 /* Build configuration list for PBXNativeTarget "GameControllerWrapper_iOS" */;
@@ -235,12 +278,20 @@
 			targets = (
 				7A55184524E2FC09004CDB45 /* GameControllerWrapper_iOS */,
 				7AE5BB732502C06C00BDBEDA /* GameControllerWrapper_tvOS */,
+				619DEF7E2B9F364500924B6D /* GameControllerWrapper_visionOS */,
 				7A55185424E2FF56004CDB45 /* GameControllerWrapper_macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		619DEF892B9F364500924B6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A55184424E2FC09004CDB45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +316,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		619DEF822B9F364500924B6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				619DEF832B9F364500924B6D /* General_CallbackTypeDefinitions.swift in Sources */,
+				619DEF842B9F364500924B6D /* Extensions.swift in Sources */,
+				619DEF852B9F364500924B6D /* Controller.swift in Sources */,
+				619DEF862B9F364500924B6D /* ControllerDictionary.swift in Sources */,
+				619DEF872B9F364500924B6D /* ControllerHaptics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A55184224E2FC09004CDB45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +367,73 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		619DEF8B2B9F364500924B6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646142B62D48400246067 /* GameController.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GameControllerWrapper/Info.plist;
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.GameControllerWrapper-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Debug;
+		};
+		619DEF8C2B9F364500924B6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646142B62D48400246067 /* GameController.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GameControllerWrapper/Info.plist;
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.GameControllerWrapper-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Release;
+		};
 		7A55184C24E2FC09004CDB45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240646142B62D48400246067 /* GameController.xcconfig */;
@@ -628,6 +758,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		619DEF8A2B9F364500924B6D /* Build configuration list for PBXNativeTarget "GameControllerWrapper_visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				619DEF8B2B9F364500924B6D /* Debug */,
+				619DEF8C2B9F364500924B6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7A55184024E2FC09004CDB45 /* Build configuration list for PBXProject "GameControllerWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

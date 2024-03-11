@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1410"
-   version = "1.3">
+   LastUpgradeVersion = "1250"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "$AUP_SHELL_SCRIPT_PATH/copy_native_libraries.sh&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "7A55184524E2FC09004CDB45"
+                     BuildableName = "GameControllerWrapper.framework"
+                     BlueprintName = "GameControllerWrapper_iOS"
+                     ReferencedContainer = "container:GameControllerWrapper.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,10 +32,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "611D6CE92B9F375B0072C120"
-               BuildableName = "GameKitWrapper visionOS.framework"
-               BlueprintName = "GameKitWrapper visionOS"
-               ReferencedContainer = "container:GameKitWrapper.xcodeproj">
+               BlueprintIdentifier = "619DEF7E2B9F364500924B6D"
+               BuildableName = "GameControllerWrapper_visionOS.framework"
+               BlueprintName = "GameControllerWrapper_visionOS"
+               ReferencedContainer = "container:GameControllerWrapper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +68,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "611D6CE92B9F375B0072C120"
-            BuildableName = "GameKitWrapper visionOS.framework"
-            BlueprintName = "GameKitWrapper visionOS"
-            ReferencedContainer = "container:GameKitWrapper.xcodeproj">
+            BlueprintIdentifier = "619DEF7E2B9F364500924B6D"
+            BuildableName = "GameControllerWrapper_visionOS.framework"
+            BlueprintName = "GameControllerWrapper_visionOS"
+            ReferencedContainer = "container:GameControllerWrapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
@@ -64,4 +82,7 @@
       buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
+   <InstallAction
+      buildConfiguration = "Release">
+   </InstallAction>
 </Scheme>

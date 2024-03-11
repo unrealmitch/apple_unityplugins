@@ -14,9 +14,9 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "7AE5BB732502C06C00BDBEDA"
+                     BlueprintIdentifier = "7A55184524E2FC09004CDB45"
                      BuildableName = "CoreHapticsWrapper.framework"
-                     BlueprintName = "CoreHapticsWrapper tvOS"
+                     BlueprintName = "CoreHapticsWrapper iOS"
                      ReferencedContainer = "container:CoreHapticsWrapper.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -32,7 +32,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61EE4BDC2B9F1D64005F6EE6"
+               BlueprintIdentifier = "61B810152B9F34E30068036C"
                BuildableName = "CoreHapticsWrapper visionOS.framework"
                BlueprintName = "CoreHapticsWrapper visionOS"
                ReferencedContainer = "container:CoreHapticsWrapper.xcodeproj">
@@ -68,7 +68,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "61EE4BDC2B9F1D64005F6EE6"
+            BlueprintIdentifier = "61B810152B9F34E30068036C"
             BuildableName = "CoreHapticsWrapper visionOS.framework"
             BlueprintName = "CoreHapticsWrapper visionOS"
             ReferencedContainer = "container:CoreHapticsWrapper.xcodeproj">

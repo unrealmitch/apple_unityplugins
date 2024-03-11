@@ -7,31 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61EE4BDE2B9F1D64005F6EE6 /* CoreHapticsWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A55184924E2FC09004CDB45 /* CoreHapticsWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61EE4BDF2B9F1D64005F6EE6 /* CHHapticPatternPlayer_BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A443C722603D68D0048A408 /* CHHapticPatternPlayer_BridgingHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61EE4BE12B9F1D64005F6EE6 /* General_CallbackTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186124E6FBA0004CDB45 /* General_CallbackTypeDefinitions.swift */; };
-		61EE4BE22B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210F26015D1A00B447CD /* CHHapticAdvancedPatternPlayer_Protocol.swift */; };
-		61EE4BE32B9F1D64005F6EE6 /* CHHapticPatternPlayer_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320FA26015A3000B447CD /* CHHapticPatternPlayer_Protocol.swift */; };
-		61EE4BE42B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33211D26015EB700B447CD /* CHHapticAdvancedPatternPlayer_Unsupported.swift */; };
-		61EE4BE52B9F1D64005F6EE6 /* CHHapticPatternPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948088BA25D7052A00D7DAF0 /* CHHapticPatternPlayer.swift */; };
-		61EE4BE62B9F1D64005F6EE6 /* CHHapticEngine_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320F326014BF500B447CD /* CHHapticEngine_Unsupported.swift */; };
-		61EE4BE72B9F1D64005F6EE6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B0272C76D000F63529 /* Utilities.swift */; };
-		61EE4BE82B9F1D64005F6EE6 /* CHHapticEngine_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */; };
-		61EE4BE92B9F1D64005F6EE6 /* UIFBG_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16F12756FFC000C62383 /* UIFBG_Supported.swift */; };
-		61EE4BEA2B9F1D64005F6EE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186624E70042004CDB45 /* Extensions.swift */; };
-		61EE4BEB2B9F1D64005F6EE6 /* CHCapabilities_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B8272C7DF300F63529 /* CHCapabilities_Supported.swift */; };
-		61EE4BEC2B9F1D64005F6EE6 /* CHHapticPatternPlayer_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210126015AA100B447CD /* CHHapticPatternPlayer_Supported.swift */; };
-		61EE4BED2B9F1D64005F6EE6 /* UIFBG_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16F52756FFCB00C62383 /* UIFBG_Unsupported.swift */; };
-		61EE4BEE2B9F1D64005F6EE6 /* CHHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D6B9B25DC56FD0072DB37 /* CHHapticEngine.swift */; };
-		61EE4BEF2B9F1D64005F6EE6 /* CHHapticPatternPlayer_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210826015B1000B447CD /* CHHapticPatternPlayer_Unsupported.swift */; };
-		61EE4BF02B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473E3B925DEF3F600B4AD36 /* CHHapticAdvancedPatternPlayer.swift */; };
-		61EE4BF12B9F1D64005F6EE6 /* CHCapabilities_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64BC272C7E4900F63529 /* CHCapabilities_Unsupported.swift */; };
-		61EE4BF22B9F1D64005F6EE6 /* CHCapabilities_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64AC272C74FE00F63529 /* CHCapabilities_Protocol.swift */; };
-		61EE4BF32B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33211626015D7F00B447CD /* CHHapticAdvancedPatternPlayer_Supported.swift */; };
-		61EE4BF42B9F1D64005F6EE6 /* UIFBG_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16EB2756FFA000C62383 /* UIFBG_Protocol.swift */; };
-		61EE4BF52B9F1D64005F6EE6 /* UIFBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16E52756EA9700C62383 /* UIFBG.swift */; };
-		61EE4BF62B9F1D64005F6EE6 /* CHHapticEngine_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320EC26014B2E00B447CD /* CHHapticEngine_Protocol.swift */; };
-		61EE4BF72B9F1D64005F6EE6 /* CHCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B4272C78F800F63529 /* CHCapabilities.swift */; };
+		61B810172B9F34E30068036C /* CoreHapticsWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A55184924E2FC09004CDB45 /* CoreHapticsWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61B810182B9F34E30068036C /* CHHapticPatternPlayer_BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A443C722603D68D0048A408 /* CHHapticPatternPlayer_BridgingHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61B8101A2B9F34E30068036C /* UIFBG_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16EB2756FFA000C62383 /* UIFBG_Protocol.swift */; };
+		61B8101B2B9F34E30068036C /* General_CallbackTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186124E6FBA0004CDB45 /* General_CallbackTypeDefinitions.swift */; };
+		61B8101C2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210F26015D1A00B447CD /* CHHapticAdvancedPatternPlayer_Protocol.swift */; };
+		61B8101D2B9F34E30068036C /* CHHapticPatternPlayer_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320FA26015A3000B447CD /* CHHapticPatternPlayer_Protocol.swift */; };
+		61B8101E2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33211D26015EB700B447CD /* CHHapticAdvancedPatternPlayer_Unsupported.swift */; };
+		61B8101F2B9F34E30068036C /* CHHapticPatternPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948088BA25D7052A00D7DAF0 /* CHHapticPatternPlayer.swift */; };
+		61B810202B9F34E30068036C /* CHHapticEngine_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320F326014BF500B447CD /* CHHapticEngine_Unsupported.swift */; };
+		61B810212B9F34E30068036C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B0272C76D000F63529 /* Utilities.swift */; };
+		61B810222B9F34E30068036C /* UIFBG_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16F12756FFC000C62383 /* UIFBG_Supported.swift */; };
+		61B810232B9F34E30068036C /* CHHapticEngine_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */; };
+		61B810242B9F34E30068036C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55186624E70042004CDB45 /* Extensions.swift */; };
+		61B810252B9F34E30068036C /* CHCapabilities_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B8272C7DF300F63529 /* CHCapabilities_Supported.swift */; };
+		61B810262B9F34E30068036C /* UIFBG_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16F52756FFCB00C62383 /* UIFBG_Unsupported.swift */; };
+		61B810272B9F34E30068036C /* CHHapticPatternPlayer_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210126015AA100B447CD /* CHHapticPatternPlayer_Supported.swift */; };
+		61B810282B9F34E30068036C /* CHHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D6B9B25DC56FD0072DB37 /* CHHapticEngine.swift */; };
+		61B810292B9F34E30068036C /* CHHapticPatternPlayer_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33210826015B1000B447CD /* CHHapticPatternPlayer_Unsupported.swift */; };
+		61B8102A2B9F34E30068036C /* CHHapticAdvancedPatternPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473E3B925DEF3F600B4AD36 /* CHHapticAdvancedPatternPlayer.swift */; };
+		61B8102B2B9F34E30068036C /* CHCapabilities_Unsupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64BC272C7E4900F63529 /* CHCapabilities_Unsupported.swift */; };
+		61B8102C2B9F34E30068036C /* UIFBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA16E52756EA9700C62383 /* UIFBG.swift */; };
+		61B8102D2B9F34E30068036C /* CHCapabilities_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64AC272C74FE00F63529 /* CHCapabilities_Protocol.swift */; };
+		61B8102E2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33211626015D7F00B447CD /* CHHapticAdvancedPatternPlayer_Supported.swift */; };
+		61B8102F2B9F34E30068036C /* CHHapticEngine_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320EC26014B2E00B447CD /* CHHapticEngine_Protocol.swift */; };
+		61B810302B9F34E30068036C /* CHCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E64B4272C78F800F63529 /* CHCapabilities.swift */; };
+		61B810322B9F34E30068036C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948088A325D6DF1B00D7DAF0 /* AVFoundation.framework */; };
+		61B810332B9F34E30068036C /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948088A125D6DF1200D7DAF0 /* CoreHaptics.framework */; };
 		7A3320E626014AD100B447CD /* CHHapticEngine_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */; };
 		7A3320E726014AD100B447CD /* CHHapticEngine_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */; };
 		7A3320E826014AD100B447CD /* CHHapticEngine_Supported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */; };
@@ -113,7 +115,7 @@
 
 /* Begin PBXFileReference section */
 		240646132B61FFCD00246067 /* CoreHaptics.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CoreHaptics.xcconfig; sourceTree = "<group>"; };
-		61EE4BFD2B9F1D64005F6EE6 /* CoreHapticsWrapper visionOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoreHapticsWrapper visionOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61B810382B9F34E30068036C /* CoreHapticsWrapper visionOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoreHapticsWrapper visionOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3320E526014AD100B447CD /* CHHapticEngine_Supported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHHapticEngine_Supported.swift; sourceTree = "<group>"; };
 		7A3320EC26014B2E00B447CD /* CHHapticEngine_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CHHapticEngine_Protocol.swift; path = CoreHapticsWrapper/Haptics/HapticEngine/CHHapticEngine_Protocol.swift; sourceTree = SOURCE_ROOT; };
 		7A3320F326014BF500B447CD /* CHHapticEngine_Unsupported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHHapticEngine_Unsupported.swift; sourceTree = "<group>"; };
@@ -149,10 +151,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		61EE4BF82B9F1D64005F6EE6 /* Frameworks */ = {
+		61B810312B9F34E30068036C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B810322B9F34E30068036C /* AVFoundation.framework in Frameworks */,
+				61B810332B9F34E30068036C /* CoreHaptics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +202,7 @@
 				7A55184624E2FC09004CDB45 /* CoreHapticsWrapper.framework */,
 				7A55185524E2FF56004CDB45 /* CoreHapticsWrapper.bundle */,
 				7AE5BB812502C06C00BDBEDA /* CoreHapticsWrapper.framework */,
-				61EE4BFD2B9F1D64005F6EE6 /* CoreHapticsWrapper visionOS.framework */,
+				61B810382B9F34E30068036C /* CoreHapticsWrapper visionOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,12 +301,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		61EE4BDD2B9F1D64005F6EE6 /* Headers */ = {
+		61B810162B9F34E30068036C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61EE4BDE2B9F1D64005F6EE6 /* CoreHapticsWrapper.h in Headers */,
-				61EE4BDF2B9F1D64005F6EE6 /* CHHapticPatternPlayer_BridgingHeader.h in Headers */,
+				61B810172B9F34E30068036C /* CoreHapticsWrapper.h in Headers */,
+				61B810182B9F34E30068036C /* CHHapticPatternPlayer_BridgingHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,14 +340,14 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		61EE4BDC2B9F1D64005F6EE6 /* CoreHapticsWrapper visionOS */ = {
+		61B810152B9F34E30068036C /* CoreHapticsWrapper visionOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61EE4BFA2B9F1D64005F6EE6 /* Build configuration list for PBXNativeTarget "CoreHapticsWrapper visionOS" */;
+			buildConfigurationList = 61B810352B9F34E30068036C /* Build configuration list for PBXNativeTarget "CoreHapticsWrapper visionOS" */;
 			buildPhases = (
-				61EE4BDD2B9F1D64005F6EE6 /* Headers */,
-				61EE4BE02B9F1D64005F6EE6 /* Sources */,
-				61EE4BF82B9F1D64005F6EE6 /* Frameworks */,
-				61EE4BF92B9F1D64005F6EE6 /* Resources */,
+				61B810162B9F34E30068036C /* Headers */,
+				61B810192B9F34E30068036C /* Sources */,
+				61B810312B9F34E30068036C /* Frameworks */,
+				61B810342B9F34E30068036C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -351,7 +355,7 @@
 			);
 			name = "CoreHapticsWrapper visionOS";
 			productName = GameControllerWrapper;
-			productReference = 61EE4BFD2B9F1D64005F6EE6 /* CoreHapticsWrapper visionOS.framework */;
+			productReference = 61B810382B9F34E30068036C /* CoreHapticsWrapper visionOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7A55184524E2FC09004CDB45 /* CoreHapticsWrapper iOS */ = {
@@ -442,14 +446,14 @@
 			targets = (
 				7A55184524E2FC09004CDB45 /* CoreHapticsWrapper iOS */,
 				7AE5BB732502C06C00BDBEDA /* CoreHapticsWrapper tvOS */,
-				61EE4BDC2B9F1D64005F6EE6 /* CoreHapticsWrapper visionOS */,
+				61B810152B9F34E30068036C /* CoreHapticsWrapper visionOS */,
 				7A55185424E2FF56004CDB45 /* CoreHapticsWrapperMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		61EE4BF92B9F1D64005F6EE6 /* Resources */ = {
+		61B810342B9F34E30068036C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,33 +484,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		61EE4BE02B9F1D64005F6EE6 /* Sources */ = {
+		61B810192B9F34E30068036C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61EE4BE12B9F1D64005F6EE6 /* General_CallbackTypeDefinitions.swift in Sources */,
-				61EE4BE22B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Protocol.swift in Sources */,
-				61EE4BE32B9F1D64005F6EE6 /* CHHapticPatternPlayer_Protocol.swift in Sources */,
-				61EE4BE42B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Unsupported.swift in Sources */,
-				61EE4BE52B9F1D64005F6EE6 /* CHHapticPatternPlayer.swift in Sources */,
-				61EE4BE62B9F1D64005F6EE6 /* CHHapticEngine_Unsupported.swift in Sources */,
-				61EE4BE72B9F1D64005F6EE6 /* Utilities.swift in Sources */,
-				61EE4BE82B9F1D64005F6EE6 /* CHHapticEngine_Supported.swift in Sources */,
-				61EE4BE92B9F1D64005F6EE6 /* UIFBG_Supported.swift in Sources */,
-				61EE4BEA2B9F1D64005F6EE6 /* Extensions.swift in Sources */,
-				61EE4BEB2B9F1D64005F6EE6 /* CHCapabilities_Supported.swift in Sources */,
-				61EE4BEC2B9F1D64005F6EE6 /* CHHapticPatternPlayer_Supported.swift in Sources */,
-				61EE4BED2B9F1D64005F6EE6 /* UIFBG_Unsupported.swift in Sources */,
-				61EE4BEE2B9F1D64005F6EE6 /* CHHapticEngine.swift in Sources */,
-				61EE4BEF2B9F1D64005F6EE6 /* CHHapticPatternPlayer_Unsupported.swift in Sources */,
-				61EE4BF02B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer.swift in Sources */,
-				61EE4BF12B9F1D64005F6EE6 /* CHCapabilities_Unsupported.swift in Sources */,
-				61EE4BF22B9F1D64005F6EE6 /* CHCapabilities_Protocol.swift in Sources */,
-				61EE4BF32B9F1D64005F6EE6 /* CHHapticAdvancedPatternPlayer_Supported.swift in Sources */,
-				61EE4BF42B9F1D64005F6EE6 /* UIFBG_Protocol.swift in Sources */,
-				61EE4BF52B9F1D64005F6EE6 /* UIFBG.swift in Sources */,
-				61EE4BF62B9F1D64005F6EE6 /* CHHapticEngine_Protocol.swift in Sources */,
-				61EE4BF72B9F1D64005F6EE6 /* CHCapabilities.swift in Sources */,
+				61B8101A2B9F34E30068036C /* UIFBG_Protocol.swift in Sources */,
+				61B8101B2B9F34E30068036C /* General_CallbackTypeDefinitions.swift in Sources */,
+				61B8101C2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Protocol.swift in Sources */,
+				61B8101D2B9F34E30068036C /* CHHapticPatternPlayer_Protocol.swift in Sources */,
+				61B8101E2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Unsupported.swift in Sources */,
+				61B8101F2B9F34E30068036C /* CHHapticPatternPlayer.swift in Sources */,
+				61B810202B9F34E30068036C /* CHHapticEngine_Unsupported.swift in Sources */,
+				61B810212B9F34E30068036C /* Utilities.swift in Sources */,
+				61B810222B9F34E30068036C /* UIFBG_Supported.swift in Sources */,
+				61B810232B9F34E30068036C /* CHHapticEngine_Supported.swift in Sources */,
+				61B810242B9F34E30068036C /* Extensions.swift in Sources */,
+				61B810252B9F34E30068036C /* CHCapabilities_Supported.swift in Sources */,
+				61B810262B9F34E30068036C /* UIFBG_Unsupported.swift in Sources */,
+				61B810272B9F34E30068036C /* CHHapticPatternPlayer_Supported.swift in Sources */,
+				61B810282B9F34E30068036C /* CHHapticEngine.swift in Sources */,
+				61B810292B9F34E30068036C /* CHHapticPatternPlayer_Unsupported.swift in Sources */,
+				61B8102A2B9F34E30068036C /* CHHapticAdvancedPatternPlayer.swift in Sources */,
+				61B8102B2B9F34E30068036C /* CHCapabilities_Unsupported.swift in Sources */,
+				61B8102C2B9F34E30068036C /* UIFBG.swift in Sources */,
+				61B8102D2B9F34E30068036C /* CHCapabilities_Protocol.swift in Sources */,
+				61B8102E2B9F34E30068036C /* CHHapticAdvancedPatternPlayer_Supported.swift in Sources */,
+				61B8102F2B9F34E30068036C /* CHHapticEngine_Protocol.swift in Sources */,
+				61B810302B9F34E30068036C /* CHCapabilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +607,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		61EE4BFB2B9F1D64005F6EE6 /* Debug */ = {
+		61B810362B9F34E30068036C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240646132B61FFCD00246067 /* CoreHaptics.xcconfig */;
 			buildSettings = {
@@ -630,7 +634,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "xrsimulator xros";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -639,7 +642,7 @@
 			};
 			name = Debug;
 		};
-		61EE4BFC2B9F1D64005F6EE6 /* Release */ = {
+		61B810372B9F34E30068036C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240646132B61FFCD00246067 /* CoreHaptics.xcconfig */;
 			buildSettings = {
@@ -666,7 +669,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "xrsimulator xros";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 7;
@@ -998,11 +1000,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		61EE4BFA2B9F1D64005F6EE6 /* Build configuration list for PBXNativeTarget "CoreHapticsWrapper visionOS" */ = {
+		61B810352B9F34E30068036C /* Build configuration list for PBXNativeTarget "CoreHapticsWrapper visionOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				61EE4BFB2B9F1D64005F6EE6 /* Debug */,
-				61EE4BFC2B9F1D64005F6EE6 /* Release */,
+				61B810362B9F34E30068036C /* Debug */,
+				61B810372B9F34E30068036C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
