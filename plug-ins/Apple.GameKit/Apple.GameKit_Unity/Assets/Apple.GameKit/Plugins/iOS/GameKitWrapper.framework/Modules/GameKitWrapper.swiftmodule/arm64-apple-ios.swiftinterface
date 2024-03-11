@@ -1,0 +1,683 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GameKitWrapper
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import GameKit
+@_exported import GameKitWrapper
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_cdecl("GKAchievementDescription_GetIdentifier")
+public func GKAchievementDescription_GetIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKAchievementDescription_GetTitle")
+public func GKAchievementDescription_GetTitle(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKAchievementDescription_GetUnachievedDescription")
+public func GKAchievementDescription_GetUnachievedDescription(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKAchievementDescription_GetAchievedDescription")
+public func GKAchievementDescription_GetAchievedDescription(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKAchievementDescription_GetGroupIdentifier")
+public func GKAchievementDescription_GetGroupIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKAchievementDescription_GetMaximumPoints")
+public func GKAchievementDescription_GetMaximumPoints(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKAchievementDescription_GetIsHidden")
+public func GKAchievementDescription_GetIsHidden(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAchievementDescription_GetIsReplayable")
+public func GKAchievementDescription_GetIsReplayable(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAchievementDescription_GetRarityPercent")
+public func GKAchievementDescription_GetRarityPercent(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Double
+@_cdecl("GKAchievementDescription_LoadAchievementDescriptions")
+public func GKAchievementDescription_LoadAchievementDescriptions(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKAchievementDescription_LoadImage")
+public func GKAchievementDescription_LoadImage(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, photoSize: Swift.Int, onImageLoaded: GameKitWrapper.SuccessTaskImageCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboard_GetBaseLeaderboardId")
+public func GKLeaderboard_GetBaseLeaderboardId(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKLeaderboard_GetTitle")
+public func GKLeaderboard_GetTitle(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKLeaderboard_GetType")
+public func GKLeaderboard_GetType(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboard_GetGroupIdentifier")
+public func GKLeaderboard_GetGroupIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKLeaderboard_GetStartDate")
+public func GKLeaderboard_GetStartDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboard_GetNextStartDate")
+public func GKLeaderboard_GetNextStartDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboard_GetDuration")
+public func GKLeaderboard_GetDuration(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboard_LoadPreviousOccurrence")
+public func GKLeaderboard_LoadPreviousOccurrence(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+public typealias GKLeaderboardLoadEntriesCallback = @convention(c) (Swift.Int64, Swift.UnsafeMutableRawPointer?, Swift.UnsafeMutableRawPointer?, Swift.Int) -> Swift.Void
+@_cdecl("GKLeaderboard_LoadEntries")
+public func GKLeaderboard_LoadEntries(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, playerScope: Swift.Int, timeScope: Swift.Int, rankMin: Swift.Int, rankMax: Swift.Int, onSuccess: GameKitWrapper.GKLeaderboardLoadEntriesCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboard_LoadImage")
+public func GKLeaderboard_LoadImage(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onImageLoaded: GameKitWrapper.SuccessTaskImageCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboard_SubmitScore")
+public func GKLeaderboard_SubmitScore(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, score: Swift.Int, context: Swift.Int, player: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboard_LoadLeaderboards")
+public func GKLeaderboard_LoadLeaderboards(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+public typealias DidFindMatchCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias MatchmakingCanceledCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias DidFailWithErrorCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+@objc @_inheritsConvenienceInitializers public class GKWTurnBasedMatchmakerViewControllerDelegate : ObjectiveC.NSObject, GameKit.GKTurnBasedMatchmakerViewControllerDelegate {
+  public var DidFindMatch: GameKitWrapper.DidFindMatchCallback?
+  public var MatchmakingCanceled: GameKitWrapper.MatchmakingCanceledCallback?
+  public var DidFailWithError: GameKitWrapper.DidFailWithErrorCallback?
+  @objc public func turnBasedMatchmakerViewControllerWasCancelled(_ viewController: GameKit.GKTurnBasedMatchmakerViewController)
+  @objc public func turnBasedMatchmakerViewController(_ viewController: GameKit.GKTurnBasedMatchmakerViewController, didFailWithError error: any Swift.Error)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_cdecl("GKTurnBasedMatchmakerViewControllerDelegate_SetDidFindMatchCallback")
+public func GKTurnBasedMatchmakerViewControllerDelegate_SetDidFindMatchCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.DidFindMatchCallback)
+@_cdecl("GKTurnBasedMatchmakerViewControllerDelegate_SetDidFailWithErrorCallback")
+public func GKTurnBasedMatchmakerViewControllerDelegate_SetDidFailWithErrorCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.DidFailWithErrorCallback)
+@_cdecl("GKTurnBasedMatchmakerViewControllerDelegate_SetMatchmakingCanceledCallback")
+public func GKTurnBasedMatchmakerViewControllerDelegate_SetMatchmakingCanceledCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.MatchmakingCanceledCallback)
+public typealias ChallengeReceivedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias ChallengeOtherPlayerAcceptedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias ChallengeCompletedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias ChallengeOtherPlayerCompletedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+extension GameKitWrapper.GKWLocalPlayerListener : GameKit.GKChallengeListener {
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, didReceive challenge: GameKit.GKChallenge)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, wantsToPlay challenge: GameKit.GKChallenge)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, didComplete challenge: GameKit.GKChallenge, issuedByFriend friendPlayer: GameKit.GKPlayer)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, issuedChallengeWasCompleted challenge: GameKit.GKChallenge, byFriend friendPlayer: GameKit.GKPlayer)
+}
+@_cdecl("GKChallenge_SetChallengeCompletedCallback")
+public func GKChallenge_SetChallengeCompletedCallback(callback: GameKitWrapper.ChallengeCompletedCallback)
+@_cdecl("GKChallenge_SetChallengeReceivedCallback")
+public func GKChallenge_SetChallengeReceivedCallback(callback: GameKitWrapper.ChallengeReceivedCallback)
+@_cdecl("GKChallenge_SetChallengeOtherPlayerAcceptedCallback")
+public func GKChallenge_SetChallengeOtherPlayerAcceptedCallback(callback: GameKitWrapper.ChallengeOtherPlayerAcceptedCallback)
+@_cdecl("GKChallenge_SetChallengeOtherPlayerCompletedCallback")
+public func GKChallenge_SetChallengeOtherPlayerCompletedCallback(callback: GameKitWrapper.ChallengeOtherPlayerCompletedCallback)
+public typealias GKMatchDataReceivedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.Int32, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchDataReceivedForPlayerCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.Int32, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchPlayerConnectionDidChangeCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, GameKit.GKPlayerConnectionState) -> Swift.Void
+public typealias GKMatchShouldReinviteDisconnectedPlayerCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Bool
+public typealias GKMatchDidFailWithErrorhandler = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+@objc @_inheritsConvenienceInitializers public class GKWMatchDelegate : ObjectiveC.NSObject, GameKit.GKMatchDelegate {
+  public var Match: GameKit.GKMatch?
+  public var DataReceivedHandler: GameKitWrapper.GKMatchDataReceivedCallback?
+  public var DataReceivedForPlayerHandler: GameKitWrapper.GKMatchDataReceivedForPlayerCallback?
+  public var PlayerConnectionDidChangeHandler: GameKitWrapper.GKMatchPlayerConnectionDidChangeCallback?
+  public var ShouldReinviteDisconnectedPlayerHandler: GameKitWrapper.GKMatchShouldReinviteDisconnectedPlayerCallback?
+  public var DidFailWithErrorHandler: GameKitWrapper.GKMatchDidFailWithErrorhandler?
+  @objc public func match(_ match: GameKit.GKMatch, didReceive data: Foundation.Data, fromRemotePlayer player: GameKit.GKPlayer)
+  @objc public func match(_ match: GameKit.GKMatch, didReceive data: Foundation.Data, forRecipient recipient: GameKit.GKPlayer, fromRemotePlayer player: GameKit.GKPlayer)
+  @objc public func match(_ match: GameKit.GKMatch, player: GameKit.GKPlayer, didChange state: GameKit.GKPlayerConnectionState)
+  @objc public func match(_ match: GameKit.GKMatch, shouldReinviteDisconnectedPlayer player: GameKit.GKPlayer) -> Swift.Bool
+  @objc public func match(_ match: GameKit.GKMatch, didFailWithError error: (any Swift.Error)?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_cdecl("GKMatchDelegate_SetDataReceived")
+public func GKMatchDelegate_SetDataReceived(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchDataReceivedCallback)
+@_cdecl("GKMatchDelegate_SetDataReceivedForPlayer")
+public func GKMatchDelegate_SetDataReceivedForPlayer(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchDataReceivedForPlayerCallback)
+@_cdecl("GKMatchDelegate_SetPlayerConnectedDidChange")
+public func GKMatchDelegate_SetPlayerConnectedDidChange(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchPlayerConnectionDidChangeCallback)
+@_cdecl("GKMatchDelegate_SetDidFailWithError")
+public func GKMatchDelegate_SetDidFailWithError(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchPlayerConnectionDidChangeCallback)
+@_cdecl("GKMatchDelegate_SetShouldReinviteDisconnectedPlayer")
+public func GKMatchDelegate_SetShouldReinviteDisconnectedPlayer(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchShouldReinviteDisconnectedPlayerCallback)
+public typealias GKMatchmakerDidFindMatchCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchmakerDidFindHostedPlayersCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchmakerCanceledCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchmakerDidFailWithErrorCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchmakerHostedPlayerDidAcceptCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias GKMatchmakerGetMatchPropertiesForRecipientCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+@objc @_inheritsConvenienceInitializers public class GKWMatchmakerViewControllerDelegate : ObjectiveC.NSObject, GameKit.GKMatchmakerViewControllerDelegate {
+  public var DidFindMatch: GameKitWrapper.GKMatchmakerDidFindMatchCallback?
+  public var DidFindHostedPlayers: GameKitWrapper.GKMatchmakerDidFindHostedPlayersCallback?
+  public var Canceled: GameKitWrapper.GKMatchmakerCanceledCallback?
+  public var DidFailWithError: GameKitWrapper.GKMatchmakerDidFailWithErrorCallback?
+  public var HostedPlayerDidAccept: GameKitWrapper.GKMatchmakerHostedPlayerDidAcceptCallback?
+  public var GetMatchPropertiesForRecipient: GameKitWrapper.GKMatchmakerGetMatchPropertiesForRecipientCallback?
+  @objc public func matchmakerViewControllerWasCancelled(_ viewController: GameKit.GKMatchmakerViewController)
+  @objc public func matchmakerViewController(_ viewController: GameKit.GKMatchmakerViewController, didFailWithError error: any Swift.Error)
+  @objc public func matchmakerViewController(_ viewController: GameKit.GKMatchmakerViewController, didFind match: GameKit.GKMatch)
+  @objc public func matchmakerViewController(_ viewController: GameKit.GKMatchmakerViewController, hostedPlayerDidAccept player: GameKit.GKPlayer)
+  @objc public func matchmakerViewController(_ viewController: GameKit.GKMatchmakerViewController, didFindHostedPlayers players: [GameKit.GKPlayer])
+  @objc public func matchmakerViewController(_ viewController: GameKit.GKMatchmakerViewController, getMatchPropertiesForRecipient recipient: GameKit.GKPlayer, withCompletionHandler completionHandler: @escaping ([Swift.String : Any]) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_cdecl("GKMatchmakerViewControllerDelegate_SetDidFindMatchCallback")
+public func GKMatchmakerViewControllerDelegate_SetDidFindMatchCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerDidFindMatchCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_SetDidFindHostedPlayersCallback")
+public func GKMatchmakerViewControllerDelegate_SetDidFindHostedPlayersCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerDidFindHostedPlayersCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_SetMatchmakingCanceledCallback")
+public func GKMatchmakerViewControllerDelegate_SetMatchmakingCanceledCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerCanceledCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_SetDidFailWithErrorCallback")
+public func GKMatchmakerViewControllerDelegate_SetDidFailWithErrorCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerDidFailWithErrorCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_SetHostedPlayerDidAccept")
+public func GKMatchmakerViewControllerDelegate_SetHostedPlayerDidAccept(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerHostedPlayerDidAcceptCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_SetGetMatchPropertiesForRecipientCallback")
+public func GKMatchmakerViewControllerDelegate_SetGetMatchPropertiesForRecipientCallback(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKMatchmakerGetMatchPropertiesForRecipientCallback)
+@_cdecl("GKMatchmakerViewControllerDelegate_CallGetMatchPropertiesForRecipientCompletionHandler")
+public func GKMatchmakerViewControllerDelegate_CallGetMatchPropertiesForRecipientCompletionHandler(completionHandlerWrapperPtr: Swift.UnsafeMutableRawPointer, nsDictionaryPtr: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKInvite_GetSender")
+public func GKInvite_GetSender(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKInvite_GetPlayerAttributes")
+public func GKInvite_GetPlayerAttributes(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UInt32
+@_cdecl("GKInvite_GetPlayerGroup")
+public func GKInvite_GetPlayerGroup(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKInvite_GetIsHosted")
+public func GKInvite_GetIsHosted(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKChallenge_GetIssuingPlayer")
+public func GKChallenge_GetIssuingPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKChallenge_GetReceivingPlayer")
+public func GKChallenge_GetReceivingPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKChallenge_GetMessage")
+public func GKChallenge_GetMessage(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKChallenge_GetState")
+public func GKChallenge_GetState(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKChallenge_GetIssueDate")
+public func GKChallenge_GetIssueDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKChallenge_GetCompletionDate")
+public func GKChallenge_GetCompletionDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKChallenge_Decline")
+public func GKChallenge_Decline(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKChallenge_LoadReceivedChallenges")
+public func GKChallenge_LoadReceivedChallenges(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKChallenge_GetChallengeType")
+public func GKChallenge_GetChallengeType(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedParticipant_GetPlayer")
+public func GKTurnBasedParticipant_GetPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedParticipant_GetStatus")
+public func GKTurnBasedParticipant_GetStatus(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedParticipant_GetLastTurnDate")
+public func GKTurnBasedParticipant_GetLastTurnDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedParticipant_GetTimeoutDate")
+public func GKTurnBasedParticipant_GetTimeoutDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedParticipant_GetMatchOutcome")
+public func GKTurnBasedParticipant_GetMatchOutcome(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedParticipant_SetMatchOutcome")
+public func GKTurnBasedParticipant_SetMatchOutcome(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+public let _localPlayerListener: GameKitWrapper.GKWLocalPlayerListener
+@objc @_inheritsConvenienceInitializers public class GKWLocalPlayerListener : ObjectiveC.NSObject, GameKit.GKLocalPlayerListener {
+  public var InviteAccepted: GameKitWrapper.InviteAcceptedCallback?
+  public var ChallengeReceived: GameKitWrapper.ChallengeReceivedCallback?
+  public var ChallengeOtherPlayerAccepted: GameKitWrapper.ChallengeOtherPlayerAcceptedCallback?
+  public var ChallengeCompleted: GameKitWrapper.ChallengeCompletedCallback?
+  public var ChallengeOtherPlayerCompleted: GameKitWrapper.ChallengeOtherPlayerCompletedCallback?
+  public var ExchangeReceived: GameKitWrapper.ExchangedReceivedCallback?
+  public var ExchangeCanceled: GameKitWrapper.ExchangeCanceledCallback?
+  public var ExchangeCompleted: GameKitWrapper.ExchangeCompletedCallback?
+  public var MatchRequestedWithOtherPlayers: GameKitWrapper.MatchRequestedWithOtherPlayersCallback?
+  public var MatchEnded: GameKitWrapper.MatchEndedCallback?
+  public var TurnEventReceived: GameKitWrapper.TurnEventReceivedCallback?
+  public var PlayerWantsToQuit: GameKitWrapper.PlayerWantsToQuitCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_cdecl("GKGameCenterViewController_InitWithState")
+public func GKGameCenterViewController_InitWithState(state: Swift.Int) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKGameCenterViewController_InitWithLeaderboard")
+public func GKGameCenterViewController_InitWithLeaderboard(leaderboardPtr: Swift.UnsafeMutableRawPointer, playerScope: Swift.Int, timeScope: Swift.Int) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKGameCenterViewController_InitWithAchievement")
+public func GKGameCenterViewController_InitWithAchievement(achievementPtr: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKGameCenterViewController_Present")
+public func GKGameCenterViewController_Present(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskCallback)
+@_cdecl("GKAccessPoint_GetShared")
+public func GKAccessPoint_GetShared() -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKAccessPoint_Trigger")
+public func GKAccessPoint_Trigger(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKAccessPoint_GetLocation")
+public func GKAccessPoint_GetLocation(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKAccessPoint_SetLocation")
+public func GKAccessPoint_SetLocation(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+@_cdecl("GKAccessPoint_GetShowHighlights")
+public func GKAccessPoint_GetShowHighlights(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAccessPoint_SetShowHighlights")
+public func GKAccessPoint_SetShowHighlights(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKAccessPoint_GetIsPresentingGameCenter")
+public func GKAccessPoint_GetIsPresentingGameCenter(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAccessPoint_GetIsFocused")
+public func GKAccessPoint_GetIsFocused(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAccessPoint_GetIsVisible")
+public func GKAccessPoint_GetIsVisible(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAccessPoint_GetIsActive")
+public func GKAccessPoint_GetIsActive(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAccessPoint_SetIsActive")
+public func GKAccessPoint_SetIsActive(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKAccessPoint_GetFrameInScreenCoordinates")
+public func GKAccessPoint_GetFrameInScreenCoordinates(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.GKWAccessPointFrameInScreenCoordinates
+@_cdecl("GKAccessPoint_GetFrameInUnitCoordinates")
+public func GKAccessPoint_GetFrameInUnitCoordinates(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.GKWAccessPointFrameInScreenCoordinates
+@_cdecl("GKBasePlayer_GetDisplayName")
+public func GKBasePlayer_GetDisplayName(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKAchievementChallenge_GetAchievement")
+public func GKAchievementChallenge_GetAchievement(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKLeaderboardEntry_GetRank")
+public func GKLeaderboardEntry_GetRank(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboardEntry_GetScore")
+public func GKLeaderboardEntry_GetScore(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboardEntry_GetContext")
+public func GKLeaderboardEntry_GetContext(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKLeaderboardEntry_GetDate")
+public func GKLeaderboardEntry_GetDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Double
+@_cdecl("GKLeaderboardEntry_GetFormattedScore")
+public func GKLeaderboardEntry_GetFormattedScore(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKLeaderboardEntry_GetPlayer")
+public func GKLeaderboardEntry_GetPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedExchangeReply_GetData")
+public func GKTurnBasedExchangeReply_GetData(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.InteropStructArray
+@_cdecl("GKTurnBasedExchangeReply_GetMessage")
+public func GKTurnBasedExchangeReply_GetMessage(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKTurnBasedExchangeReply_GetRecipient")
+public func GKTurnBasedExchangeReply_GetRecipient(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedExchangeReply_GetReplyDate")
+public func GKTurnBasedExchangeReply_GetReplyDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatchmakerViewController_InitWithMatchRequest")
+public func GKTurnBasedMatchmakerViewController_InitWithMatchRequest(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedMatchmakerViewController_GetShowExistingMatches")
+public func GKTurnBasedMatchmakerViewController_GetShowExistingMatches(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKTurnBasedMatchmakerViewController_SetShowExistingMatches")
+public func GKTurnBasedMatchmakerViewController_SetShowExistingMatches(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKTurnBasedMatchmakerViewController_GetMatchmakingMode")
+public func GKTurnBasedMatchmakerViewController_GetMatchmakingMode(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatchmakerViewController_SetMatchmakingMode")
+public func GKTurnBasedMatchmakerViewController_SetMatchmakingMode(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+public var _activeTurnBasedMatchmakerDelegate: GameKitWrapper.GKWTurnBasedMatchmakerViewControllerDelegate?
+@_cdecl("GKTurnBasedMatchmakerViewController_GetMatchmakerDelegate")
+public func GKTurnBasedMatchmakerViewController_GetMatchmakerDelegate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+public var _presentingTurnBasedMatchmakerViewController: GameKit.GKTurnBasedMatchmakerViewController?
+@_cdecl("GKTurnBasedMatchmakerViewController_Present")
+public func GKTurnBasedMatchmakerViewController_Present(pointer: Swift.UnsafeMutableRawPointer)
+public func GKTurnBasedMatchmakerViewController_Dismiss(viewController: GameKit.GKTurnBasedMatchmakerViewController)
+public typealias char_p = Swift.UnsafeMutablePointer<Swift.Int8>
+public typealias uchar_p = Swift.UnsafeMutablePointer<Swift.UInt8>
+public typealias ErrorCallback = @convention(c) (GameKitWrapper.InteropError) -> Swift.Void
+public typealias NSErrorCallback = @convention(c) (Swift.Int64, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias SuccessCallback = @convention(c) () -> Swift.Void
+public typealias SuccessTaskCallback = @convention(c) (Swift.Int64) -> Swift.Void
+public typealias SuccessTaskPtrCallback = @convention(c) (Swift.Int64, Swift.UnsafeMutableRawPointer?) -> Swift.Void
+public typealias SuccessTaskIntCallback = @convention(c) (Swift.Int64, Swift.Int) -> Swift.Void
+public typealias SuccessTaskImageCallback = @convention(c) (Swift.Int64, Swift.Int32, Swift.Int32, GameKitWrapper.uchar_p, Swift.Int32) -> Swift.Void
+extension GameKitWrapper.InteropStructArray {
+  public func toData() -> Foundation.Data
+  public func toArray<Element>() -> [Element]
+}
+extension GameKitWrapper.InteropStructDictionary {
+  public func toDictionary<KElement, VElement>() -> [KElement : VElement] where KElement : Swift.Hashable
+}
+extension Swift.String {
+  public func toCharPCopy() -> GameKitWrapper.char_p
+}
+extension Swift.UnsafeMutablePointer where Pointee == Swift.Int8 {
+  public func toString() -> Swift.String
+}
+extension Foundation.Data {
+  public func toUCharP() -> GameKitWrapper.uchar_p
+}
+extension Swift.UnsafeMutablePointer where Pointee == Swift.UInt8 {
+  public func toData(count: Swift.Int) -> Foundation.Data
+}
+extension Swift.Error {
+  public func code() -> Swift.Int
+  public func toCKWError(taskId: Swift.Int64) -> GameKitWrapper.InteropError
+}
+extension Swift.Array {
+  public func toUnsafeMutablePointer() -> Swift.UnsafeMutablePointer<Element>
+}
+@_cdecl("GKMatchmaker_GetShared")
+public func GKMatchmaker_GetShared() -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKMatchmaker_MatchForInvite")
+public func GKMatchmaker_MatchForInvite(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, invitePtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_FindMatch")
+public func GKMatchmaker_FindMatch(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, matchRequestPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_Cancel")
+public func GKMatchmaker_Cancel(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKMatchmaker_FindPlayers")
+public func GKMatchmaker_FindPlayers(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, matchRequestPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchMaker_FindMatchedPlayers")
+public func GKMatchMaker_FindMatchedPlayers(gkMatchmakerPtr: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, gkMatchRequestPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_AddPlayers")
+public func GKMatchmaker_AddPlayers(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, matchPtr: Swift.UnsafeMutableRawPointer, matchRequestPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_QueryActivity")
+public func GKMatchmaker_QueryActivity(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskIntCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_QueryQueueActivity")
+public func GKMatchmaker_QueryQueueActivity(gkMatchmakerPtr: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, queueName: GameKitWrapper.char_p, onSuccess: GameKitWrapper.SuccessTaskIntCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_QueryPlayerGroupActivity")
+public func GKMatchmaker_QueryPlayerGroupActivity(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, groupId: Swift.Int, onSuccess: GameKitWrapper.SuccessTaskIntCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmaker_CancelPendingInvite")
+public func GKMatchmaker_CancelPendingInvite(pointer: Swift.UnsafeMutableRawPointer, playerId: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKTurnBasedExchange_Cancel")
+public func GKTurnBasedExchange_Cancel(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, localizableMessageKey: GameKitWrapper.char_p, argumentsPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedExchange_GetCompletionDate")
+public func GKTurnBasedExchange_GetCompletionDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedExchange_GetSendDate")
+public func GKTurnBasedExchange_GetSendDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedExchange_GetTimeoutDate")
+public func GKTurnBasedExchange_GetTimeoutDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedExchange_GetSender")
+public func GKTurnBasedExchange_GetSender(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedExchange_GetRecipients")
+public func GKTurnBasedExchange_GetRecipients(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedExchange_GetData")
+public func GKTurnBasedExchange_GetData(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.InteropStructArray
+@_cdecl("GKTurnBasedExchange_GetExchangeID")
+public func GKTurnBasedExchange_GetExchangeID(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKTurnBasedExchange_GetMessage")
+public func GKTurnBasedExchange_GetMessage(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKTurnBasedExchange_GetReplies")
+public func GKTurnBasedExchange_GetReplies(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedExchange_GetStatus")
+public func GKTurnBasedExchange_GetStatus(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int8
+@_cdecl("GKTurnBasedExchange_Reply")
+public func GKTurnBasedExchange_Reply(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, localizableMessageKey: GameKitWrapper.char_p, argumentsPtr: Swift.UnsafeMutableRawPointer, data: GameKitWrapper.InteropStructArray, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKNotificationBanner_Show")
+public func GKNotificationBanner_Show(title: GameKitWrapper.char_p, message: GameKitWrapper.char_p)
+@_cdecl("GKNotificationBanner_ShowWithDuration")
+public func GKNotificationBanner_ShowWithDuration(title: GameKitWrapper.char_p, message: GameKitWrapper.char_p, duration: Swift.Double)
+@_cdecl("GKScoreChallenge_GetScore")
+public func GKScoreChallenge_GetScore(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKLocalPlayer_Authenticate")
+public func GKLocalPlayer_Authenticate(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLocalPlayer_GetLocal")
+public func GKLocalPlayer_GetLocal() -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKLocalPlayer_GetIsAuthenticated")
+public func GKLocalPlayer_GetIsAuthenticated(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKLocalPlayer_GetIsUnderage")
+public func GKLocalPlayer_GetIsUnderage(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKLocalPlayer_GetIsMultiplayerGamingRestricted")
+public func GKLocalPlayer_GetIsMultiplayerGamingRestricted(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKLocalPlayer_GetIsPersonalizedCommunicationRestricted")
+public func GKLocalPlayer_GetIsPersonalizedCommunicationRestricted(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKLocalPlayer_LoadFriends")
+public func GKLocalPlayer_LoadFriends(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLocalPlayer_LoadChallengableFriends")
+public func GKLocalPlayer_LoadChallengableFriends(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLocalPlayer_LoadRecentPlayers")
+public func GKLocalPlayer_LoadRecentPlayers(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLocalPlayer_LoadFriendsAuthorizationStatus")
+public func GKLocalPlayer_LoadFriendsAuthorizationStatus(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskIntCallback, onError: GameKitWrapper.NSErrorCallback)
+public typealias SuccessTaskFetchItemsCallback = @convention(c) (Swift.Int64, GameKitWrapper.char_p, GameKitWrapper.uchar_p, Swift.Int32, GameKitWrapper.uchar_p, Swift.Int32, Swift.UInt) -> Swift.Void
+@_cdecl("GKLocalPlayer_FetchItems")
+public func GKLocalPlayer_FetchItems(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskFetchItemsCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboardSet_GetTitle")
+public func GKLeaderboardSet_GetTitle(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKLeaderboardSet_GetIdentifier")
+public func GKLeaderboardSet_GetIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKLeaderboardSet_GetGroupIdentifier")
+public func GKLeaderboardSet_GetGroupIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKLeaderboardSet_LoadLeaderboards")
+public func GKLeaderboardSet_LoadLeaderboards(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboardSet_LoadLeaderboardSets")
+public func GKLeaderboardSet_LoadLeaderboardSets(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKLeaderboardSet_LoadImage")
+public func GKLeaderboardSet_LoadImage(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onImageLoaded: GameKitWrapper.SuccessTaskImageCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchRequest_Init")
+public func GKMatchRequest_Init() -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKMatchRequest_SetMaxPlayers")
+public func GKMatchRequest_SetMaxPlayers(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+@_cdecl("GKMatchRequest_GetMaxPlayers")
+public func GKMatchRequest_GetMaxPlayers(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKMatchRequest_SetMinPlayers")
+public func GKMatchRequest_SetMinPlayers(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+@_cdecl("GKMatchRequest_GetMinPlayers")
+public func GKMatchRequest_GetMinPlayers(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKMatchRequest_GetPlayerGroup")
+public func GKMatchRequest_GetPlayerGroup(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKMatchRequest_GetPlayerAttributes")
+public func GKMatchRequest_GetPlayerAttributes(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UInt32
+@_cdecl("GKMatchRequest_SetPlayerGroup")
+public func GKMatchRequest_SetPlayerGroup(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+@_cdecl("GKMatchRequest_SetPlayerAttributes")
+public func GKMatchRequest_SetPlayerAttributes(pointer: Swift.UnsafeMutableRawPointer, value: Swift.UInt32)
+@_cdecl("GKMatchRequest_GetInviteMessage")
+public func GKMatchRequest_GetInviteMessage(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKMatchRequest_SetInviteMessage")
+public func GKMatchRequest_SetInviteMessage(pointer: Swift.UnsafeMutableRawPointer, value: GameKitWrapper.char_p?)
+@_cdecl("GKMatchRequest_GetRecipients")
+public func GKMatchRequest_GetRecipients(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatchRequest_SetRecipients")
+public func GKMatchRequest_SetRecipients(pointer: Swift.UnsafeMutableRawPointer, value: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKMatchRequest_GetQueueName")
+public func GKMatchRequest_GetQueueName(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKMatchRequest_SetQueueName")
+public func GKMatchRequest_SetQueueName(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer, value: GameKitWrapper.char_p?)
+@_cdecl("GKMatchRequest_GetProperties")
+public func GKMatchRequest_GetProperties(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatchRequest_SetProperties")
+public func GKMatchRequest_SetProperties(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer, nsDictionaryPtr: Swift.UnsafeMutableRawPointer?)
+@_cdecl("GKMatchRequest_GetRecipientProperties")
+public func GKMatchRequest_GetRecipientProperties(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatchRequest_SetRecipientProperties")
+public func GKMatchRequest_SetRecipientProperties(gkMatchRequestPtr: Swift.UnsafeMutableRawPointer, nsDictionaryPtr: Swift.UnsafeMutableRawPointer?)
+@_cdecl("GKMatch_GetExpectedPlayerCount")
+public func GKMatch_GetExpectedPlayerCount(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKMatch_GetPlayers")
+public func GKMatch_GetPlayers(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_GetProperties")
+public func GKMatch_GetProperties(gkMatchPtr: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_GetPlayerProperties")
+public func GKMatch_GetPlayerProperties(gkMatchPtr: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_SendToAll")
+public func GKMatch_SendToAll(pointer: Swift.UnsafeMutableRawPointer, data: GameKitWrapper.InteropStructArray, sendMode: Swift.Int) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_SendTo")
+public func GKMatch_SendTo(pointer: Swift.UnsafeMutableRawPointer, data: GameKitWrapper.InteropStructArray, players: Swift.UnsafeMutableRawPointer, sendMode: Swift.Int) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_Disconnect")
+public func GKMatch_Disconnect(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKMatch_ChooseBestHostingPlayer")
+public func GKMatch_ChooseBestHostingPlayer(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatch_VoiceChat")
+public func GKMatch_VoiceChat(pointer: Swift.UnsafeMutableRawPointer, channel: GameKitWrapper.char_p) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKMatch_Rematch")
+public func GKMatch_Rematch(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+public var _currentGKMatchDelegate: GameKitWrapper.GKWMatchDelegate?
+@_cdecl("GKMatch_GetDelegate")
+public func GKMatch_GetDelegate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKAchievement_Init")
+public func GKAchievement_Init(identifier: GameKitWrapper.char_p) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKAchievement_GetIdentifier")
+public func GKAchievement_GetIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKAchievement_SetIdentifier")
+public func GKAchievement_SetIdentifier(pointer: Swift.UnsafeMutableRawPointer, value: GameKitWrapper.char_p)
+@_cdecl("GKAchievement_GetPlayer")
+public func GKAchievement_GetPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKAchievement_GetPercentComplete")
+public func GKAchievement_GetPercentComplete(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Float
+@_cdecl("GKAchievement_SetPercentComplete")
+public func GKAchievement_SetPercentComplete(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Float)
+@_cdecl("GKAchievement_GetIsCompleted")
+public func GKAchievement_GetIsCompleted(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAchievement_GetLastReportedDate")
+public func GKAchievement_GetLastReportedDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKAchievement_GetShowCompletionBanner")
+public func GKAchievement_GetShowCompletionBanner(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKAchievement_SetShowCompletionBanner")
+public func GKAchievement_SetShowCompletionBanner(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKAchievement_Report")
+public func GKAchievement_Report(taskId: Swift.Int64, pointer: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKAchievement_ResetAchievements")
+public func GKAchievement_ResetAchievements(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKAchievement_LoadAchievements")
+public func GKAchievement_LoadAchievements(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKAchievement_SelectChallengeablePlayers")
+public func GKAchievement_SelectChallengeablePlayers(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, playersPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKAchievement_ChallengeComposeController")
+public func GKAchievement_ChallengeComposeController(pointer: Swift.UnsafeMutableRawPointer, message: GameKitWrapper.char_p, playersPtr: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKVoiceChat_GetIsVoIPAllowed")
+public func GKVoiceChat_GetIsVoIPAllowed(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKVoiceChat_Start")
+public func GKVoiceChat_Start(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKVoiceChat_Stop")
+public func GKVoiceChat_Stop(pointer: Swift.UnsafeMutableRawPointer)
+@_cdecl("GKVoiceChat_GetIsActive")
+public func GKVoiceChat_GetIsActive(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKVoiceChat_SetIsActive")
+public func GKVoiceChat_SetIsActive(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+public typealias GKVoiceChatStateDidChangeHandler = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, GameKit.GKVoiceChat.PlayerState) -> Swift.Void
+@_cdecl("GKVoiceChat_PlayerVoiceChatStateDidChangeHandler")
+public func GKVoiceChat_PlayerVoiceChatStateDidChangeHandler(pointer: Swift.UnsafeMutableRawPointer, callback: GameKitWrapper.GKVoiceChatStateDidChangeHandler)
+@_cdecl("GKVoiceChat_SetPlayer")
+public func GKVoiceChat_SetPlayer(pointer: Swift.UnsafeMutableRawPointer, playerPtr: Swift.UnsafeMutableRawPointer, isMuted: Swift.Bool)
+@_cdecl("GKVoiceChat_GetVolume")
+public func GKVoiceChat_GetVolume(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Float
+@_cdecl("GKVoiceChat_SetVolume")
+public func GKVoiceChat_SetVolume(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Float)
+@_cdecl("GKVoiceChat_GetName")
+public func GKVoiceChat_GetName(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKVoiceChat_GetPlayers")
+public func GKVoiceChat_GetPlayers(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+public typealias ExchangeCanceledCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias ExchangeCompletedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias ExchangedReceivedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias MatchRequestedWithOtherPlayersCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias MatchEndedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+public typealias TurnEventReceivedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer, Swift.Bool) -> Swift.Void
+public typealias PlayerWantsToQuitCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+extension GameKitWrapper.GKWLocalPlayerListener : GameKit.GKTurnBasedEventListener {
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, receivedExchangeRequest exchange: GameKit.GKTurnBasedExchange, for match: GameKit.GKTurnBasedMatch)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, receivedExchangeCancellation exchange: GameKit.GKTurnBasedExchange, for match: GameKit.GKTurnBasedMatch)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, receivedExchangeReplies replies: [GameKit.GKTurnBasedExchangeReply], forCompletedExchange exchange: GameKit.GKTurnBasedExchange, for match: GameKit.GKTurnBasedMatch)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, didRequestMatchWithRecipients recipientPlayers: [GameKit.GKPlayer])
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, matchEnded match: GameKit.GKTurnBasedMatch)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, receivedTurnEventFor match: GameKit.GKTurnBasedMatch, didBecomeActive: Swift.Bool)
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, wantsToQuitMatch match: GameKit.GKTurnBasedMatch)
+}
+@_cdecl("GKTurnBasedMatch_SetExchangeReceivedCallback")
+public func GKTurnBasedMatch_SetExchangeReceivedCallback(callback: GameKitWrapper.ExchangedReceivedCallback)
+@_cdecl("GKTurnBasedMatch_SetExchangeCanceledCallback")
+public func GKTurnBasedMatch_SetExchangeCanceledCallback(callback: GameKitWrapper.ExchangeCanceledCallback)
+@_cdecl("GKTurnBasedMatch_SetExchangeCompletedCallback")
+public func GKTurnBasedMatch_SetExchangeCompletedCallback(callback: GameKitWrapper.ExchangeCompletedCallback)
+@_cdecl("GKTurnBasedMatch_SetMatchRequestedWithOtherPlayersCallback")
+public func GKTurnBasedMatch_SetMatchRequestedWithOtherPlayersCallback(callback: GameKitWrapper.MatchRequestedWithOtherPlayersCallback)
+@_cdecl("GKTurnBasedMatch_SetMatchEndedCallback")
+public func GKTurnBasedMatch_SetMatchEndedCallback(callback: GameKitWrapper.MatchEndedCallback)
+@_cdecl("GKTurnBasedMatch_SetTurnEventReceivedCallback")
+public func GKTurnBasedMatch_SetTurnEventReceivedCallback(callback: GameKitWrapper.TurnEventReceivedCallback)
+@_cdecl("GKTurnBasedMatch_SetPlayerWantsToQuitMatchCallback")
+public func GKTurnBasedMatch_SetPlayerWantsToQuitMatchCallback(callback: GameKitWrapper.PlayerWantsToQuitCallback)
+@_cdecl("GKTurnBasedMatch_GetParticipants")
+public func GKTurnBasedMatch_GetParticipants(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKTurnBasedMatch_GetCurrentParticipant")
+public func GKTurnBasedMatch_GetCurrentParticipant(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedMatch_GetMatchData")
+public func GKTurnBasedMatch_GetMatchData(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.InteropStructArray
+@_cdecl("GKTurnBasedMatch_GetMatchDataMaximumSize")
+public func GKTurnBasedMatch_GetMatchDataMaximumSize(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatch_GetMessage")
+public func GKTurnBasedMatch_GetMessage(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKTurnBasedMatch_GetMatchID")
+public func GKTurnBasedMatch_GetMatchID(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKTurnBasedMatch_GetCreationDate")
+public func GKTurnBasedMatch_GetCreationDate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatch_GetStatus")
+public func GKTurnBasedMatch_GetStatus(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+public typealias SuccessTaskInteropStructArrayCallback = @convention(c) (Swift.Int64, GameKitWrapper.InteropStructArray) -> Swift.Void
+@_cdecl("GKTurnBasedMatch_LoadMatchData")
+public func GKTurnBasedMatch_LoadMatchData(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskInteropStructArrayCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_SaveCurrentTurn")
+public func GKTurnBasedMatch_SaveCurrentTurn(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, data: GameKitWrapper.InteropStructArray, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_EndTurn")
+public func GKTurnBasedMatch_EndTurn(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, participantsPtr: Swift.UnsafeMutableRawPointer, timeout: Swift.Double, data: GameKitWrapper.InteropStructArray, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_ParticipantQuitInTurn")
+public func GKTurnBasedMatch_ParticipantQuitInTurn(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, outcome: Swift.Int, participantsPtr: Swift.UnsafeMutableRawPointer, timeout: Swift.Double, data: GameKitWrapper.InteropStructArray, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_ParticipantQuitOutOfTurn")
+public func GKTurnBasedMatch_ParticipantQuitOutOfTurn(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, outcome: Swift.Int, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_EndMatchInTurn")
+public func GKTurnBasedMatch_EndMatchInTurn(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, data: GameKitWrapper.InteropStructArray, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_Remove")
+public func GKTurnBasedMatch_Remove(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_SaveMergedMatch")
+public func GKTurnBasedMatch_SaveMergedMatch(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, data: GameKitWrapper.InteropStructArray, exchangesPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_SendExchange")
+public func GKTurnBasedMatch_SendExchange(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, participantsPtr: Swift.UnsafeMutableRawPointer, data: GameKitWrapper.InteropStructArray, localizableMessageKey: GameKitWrapper.char_p, argumentsPtr: Swift.UnsafeMutableRawPointer, timeout: Swift.Double, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_GKExchangeTimeoutDefault")
+public func GKTurnBasedMatch_GKExchangeTimeoutDefault() -> Swift.Double
+@_cdecl("GKTurnBasedMatch_GKExchangeTimeoutNone")
+public func GKTurnBasedMatch_GKExchangeTimeoutNone() -> Swift.Double
+@_cdecl("GKTurnBasedMatch_GetTurnTimeoutDefault")
+public func GKTurnBasedMatch_GetTurnTimeoutDefault() -> Swift.Double
+@_cdecl("GKTurnBasedMatch_GetTurnTimeoutNone")
+public func GKTurnBasedMatch_GetTurnTimeoutNone() -> Swift.Double
+@_cdecl("GKTurnBasedMatch_GetActiveExchanges")
+public func GKTurnBasedMatch_GetActiveExchanges(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedMatch_GetCompletedExchanges")
+public func GKTurnBasedMatch_GetCompletedExchanges(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedMatch_GetExchanges")
+public func GKTurnBasedMatch_GetExchanges(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@_cdecl("GKTurnBasedMatch_GetExchangeDataMaximumSize")
+public func GKTurnBasedMatch_GetExchangeDataMaximumSize(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatch_GetExchangeMaxInitiatedExchangesPerPlayer")
+public func GKTurnBasedMatch_GetExchangeMaxInitiatedExchangesPerPlayer(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKTurnBasedMatch_SendReminder")
+public func GKTurnBasedMatch_SendReminder(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, participantsPtr: Swift.UnsafeMutableRawPointer, localizableMessageKey: GameKitWrapper.char_p, argumentsPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_LoadMatches")
+public func GKTurnBasedMatch_LoadMatches(taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_Load")
+public func GKTurnBasedMatch_Load(taskId: Swift.Int64, matchId: GameKitWrapper.char_p, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_Find")
+public func GKTurnBasedMatch_Find(taskId: Swift.Int64, matchRequestPtr: Swift.UnsafeMutableRawPointer, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_AcceptInvite")
+public func GKTurnBasedMatch_AcceptInvite(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_DeclineInvite")
+public func GKTurnBasedMatch_DeclineInvite(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKTurnBasedMatch_Rematch")
+public func GKTurnBasedMatch_Rematch(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, onSuccess: GameKitWrapper.SuccessTaskPtrCallback, onError: GameKitWrapper.NSErrorCallback)
+@_cdecl("GKMatchmakerViewController_InitWithInvite")
+public func GKMatchmakerViewController_InitWithInvite(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKMatchmakerViewController_InitWithMatchRequest")
+public func GKMatchmakerViewController_InitWithMatchRequest(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKMatchmakerViewController_GetMatchRequest")
+public func GKMatchmakerViewController_GetMatchRequest(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKMatchmakerViewController_GetCanStartWithMinimumPlayers")
+public func GKMatchmakerViewController_GetCanStartWithMinimumPlayers(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKMatchmakerViewController_SetCanStartWithMinimumPlayers")
+public func GKMatchmakerViewController_SetCanStartWithMinimumPlayers(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKMatchmakerViewController_GetMatchmakingMode")
+public func GKMatchmakerViewController_GetMatchmakingMode(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Int
+@_cdecl("GKMatchmakerViewController_SetMatchmakingMode")
+public func GKMatchmakerViewController_SetMatchmakingMode(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Int)
+@_cdecl("GKMatchmakerViewController_GetIsHosted")
+public func GKMatchmakerViewController_GetIsHosted(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKMatchmakerViewController_SetIsHosted")
+public func GKMatchmakerViewController_SetIsHosted(pointer: Swift.UnsafeMutableRawPointer, value: Swift.Bool)
+@_cdecl("GKMatchmakerViewController_SetHostedPlayerDidConnect")
+public func GKMatchmakerViewController_SetHostedPlayerDidConnect(gkMatchmakerViewControllerPtr: Swift.UnsafeMutableRawPointer, gkPlayerPtr: Swift.UnsafeMutableRawPointer, didConnect: Swift.Bool)
+@_cdecl("GKMatchmakerViewController_Present")
+public func GKMatchmakerViewController_Present(pointer: Swift.UnsafeMutableRawPointer)
+public func GKMatchmakerViewController_Dismiss(viewController: GameKit.GKMatchmakerViewController)
+public var _activeRealtimeMatchmakerDelegate: GameKitWrapper.GKWMatchmakerViewControllerDelegate?
+@_cdecl("GKMatchmakerViewController_GetMatchmakerDelegate")
+public func GKMatchmakerViewController_GetMatchmakerDelegate(pointer: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+@objc @_hasMissingDesignatedInitializers public class GameKitUIDelegateHandler : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension GameKitWrapper.GameKitUIDelegateHandler : GameKit.GKGameCenterControllerDelegate {
+  @objc dynamic public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GameKit.GKGameCenterViewController)
+}
+@_cdecl("GKPlayer_GetGamePlayerId")
+public func GKPlayer_GetGamePlayerId(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKPlayer_GetTeamPlayerId")
+public func GKPlayer_GetTeamPlayerId(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKPlayer_GetPlayerId")
+public func GKPlayer_GetPlayerId(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKPlayer_GetScopedIDsArePersistent")
+public func GKPlayer_GetScopedIDsArePersistent(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKPlayer_GetAlias")
+public func GKPlayer_GetAlias(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKPlayer_GetDisplayName")
+public func GKPlayer_GetDisplayName(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p
+@_cdecl("GKPlayer_GetIsInvitable")
+public func GKPlayer_GetIsInvitable(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKPlayer_GetScopedIdsArePersistent")
+public func GKPlayer_GetScopedIdsArePersistent(pointer: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+@_cdecl("GKPlayer_GetGuestIdentifier")
+public func GKPlayer_GetGuestIdentifier(pointer: Swift.UnsafeMutableRawPointer) -> GameKitWrapper.char_p?
+@_cdecl("GKPlayer_AnonymousGuestPlayer")
+public func GKPlayer_AnonymousGuestPlayer(identifier: GameKitWrapper.char_p) -> Swift.UnsafeMutableRawPointer
+@_cdecl("GKPlayer_LoadPhoto")
+public func GKPlayer_LoadPhoto(pointer: Swift.UnsafeMutableRawPointer, taskId: Swift.Int64, photoSize: Swift.Int, onImageLoaded: GameKitWrapper.SuccessTaskImageCallback, onError: GameKitWrapper.NSErrorCallback)
+public typealias InviteAcceptedCallback = @convention(c) (Swift.UnsafeMutableRawPointer, Swift.UnsafeMutableRawPointer) -> Swift.Void
+extension GameKitWrapper.GKWLocalPlayerListener : GameKit.GKInviteEventListener {
+  @objc dynamic public func player(_ player: GameKit.GKPlayer, didAccept invite: GameKit.GKInvite)
+}
+@_cdecl("GKInvite_SetInviteAcceptedCallback")
+public func GKInvite_SetInviteAcceptedCallback(callback: GameKitWrapper.InviteAcceptedCallback)
