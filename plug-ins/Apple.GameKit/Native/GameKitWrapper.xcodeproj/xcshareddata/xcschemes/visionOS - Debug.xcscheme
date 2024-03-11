@@ -7,15 +7,15 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69D04BF22B126F3500C74B42"
-               BuildableName = "GameKitWrapper.framework"
+               BlueprintIdentifier = "6110C9D02B9F208D00B336EB"
+               BuildableName = "GameKitWrapper visionOS.framework"
                BlueprintName = "GameKitWrapper visionOS"
                ReferencedContainer = "container:GameKitWrapper.xcodeproj">
             </BuildableReference>
@@ -50,8 +50,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69D04BF22B126F3500C74B42"
-            BuildableName = "GameKitWrapper.framework"
+            BlueprintIdentifier = "6110C9D02B9F208D00B336EB"
+            BuildableName = "GameKitWrapper visionOS.framework"
             BlueprintName = "GameKitWrapper visionOS"
             ReferencedContainer = "container:GameKitWrapper.xcodeproj">
          </BuildableReference>

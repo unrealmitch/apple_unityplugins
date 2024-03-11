@@ -1,0 +1,11 @@
+framework module GameControllerWrapper {
+  umbrella header "GameControllerWrapper.h"
+  export *
+
+  module * { export * }
+}
+
+module GameControllerWrapper.Swift {
+  header "GameControllerWrapper-Swift.h"
+  requires objc
+}

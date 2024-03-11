@@ -77,7 +77,7 @@ public func GKMatch_SendToAll
     let target = Unmanaged<GKMatch>.fromOpaque(pointer).takeUnretainedValue();
     
     do {
-        try target.sendData(toAllPlayers: data.toData(), with: GKMatch.SendDataMode.init(rawValue: sendMode)!);
+        try target.sendData(toAllPlayers: data.toData(), with: GKMatch.SendDataMode(rawValue: sendMode)!);
         return nil;
     } catch {
         return Unmanaged.passRetained(error as NSError).toOpaque();
@@ -97,7 +97,7 @@ public func GKMatch_SendTo
     let players = Unmanaged<NSArray>.fromOpaque(players).takeUnretainedValue() as! [GKPlayer];
     
     do {
-        try target.send(data.toData(), to: players, dataMode: GKMatch.SendDataMode.init(rawValue: sendMode)!);
+        try target.send(data.toData(), to: players, dataMode: GKMatch.SendDataMode(rawValue: sendMode)!);
         return nil;
     } catch {
         return Unmanaged.passRetained(error as NSError).toOpaque();

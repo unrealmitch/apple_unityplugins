@@ -1,3 +1,4 @@
+#if (UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS))
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Apple.Core
 
         class UIStrings
         {
+            public const string EnvironmentSettingsSectionLabelText = "Apple Unity Plug-In Environment Settings";
             public const string UnityBuildConfigSectionLabelText = "Unity Build Configuration";
             public const string UnityActiveBuildTargetLabelText = "Current build target:";
             public const string UnityBuildSettingsButtonLabelText = "Unity Build Settings...";
@@ -127,20 +129,17 @@ namespace Apple.Core
                     break;
             }
 
-
             if (_serializedMinimumOSVersion_iOS.stringValue == string.Empty)
             {
                 _serializedMinimumOSVersion_iOS.stringValue = PlayerSettings.iOS.targetOSVersionString;
                 serializedObject.ApplyModifiedProperties();
             }
 
-
             if (_serializedMinimumOSVersion_tvOS.stringValue == string.Empty)
             {
                 _serializedMinimumOSVersion_tvOS.stringValue = PlayerSettings.tvOS.targetOSVersionString;
                 serializedObject.ApplyModifiedProperties();
             }
-
 
             if (_serializedMinimumOSVersion_macOS.stringValue == string.Empty)
             {
@@ -162,11 +161,11 @@ namespace Apple.Core
                 EditorWindow.GetWindow(Type.GetType(BuildPlayerWindowType));
             }
 
-            GUILayout.EndVertical();
-
-            #endregion // Draw Build Summary
+            GUILayout.EndVertical(); // GUILayout.BeginVertical(EditorStyles.helpBox);
 
             GUILayout.Space(VerticalUIPadding);
+
+            #endregion // Draw Build Summary
 
             #region Draw Build Profile Properties
 
@@ -253,17 +252,15 @@ namespace Apple.Core
                 EditorGUI.indentLevel--;
             }
 
-
             GUILayout.EndVertical();
 
-            #endregion // Draw Build Profile Properties
-
             GUILayout.Space(VerticalUIPadding);
+
+            #endregion // Draw Build Profile Properties
 
             #region Draw Apple Build Steps
 
             GUILayout.BeginVertical();
-
 
             List<string> buildStepNames = appleBuildProfile.buildSteps.Keys.ToList();
             buildStepNames.Sort();
@@ -356,3 +353,4 @@ namespace Apple.Core
         }
     }
 }
+#endif // (UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS))

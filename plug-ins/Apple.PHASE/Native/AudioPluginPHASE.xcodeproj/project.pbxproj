@@ -7,38 +7,20 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		6400218C25FC27DE00ED6DA1 /* All - Release */ = {
+		241B6AAD2947E2F000EC7B7A /* tvOS_sentinel */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 6400218F25FC27DE00ED6DA1 /* Build configuration list for PBXAggregateTarget "All - Release" */;
+			buildConfigurationList = 241B6AB02947E2F000EC7B7A /* Build configuration list for PBXAggregateTarget "tvOS_sentinel" */;
 			buildPhases = (
+				241B6AB12947E30A00EC7B7A /* tvOS Unsupported Message */,
 			);
 			dependencies = (
-				616942CC2B86292F00630D1C /* PBXTargetDependency */,
-				616942CA2B86292C00630D1C /* PBXTargetDependency */,
-				6489AD2C25FC281300DC5874 /* PBXTargetDependency */,
-				6489AD2E25FC281300DC5874 /* PBXTargetDependency */,
 			);
-			name = "All - Release";
-			productName = "AudioPluginPHASE-Aggregate";
-		};
-		649B736C276D2F06004E0B8E /* All - Debug */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 649B7371276D2F06004E0B8E /* Build configuration list for PBXAggregateTarget "All - Debug" */;
-			buildPhases = (
-			);
-			dependencies = (
-				616942D02B86293600630D1C /* PBXTargetDependency */,
-				616942CE2B86293400630D1C /* PBXTargetDependency */,
-				649B736D276D2F06004E0B8E /* PBXTargetDependency */,
-				649B736F276D2F06004E0B8E /* PBXTargetDependency */,
-			);
-			name = "All - Debug";
-			productName = "AudioPluginPHASE-Aggregate";
+			name = tvOS_sentinel;
+			productName = tvOS_sentinel;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		24577AFE294BCE0800A9D6D8 /* AudioPluginPHASE.a in Copy plugin to Unity project */ = {isa = PBXBuildFile; fileRef = FF98C0671F23DCD70043047A /* AudioPluginPHASE.a */; platformFilter = ios; };
 		302D376323621CA40030DA9A /* AudioPluginPHASE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF98C0671F23DCD70043047A /* AudioPluginPHASE.a */; platformFilter = ios; };
 		302D377623621F2E0030DA9A /* AudioPluginPHASE_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 302D377523621F2E0030DA9A /* AudioPluginPHASE_Tests.mm */; platformFilter = ios; };
 		302D377723621F2E0030DA9A /* AudioPluginPHASE_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 302D377523621F2E0030DA9A /* AudioPluginPHASE_Tests.mm */; };
@@ -95,111 +77,10 @@
 			remoteGlobalIDString = FF98C0041F220DA10043047A;
 			remoteInfo = "AudioPluginPHASE-iOS";
 		};
-		616942C92B86292C00630D1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 611270A32B86263200D6A23B;
-			remoteInfo = "AudioPluginPHASE-tvOS";
-		};
-		616942CB2B86292F00630D1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 618C81732B8623BF001D2F9A;
-			remoteInfo = "AudioPluginPHASE-visionOS";
-		};
-		616942CD2B86293400630D1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 611270A32B86263200D6A23B;
-			remoteInfo = "AudioPluginPHASE-tvOS";
-		};
-		616942CF2B86293600630D1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 618C81732B8623BF001D2F9A;
-			remoteInfo = "AudioPluginPHASE-visionOS";
-		};
-		6489AD2B25FC281300DC5874 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D57630D048677EA00EA77CD;
-			remoteInfo = AudioPluginPHASE;
-		};
-		6489AD2D25FC281300DC5874 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF98C0041F220DA10043047A;
-			remoteInfo = "AudioPluginPHASE-iOS";
-		};
-		649B736E276D2F06004E0B8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D57630D048677EA00EA77CD;
-			remoteInfo = AudioPluginPHASE;
-		};
-		649B7370276D2F06004E0B8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF98C0041F220DA10043047A;
-			remoteInfo = "AudioPluginPHASE-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		300C0E7C234FD346006C3C18 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		611270AC2B86263200D6A23B /* Copy plugin to Unity project */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(PROJECT_DIR)/../Apple.PHASE_Unity/Assets/Runtime/Plugins/tvOS";
-			dstSubfolderSpec = 0;
-			files = (
-				611270B22B86267D00D6A23B /* AudioPluginPHASE-tvOS.a in Copy plugin to Unity project */,
-			);
-			name = "Copy plugin to Unity project";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		618C817C2B8623BF001D2F9A /* Copy plugin to Unity project */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(PROJECT_DIR)/../Apple.PHASE_Unity/Assets/Runtime/Plugins/visionOS";
-			dstSubfolderSpec = 0;
-			files = (
-				618C81822B862425001D2F9A /* AudioPluginPHASE-visionOS.a in Copy plugin to Unity project */,
-			);
-			name = "Copy plugin to Unity project";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		646655DA2609523800EBAB9D /* Copy plugin to Unity project */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(PROJECT_DIR)/../Apple.PHASE_Unity/Assets/Runtime/Plugins/iOS";
-			dstSubfolderSpec = 0;
-			files = (
-				24577AFE294BCE0800A9D6D8 /* AudioPluginPHASE.a in Copy plugin to Unity project */,
-			);
-			name = "Copy plugin to Unity project";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		240646162B62D80600246067 /* PHASE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PHASE.xcconfig; sourceTree = "<group>"; };
 		302D375E23621CA30030DA9A /* AudioPluginPHASE-Tests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AudioPluginPHASE-Tests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		302D376223621CA40030DA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302D376D23621EC90030DA9A /* AudioPluginPHASE-Tests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AudioPluginPHASE-Tests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +180,7 @@
 		089C166AFE841209C02AAC07 /* AudioPluginPHASE */ = {
 			isa = PBXGroup;
 			children = (
+				240646162B62D80600246067 /* PHASE.xcconfig */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -467,8 +349,6 @@
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
 				4A04C16D23914C9D003F9E22 /* Relocate PHASE framework */,
-				300C0E7C234FD346006C3C18 /* Embed Frameworks */,
-				2492FB5227619556005F5F33 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -486,7 +366,6 @@
 			buildPhases = (
 				FF98C01A1F220FED0043047A /* Sources */,
 				FF98C0021F220DA10043047A /* Frameworks */,
-				646655DA2609523800EBAB9D /* Copy plugin to Unity project */,
 			);
 			buildRules = (
 			);
@@ -511,9 +390,6 @@
 					302D376C23621EC90030DA9A = {
 						CreatedOnToolsVersion = 11.0;
 					};
-					6400218C25FC27DE00ED6DA1 = {
-						CreatedOnToolsVersion = 13.0;
-					};
 					FF98C0041F220DA10043047A = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
@@ -537,10 +413,7 @@
 				FF98C0041F220DA10043047A /* AudioPluginPHASE-iOS */,
 				302D375D23621CA30030DA9A /* AudioPluginPHASE-Tests-iOS */,
 				302D376C23621EC90030DA9A /* AudioPluginPHASE-Tests-macOS */,
-				6400218C25FC27DE00ED6DA1 /* All - Release */,
-				649B736C276D2F06004E0B8E /* All - Debug */,
-				618C81732B8623BF001D2F9A /* AudioPluginPHASE-visionOS */,
-				611270A32B86263200D6A23B /* AudioPluginPHASE-tvOS */,
+				241B6AAD2947E2F000EC7B7A /* tvOS_sentinel */,
 			);
 		};
 /* End PBXProject section */
@@ -565,7 +438,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2492FB5227619556005F5F33 /* ShellScript */ = {
+		241B6AB12947E30A00EC7B7A /* tvOS Unsupported Message */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -575,13 +448,15 @@
 			);
 			inputPaths = (
 			);
+			name = "tvOS Unsupported Message";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Remove and copy fresh build...\nrm -rf \"${PROJECT_DIR}/../Apple.PHASE_Unity/Assets/Runtime/Plugins/macOS/AudioPluginPHASE.bundle\"\nditto \"${BUILT_PRODUCTS_DIR}/${APPLICATION_NAME}/AudioPluginPHASE.bundle\" \"${PROJECT_DIR}/../Apple.PHASE_Unity/Assets/Runtime/Plugins/macOS/AudioPluginPHASE.bundle\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"\\n[PHASE] tvOS not currently supported by PHASE plug-in. No native library built.\"\n";
+			showEnvVarsInLog = 0;
 		};
 		4A04C16D23914C9D003F9E22 /* Relocate PHASE framework */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -678,51 +553,12 @@
 			target = FF98C0041F220DA10043047A /* AudioPluginPHASE-iOS */;
 			targetProxy = 302D376423621CA40030DA9A /* PBXContainerItemProxy */;
 		};
-		616942CA2B86292C00630D1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 611270A32B86263200D6A23B /* AudioPluginPHASE-tvOS */;
-			targetProxy = 616942C92B86292C00630D1C /* PBXContainerItemProxy */;
-		};
-		616942CC2B86292F00630D1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 618C81732B8623BF001D2F9A /* AudioPluginPHASE-visionOS */;
-			targetProxy = 616942CB2B86292F00630D1C /* PBXContainerItemProxy */;
-		};
-		616942CE2B86293400630D1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 611270A32B86263200D6A23B /* AudioPluginPHASE-tvOS */;
-			targetProxy = 616942CD2B86293400630D1C /* PBXContainerItemProxy */;
-		};
-		616942D02B86293600630D1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 618C81732B8623BF001D2F9A /* AudioPluginPHASE-visionOS */;
-			targetProxy = 616942CF2B86293600630D1C /* PBXContainerItemProxy */;
-		};
-		6489AD2C25FC281300DC5874 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D57630D048677EA00EA77CD /* AudioPluginPHASE */;
-			targetProxy = 6489AD2B25FC281300DC5874 /* PBXContainerItemProxy */;
-		};
-		6489AD2E25FC281300DC5874 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF98C0041F220DA10043047A /* AudioPluginPHASE-iOS */;
-			targetProxy = 6489AD2D25FC281300DC5874 /* PBXContainerItemProxy */;
-		};
-		649B736D276D2F06004E0B8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D57630D048677EA00EA77CD /* AudioPluginPHASE */;
-			targetProxy = 649B736E276D2F06004E0B8E /* PBXContainerItemProxy */;
-		};
-		649B736F276D2F06004E0B8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF98C0041F220DA10043047A /* AudioPluginPHASE-iOS */;
-			targetProxy = 649B7370276D2F06004E0B8E /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB911B08733D790010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -732,6 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -769,6 +606,7 @@
 		};
 		1DEB911C08733D790010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -806,6 +644,7 @@
 		};
 		1DEB911F08733D790010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -850,6 +689,7 @@
 		};
 		1DEB912008733D790010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -889,8 +729,29 @@
 			};
 			name = Release;
 		};
+		241B6AAE2947E2F000EC7B7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+			};
+			name = Debug;
+		};
+		241B6AAF2947E2F000EC7B7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+			};
+			name = Release;
+		};
 		302D376723621CA40030DA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -949,6 +810,7 @@
 		};
 		302D376823621CA40030DA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1005,6 +867,7 @@
 		};
 		302D377323621EC90030DA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1062,6 +925,7 @@
 		};
 		302D377423621EC90030DA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1114,176 +978,9 @@
 			};
 			name = Release;
 		};
-		611270AF2B86263200D6A23B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				DEAD_CODE_STRIPPING = NO;
-				EXECUTABLE_PREFIX = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					ENABLE_ENVIRONMENTAL_PROCESS,
-					ENABLE_OBSTRUCTION,
-					ENABLE_ROOM_MODEL_SELECTION,
-					DEV_BUILD,
-					"ENABLE_INTERNAL_FEATURES=1",
-				);
-				INFOPLIST_OUTPUT_FORMAT = XML;
-				INSTALL_PATH = /Plugins/iOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				OTHER_CFLAGS = "-mno-thumb";
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AudioPluginPHASE-iOS";
-				PRODUCT_MODULE_NAME = AudioPluginPHASE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = NO;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				USER_HEADER_SEARCH_PATHS = "";
-			};
-			name = Debug;
-		};
-		611270B02B86263200D6A23B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				DEAD_CODE_STRIPPING = NO;
-				EXECUTABLE_PREFIX = "";
-				INFOPLIST_OUTPUT_FORMAT = XML;
-				INSTALL_PATH = /Plugins/iOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				OTHER_CFLAGS = "-mno-thumb";
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AudioPluginPHASE-iOS";
-				PRODUCT_MODULE_NAME = AudioPluginPHASE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = NO;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				USER_HEADER_SEARCH_PATHS = "";
-			};
-			name = Release;
-		};
-		618C817F2B8623BF001D2F9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				DEAD_CODE_STRIPPING = NO;
-				EXECUTABLE_PREFIX = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					ENABLE_ENVIRONMENTAL_PROCESS,
-					ENABLE_OBSTRUCTION,
-					ENABLE_ROOM_MODEL_SELECTION,
-					DEV_BUILD,
-					"ENABLE_INTERNAL_FEATURES=1",
-				);
-				INFOPLIST_OUTPUT_FORMAT = XML;
-				INSTALL_PATH = /Plugins/iOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				OTHER_CFLAGS = "-mno-thumb";
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AudioPluginPHASE-iOS";
-				PRODUCT_MODULE_NAME = AudioPluginPHASE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = xros;
-				SKIP_INSTALL = NO;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				USER_HEADER_SEARCH_PATHS = "";
-			};
-			name = Debug;
-		};
-		618C81802B8623BF001D2F9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				DEAD_CODE_STRIPPING = NO;
-				EXECUTABLE_PREFIX = "";
-				INFOPLIST_OUTPUT_FORMAT = XML;
-				INSTALL_PATH = /Plugins/iOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				OTHER_CFLAGS = "-mno-thumb";
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AudioPluginPHASE-iOS";
-				PRODUCT_MODULE_NAME = AudioPluginPHASE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = xros;
-				SKIP_INSTALL = NO;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				USER_HEADER_SEARCH_PATHS = "";
-			};
-			name = Release;
-		};
-		6400218D25FC27DE00ED6DA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		6400218E25FC27DE00ED6DA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		649B7372276D2F06004E0B8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		649B7373276D2F06004E0B8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		FF98C00B1F220DA10043047A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1291,6 +988,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					ENABLE_ENVIRONMENTAL_PROCESS,
@@ -1320,6 +1018,7 @@
 		};
 		FF98C00C1F220DA10043047A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646162B62D80600246067 /* PHASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1327,6 +1026,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = "";
 				INFOPLIST_OUTPUT_FORMAT = XML;
 				INSTALL_PATH = /Plugins/iOS;
@@ -1382,42 +1082,6 @@
 			buildConfigurations = (
 				302D377323621EC90030DA9A /* Debug */,
 				302D377423621EC90030DA9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		611270AE2B86263200D6A23B /* Build configuration list for PBXNativeTarget "AudioPluginPHASE-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				611270AF2B86263200D6A23B /* Debug */,
-				611270B02B86263200D6A23B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		618C817E2B8623BF001D2F9A /* Build configuration list for PBXNativeTarget "AudioPluginPHASE-visionOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				618C817F2B8623BF001D2F9A /* Debug */,
-				618C81802B8623BF001D2F9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6400218F25FC27DE00ED6DA1 /* Build configuration list for PBXAggregateTarget "All - Release" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6400218D25FC27DE00ED6DA1 /* Debug */,
-				6400218E25FC27DE00ED6DA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		649B7371276D2F06004E0B8E /* Build configuration list for PBXAggregateTarget "All - Debug" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				649B7372276D2F06004E0B8E /* Debug */,
-				649B7373276D2F06004E0B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

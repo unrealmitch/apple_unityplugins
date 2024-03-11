@@ -1,0 +1,6 @@
+framework module AppleAccessibility {
+  umbrella header "AppleAccessibility.h"
+  export *
+
+  module * { export * }
+}
