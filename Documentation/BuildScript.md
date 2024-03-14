@@ -57,7 +57,7 @@ python3 build.py -p Core GameKit GameController
 ### Platform Selection
 - **Flag:** `--platforms`
 - **Short version:** `-m`
-- **Possible values:** `all`, `iOS`, `macOS`, `tvOS`, `iPhoneSimulator`, `AppleTVSimulator`, `simulators`, `devices`
+- **Possible values:** `all`, `iOS`, `macOS`, `tvOS`, `visionOS`, `iPhoneSimulator`, `AppleTVSimulator`, `simulators`, `devices`
 - **Default value:** `all`
 - **Description:** Selects the desired platforms that the plug-ins will target, which also limits which native libraries will be compiled. Platforms are validated against the build machine's installed set of Apple platform SDKs. Choosing the option `simulators` will build all simulator platforms while the option `devices` builds all device platforms. 
 

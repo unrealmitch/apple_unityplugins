@@ -19,7 +19,8 @@ namespace Apple.Core
         {
             {BuildTarget.iOS, "AppleCoreNative.framework"},
             {BuildTarget.tvOS, "AppleCoreNative.framework"},
-            {BuildTarget.StandaloneOSX, "AppleCoreNativeMac.bundle"}
+            {BuildTarget.StandaloneOSX, "AppleCoreNativeMac.bundle"},
+            {BuildTarget.VisionOS, "AppleCoreNative.framework"}
         };
 
 #if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS)

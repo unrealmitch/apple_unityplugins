@@ -168,6 +168,8 @@ public func GKAccessPoint_GetFrameInUnitCoordinates
     
     #if os(macOS)
     let screenSize = NSScreen.main!.frame;
+    #elseif os(visionOS)
+    let screenSize = CGRect(x: 0, y: 0, width: 1280, height: 720);
     #else
     let screenSize = UIScreen.main.bounds;
     #endif

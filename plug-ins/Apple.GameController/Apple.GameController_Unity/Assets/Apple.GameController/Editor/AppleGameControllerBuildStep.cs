@@ -30,7 +30,7 @@ namespace Apple.GameController.Editor
             // Support device profiles
             PlistElementArray supportedControllers = null;
 
-            if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.StandaloneOSX)
+            if (buildTarget == BuildTarget.iOS || buildTarget == BuildTarget.VisionOS || buildTarget == BuildTarget.StandaloneOSX)
             {
                 supportedControllers = infoPlist.root.CreateArray("GCSupportedGameControllers");
             }

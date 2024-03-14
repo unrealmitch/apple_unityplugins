@@ -19,6 +19,22 @@
 		24B8F1892A73397C00914A67 /* ACRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8F1882A73397C00914A67 /* ACRuntimeEnvironment.swift */; };
 		24B8F18A2A73397C00914A67 /* ACRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8F1882A73397C00914A67 /* ACRuntimeEnvironment.swift */; };
 		24B8F18B2A73397C00914A67 /* ACRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8F1882A73397C00914A67 /* ACRuntimeEnvironment.swift */; };
+		61C46FE52B9F32ED000A5EE5 /* AppleCoreNative.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE5338F263B6CCC00078448 /* AppleCoreNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61C46FE62B9F32ED000A5EE5 /* AppleCore_BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 244F33522A6F0A2B005099AE /* AppleCore_BridgingHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61C46FE82B9F32ED000A5EE5 /* CoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE53398263B6D1400078448 /* CoreUtilities.swift */; };
+		61C46FE92B9F32ED000A5EE5 /* ACRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8F1882A73397C00914A67 /* ACRuntimeEnvironment.swift */; };
+		61C46FEA2B9F32ED000A5EE5 /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2BEBF2AC77D160040E5E0 /* NSNumber.m */; };
+		61C46FEB2B9F32ED000A5EE5 /* NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2BEC32ACB2FDE0040E5E0 /* NSString.m */; };
+		61C46FEC2B9F32ED000A5EE5 /* NSMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32D87C2AF97A09006A8FE4 /* NSMutableArray.m */; };
+		61C46FED2B9F32ED000A5EE5 /* AppleCoreRuntimeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212227DEA517007479CE /* AppleCoreRuntimeShared.swift */; };
+		61C46FEE2B9F32ED000A5EE5 /* NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8FF4912B338A110058B918 /* NSData.m */; };
+		61C46FEF2B9F32ED000A5EE5 /* NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8694402AD47FFA009B8676 /* NSNull.m */; };
+		61C46FF02B9F32ED000A5EE5 /* NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32D8802AFAADAA006A8FE4 /* NSDictionary.m */; };
+		61C46FF12B9F32ED000A5EE5 /* NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6C73C22AFDA7800077714C /* NSException.m */; };
+		61C46FF22B9F32ED000A5EE5 /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32D8782AF96000006A8FE4 /* NSArray.m */; };
+		61C46FF32B9F32ED000A5EE5 /* NSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32D8842AFADF1A006A8FE4 /* NSMutableDictionary.m */; };
+		61C46FF42B9F32ED000A5EE5 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B212627DEA521007479CE /* NSError.swift */; };
+		61C46FF52B9F32ED000A5EE5 /* NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FB86943C2ACF32FB009B8676 /* NSObject.m */; };
 		CFE53391263B6CCC00078448 /* AppleCoreNative.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE5338F263B6CCC00078448 /* AppleCoreNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFE53399263B6D1400078448 /* CoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE53398263B6D1400078448 /* CoreUtilities.swift */; };
 		CFE533A1263B6E2200078448 /* AppleCoreNative.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE5338F263B6CCC00078448 /* AppleCoreNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,6 +80,7 @@
 		245B212227DEA517007479CE /* AppleCoreRuntimeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleCoreRuntimeShared.swift; sourceTree = "<group>"; };
 		245B212627DEA521007479CE /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		24B8F1882A73397C00914A67 /* ACRuntimeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACRuntimeEnvironment.swift; sourceTree = "<group>"; };
+		61C46FFB2B9F32ED000A5EE5 /* AppleCoreNative_visionOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleCoreNative_visionOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE5338C263B6CCC00078448 /* AppleCoreNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleCoreNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE5338F263B6CCC00078448 /* AppleCoreNative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleCoreNative.h; sourceTree = "<group>"; };
 		CFE53398263B6D1400078448 /* CoreUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUtilities.swift; sourceTree = "<group>"; };
@@ -83,6 +100,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		61C46FF62B9F32ED000A5EE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE53389263B6CCC00078448 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +147,7 @@
 				CFE5338C263B6CCC00078448 /* AppleCoreNative.framework */,
 				CFE533AA263B6E2200078448 /* AppleCoreNative.framework */,
 				CFE533C5263B6E4800078448 /* AppleCoreNativeMac.bundle */,
+				61C46FFB2B9F32ED000A5EE5 /* AppleCoreNative_visionOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +179,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		61C46FE42B9F32ED000A5EE5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C46FE52B9F32ED000A5EE5 /* AppleCoreNative.h in Headers */,
+				61C46FE62B9F32ED000A5EE5 /* AppleCore_BridgingHeader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE53387263B6CCC00078448 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +218,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		61C46FE32B9F32ED000A5EE5 /* AppleCoreNative_visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C46FF82B9F32ED000A5EE5 /* Build configuration list for PBXNativeTarget "AppleCoreNative_visionOS" */;
+			buildPhases = (
+				61C46FE42B9F32ED000A5EE5 /* Headers */,
+				61C46FE72B9F32ED000A5EE5 /* Sources */,
+				61C46FF62B9F32ED000A5EE5 /* Frameworks */,
+				61C46FF72B9F32ED000A5EE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleCoreNative_visionOS;
+			productName = AppleCoreNativeWrapper;
+			productReference = 61C46FFB2B9F32ED000A5EE5 /* AppleCoreNative_visionOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CFE5338B263B6CCC00078448 /* AppleCoreNative_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFE53394263B6CCC00078448 /* Build configuration list for PBXNativeTarget "AppleCoreNative_iOS" */;
@@ -273,12 +325,20 @@
 			targets = (
 				CFE5338B263B6CCC00078448 /* AppleCoreNative_iOS */,
 				CFE5339F263B6E2200078448 /* AppleCoreNative_tvOS */,
+				61C46FE32B9F32ED000A5EE5 /* AppleCoreNative_visionOS */,
 				CFE533C4263B6E4800078448 /* AppleCoreNative_Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		61C46FF72B9F32ED000A5EE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE5338A263B6CCC00078448 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +363,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		61C46FE72B9F32ED000A5EE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C46FE82B9F32ED000A5EE5 /* CoreUtilities.swift in Sources */,
+				61C46FE92B9F32ED000A5EE5 /* ACRuntimeEnvironment.swift in Sources */,
+				61C46FEA2B9F32ED000A5EE5 /* NSNumber.m in Sources */,
+				61C46FEB2B9F32ED000A5EE5 /* NSString.m in Sources */,
+				61C46FEC2B9F32ED000A5EE5 /* NSMutableArray.m in Sources */,
+				61C46FED2B9F32ED000A5EE5 /* AppleCoreRuntimeShared.swift in Sources */,
+				61C46FEE2B9F32ED000A5EE5 /* NSData.m in Sources */,
+				61C46FEF2B9F32ED000A5EE5 /* NSNull.m in Sources */,
+				61C46FF02B9F32ED000A5EE5 /* NSDictionary.m in Sources */,
+				61C46FF12B9F32ED000A5EE5 /* NSException.m in Sources */,
+				61C46FF22B9F32ED000A5EE5 /* NSArray.m in Sources */,
+				61C46FF32B9F32ED000A5EE5 /* NSMutableDictionary.m in Sources */,
+				61C46FF42B9F32ED000A5EE5 /* NSError.swift in Sources */,
+				61C46FF52B9F32ED000A5EE5 /* NSObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE53388263B6CCC00078448 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +450,73 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		61C46FF92B9F32ED000A5EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646112B61F5F000246067 /* Core.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AppleCoreNative/Info.plist;
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleCoreNative-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		61C46FFA2B9F32ED000A5EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240646112B61F5F000246067 /* Core.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AppleCoreNative/Info.plist;
+				INFOPLIST_OUTPUT_FORMAT = XML;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-plugins.AppleCoreNative-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Release;
+		};
 		CFE53392263B6CCC00078448 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240646112B61F5F000246067 /* Core.xcconfig */;
@@ -671,6 +819,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		61C46FF82B9F32ED000A5EE5 /* Build configuration list for PBXNativeTarget "AppleCoreNative_visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C46FF92B9F32ED000A5EE5 /* Debug */,
+				61C46FFA2B9F32ED000A5EE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CFE53386263B6CCC00078448 /* Build configuration list for PBXProject "AppleCoreNative" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

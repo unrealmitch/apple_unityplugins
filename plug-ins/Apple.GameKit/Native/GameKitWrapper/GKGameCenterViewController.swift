@@ -63,7 +63,7 @@ public func GKGameCenterViewController_Present
     _currentPresentingGameCenterDelegate = GameKitUIDelegateHandler(taskId: taskId, onSuccess: onSuccess);
     target.gameCenterDelegate = _currentPresentingGameCenterDelegate;
     
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     let viewController = UIApplication.shared.windows.first!.rootViewController;
     viewController?.present(target, animated: true);
 #else

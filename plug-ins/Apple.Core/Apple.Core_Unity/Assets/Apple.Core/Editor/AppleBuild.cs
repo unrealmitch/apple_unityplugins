@@ -1,6 +1,4 @@
 #if (UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX || UNITY_VISIONOS))
-using System.IO;
-using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
@@ -8,6 +6,8 @@ using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Apple.Core
 {
@@ -82,6 +82,10 @@ namespace Apple.Core
 
                     case BuildTarget.StandaloneOSX:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_macOS;
+                        break;
+
+                    case BuildTarget.VisionOS:
+                        minOSVersionString = appleBuildProfile.MinimumOSVersion_visionOS;
                         break;
 
                     default:
@@ -323,6 +327,10 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return "Unity-iPhone";
+
+                case BuildTarget.VisionOS:
+                    return "Unity-VisionOS";
+                
                 default:
                     return string.Empty;
             }
@@ -346,6 +354,9 @@ namespace Apple.Core
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
                     return $"{pathToBuiltProject}/Unity-iPhone.xcodeproj";
+                case BuildTarget.VisionOS:
+                    return $"{pathToBuiltProject}/Unity-VisionOS.xcodeproj";
+                
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER
                     return $"{pathToBuiltProject}/{new DirectoryInfo(pathToBuiltProject).Name}.xcodeproj";
@@ -366,6 +377,7 @@ namespace Apple.Core
             {
                 case BuildTarget.iOS:
                 case BuildTarget.tvOS:
+                case BuildTarget.VisionOS
                     return PBXProject.GetPBXProjectPath(pathToBuiltProject);
                 case BuildTarget.StandaloneOSX:
 #if UNITY_2020_1_OR_NEWER

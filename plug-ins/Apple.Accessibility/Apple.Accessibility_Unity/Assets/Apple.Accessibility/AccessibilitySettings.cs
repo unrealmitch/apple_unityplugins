@@ -42,7 +42,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return (ContentSizeCategory)_UnityAX_UIAccessibilityPreferredContentSizeCategory();
 #else
                 return ContentSizeCategory.Unspecified;
@@ -58,7 +58,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityPreferredContentSizeMultiplier();
 #else
                 return 1;
@@ -80,7 +80,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsVoiceOverRunning();
 #else
                 return false;
@@ -102,7 +102,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsSwitchControlRunning();
 #else
                 return false;
@@ -124,7 +124,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsSpeakSelectionEnabled();
 #else
                 return false;
@@ -146,7 +146,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsGuidedAccessEnabled();
 #else
                 return false;
@@ -168,7 +168,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsMonoAudioEnabled();
 #else
                 return false;
@@ -190,7 +190,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsClosedCaptioningEnabled();
 #else
                 return false;
@@ -212,7 +212,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsInvertColorsEnabled();
 #else
                 return false;
@@ -234,7 +234,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsBoldTextEnabled();
 #else
                 return false;
@@ -256,7 +256,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityButtonShapesEnabled();
 #else
                 return false;
@@ -278,7 +278,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsGrayscaleEnabled();
 #else
                 return false;
@@ -300,7 +300,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsReduceTransparencyEnabled();
 #else
                 return false;
@@ -322,7 +322,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsReduceMotionEnabled();
 #else
                 return false;
@@ -344,7 +344,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityPrefersCrossFadeTransitions();
 #else
                 return false;
@@ -366,7 +366,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsVideoAutoplayEnabled();
 #else
                 return false;
@@ -388,7 +388,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityDarkerSystemColorsEnabled();
 #else
                 return false;
@@ -410,7 +410,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsSpeakScreenEnabled();
 #else
                 return false;
@@ -432,7 +432,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsShakeToUndoEnabled();
 #else
                 return false;
@@ -453,7 +453,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityShouldDifferentiateWithoutColor();
 #else
                 return false;
@@ -475,7 +475,7 @@ namespace Apple.Accessibility
         {
             get
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 return _UnityAX_UIAccessibilityIsOnOffSwitchLabelsEnabled();
 #else
                 return false;
@@ -491,7 +491,7 @@ namespace Apple.Accessibility
         {
             if (!__registered)
             {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
                 _UnityAX_registerAccessibilityPreferredContentSizeCategoryDidChangeNotification(_UnityAX_UIAccessibilityPreferredContentSizeCategoryDidChangeNotification);
                 _UnityAX_registerAccessibilityIsVoiceOverRunningDidChangeNotification(_UnityAX_UIAccessibilityIsVoiceOverRunningDidChangeNotification);
                 _UnityAX_registerAccessibilityIsSwitchControlRunningDidChangeNotification(_UnityAX_UIAccessibilityIsSwitchControlRunningDidChangeNotification);
@@ -518,7 +518,7 @@ namespace Apple.Accessibility
         }
 
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityPreferredContentSizeCategoryDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern int _UnityAX_UIAccessibilityPreferredContentSizeCategory();
@@ -532,7 +532,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsVoiceOverRunningDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsVoiceOverRunning();
@@ -545,7 +545,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsSwitchControlRunningDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsSwitchControlRunning();
@@ -558,7 +558,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsSpeakSelectionEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsSpeakSelectionEnabled();
@@ -571,7 +571,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsGuidedAccessEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsGuidedAccessEnabled();
@@ -584,7 +584,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsMonoAudioEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsMonoAudioEnabled();
@@ -597,7 +597,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsClosedCaptioningEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsClosedCaptioningEnabled();
@@ -611,7 +611,7 @@ namespace Apple.Accessibility
 #endif
 
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsInvertColorsEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsInvertColorsEnabled();
@@ -624,7 +624,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsBoldTextEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsBoldTextEnabled();
@@ -637,7 +637,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityButtonShapesEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityButtonShapesEnabled();
@@ -650,7 +650,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsGrayscaleEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsGrayscaleEnabled();
@@ -663,7 +663,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsReduceTransparencyEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsReduceTransparencyEnabled();
@@ -676,7 +676,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsReduceMotionEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsReduceMotionEnabled();
@@ -689,7 +689,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityPrefersCrossFadeTransitionsDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityPrefersCrossFadeTransitions();
@@ -702,7 +702,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsVideoAutoplayEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsVideoAutoplayEnabled();
@@ -715,7 +715,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityDarkerSystemColorsEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityDarkerSystemColorsEnabled();
@@ -728,7 +728,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsSpeakScreenEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsSpeakScreenEnabled();
@@ -741,7 +741,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsShakeToUndoEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsShakeToUndoEnabled();
@@ -754,7 +754,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityShouldDifferentiateWithoutColorDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityShouldDifferentiateWithoutColor();
@@ -767,7 +767,7 @@ namespace Apple.Accessibility
         }
 #endif
 
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS) && !UNITY_EDITOR
         private delegate void UIAccessibilityIsOnOffSwitchLabelsEnabledDidChangeNotificationDelegate();
 
         [DllImport("__Internal")] private static extern bool _UnityAX_UIAccessibilityIsOnOffSwitchLabelsEnabled();

@@ -24,6 +24,8 @@ public func AppleCore_GetRuntimeEnvironment() -> ACRuntimeEnvironment {
     return ACRuntimeEnvironment(operatingSystem: macOS, majorVersion: osVersion.majorVersion, minorVersion: osVersion.minorVersion)
 #elseif os(tvOS)
     return ACRuntimeEnvironment(operatingSystem: tvOS, majorVersion: osVersion.majorVersion, minorVersion: osVersion.minorVersion)
+#elseif os(visionOS)
+    return ACRuntimeEnvironment(operatingSystem: visionOS, majorVersion: osVersion.majorVersion, minorVersion: osVersion.minorVersion)
 #else
     return ACRuntimeEnvironment(operatingSystem: Unknown, majorVersion: osVersion.majorVersion, minorVersion: osVersion.minorVersion)
 #endif

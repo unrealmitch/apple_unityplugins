@@ -128,6 +128,7 @@ public func GKMatchMaker_FindMatchedPlayers
     onError: @escaping NSErrorCallback
 )
 {
+#if !os(visionOS)
     if #available(iOS 17.2, tvOS 17.2, macOS 14.2, *) {
         let gkMatchMaker = Unmanaged<GKMatchmaker>.fromOpaque(gkMatchmakerPtr).takeUnretainedValue()
         let gkMatchRequest = Unmanaged<GKMatchRequest>.fromOpaque(gkMatchRequestPtr).takeUnretainedValue()
@@ -148,6 +149,7 @@ public func GKMatchMaker_FindMatchedPlayers
         // API not available
         onError(taskId, Unmanaged.passRetained(NSError.init(domain: "GKMatchmaker", code: GKErrorCodeExtension.unsupportedOperationForOSVersion.rawValue, userInfo: nil)).toOpaque())
     }
+#endif
 }
 
 @_cdecl("GKMatchmaker_AddPlayers")
@@ -205,6 +207,7 @@ public func GKMatchmaker_QueryQueueActivity
     onError: @escaping NSErrorCallback
 )
 {
+#if !os(visionOS)
     if #available(iOS 17.2, tvOS 17.2, macOS 14.2, *) {
         let gkMatchmaker = Unmanaged<GKMatchmaker>.fromOpaque(gkMatchmakerPtr).takeUnretainedValue();
         gkMatchmaker.queryQueueActivity(queueName.toString(), withCompletionHandler: { numPlayers, error in
@@ -219,6 +222,7 @@ public func GKMatchmaker_QueryQueueActivity
         // API not available
         onError(taskId, Unmanaged.passRetained(NSError.init(domain: "GKMatchmaker", code: GKErrorCodeExtension.unsupportedOperationForOSVersion.rawValue, userInfo: nil)).toOpaque())
     }
+#endif
 }
 
 @_cdecl("GKMatchmaker_QueryPlayerGroupActivity")

@@ -27,13 +27,13 @@ public class AvailabilityManager : MonoBehaviour
             Debug.Log("I can't call macOS 13.2 API. I should implement a fallback.");
         }
 
-        if (ACA.Available(RuntimeOperatingSystem.iOS, 14) || ACA.Available(RuntimeOperatingSystem.macOS, 12) || ACA.Available(RuntimeOperatingSystem.tvOS, 14))
+        if (ACA.Available(RuntimeOperatingSystem.iOS, 14) || ACA.Available(RuntimeOperatingSystem.macOS, 12) || ACA.Available(RuntimeOperatingSystem.tvOS, 14) || ACA.Available(RuntimeOperatingSystem.visionOS, 1))
         {
-            Debug.Log("I can call API that is compatible with iOS 14.0, macOS 12.0, or tvOS 14.0!");
+            Debug.Log("I can call API that is compatible with iOS 14.0, macOS 12.0, tvOS 14.0, or visionOS 1.0!");
         }
         else
         {
-            Debug.Log("I can't call API that is compatible with iOS 14.0, macOS 12.0, or tvOS 14.0. I should implement a fallback.");
+            Debug.Log("I can't call API that is compatible with iOS 14.0, macOS 12.0, tvOS 14.0, or visionOS 1.0. I should implement a fallback.");
         }
     }
 }

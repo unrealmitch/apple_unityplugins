@@ -156,13 +156,28 @@ namespace Apple.GameKit.Leaderboards
         [MonoPInvokeCallback(typeof(SuccessTaskCallback<IntPtr>))]
         private static void OnLoadLeaderboards(long taskId, IntPtr pointer)
         {
-            InteropTasks.TrySetResultAndRemove(taskId, PointerCast<NSArray<GKLeaderboard>>(pointer));
+            try
+            {
+                InteropTasks.TrySetResultAndRemove(taskId, PointerCast<NSArray<GKLeaderboard>>(pointer));
+            }
+            catch(Exception e)
+            {
+                Debug.Log(e);
+            }
         }
 
         [MonoPInvokeCallback(typeof(NSErrorTaskCallback))]
         private static void OnLoadLoaderboardsError(long taskId, IntPtr errorPointer)
         {
-            InteropTasks.TrySetExceptionAndRemove<NSArray<GKLeaderboard>>(taskId, new GameKitException(errorPointer));
+            try
+            {
+                InteropTasks.TrySetExceptionAndRemove<NSArray<GKLeaderboard>>(taskId,
+                    new GameKitException(errorPointer));
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
         }
         #endregion
         

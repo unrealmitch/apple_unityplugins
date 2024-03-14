@@ -104,7 +104,7 @@ void * NSDictionary_FromJson(const char * jsonString, void (* errorCallback)(voi
         NSData * nsData = [[NSString stringWithUTF8String:jsonString] dataUsingEncoding:NSUTF8StringEncoding];
 
         NSJSONReadingOptions options = 0;
-        if (@available(macos 12.0, ios 15.0, watchos 8.0, tvos 15.0, *)) {
+        if (@available(macos 12.0, ios 15.0, watchos 8.0, tvos 15.0, visionOS 1.0, *)) {
             options = NSJSONReadingJSON5Allowed | NSJSONReadingTopLevelDictionaryAssumed;
         }
 

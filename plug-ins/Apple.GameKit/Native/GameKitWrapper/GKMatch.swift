@@ -34,6 +34,7 @@ public func GKMatch_GetProperties
     gkMatchPtr: UnsafeMutableRawPointer
 ) -> UnsafeMutableRawPointer?
 {
+#if !os(visionOS)
     // GKMatchProperties is not exposed to Swift from Objective-C.
     // In Swift, it's merely a dictionary of strings to objects.
     if #available(iOS 17.2, tvOS 17.2, macOS 14.2, *) {
@@ -42,6 +43,7 @@ public func GKMatch_GetProperties
             return Unmanaged.passRetained(gkMatchProperties).toOpaque();
         }
     }
+#endif
 
     return nil;
 }
@@ -52,12 +54,14 @@ public func GKMatch_GetPlayerProperties
     gkMatchPtr: UnsafeMutableRawPointer
 ) -> UnsafeMutableRawPointer?
 {
+#if !os(visionOS)
     if #available(iOS 17.2, tvOS 17.2, macOS 14.2, *) {
         let gkMatch = Unmanaged<GKMatch>.fromOpaque(gkMatchPtr).takeUnretainedValue()
         if let dictionary = gkMatch.playerProperties as NSDictionary? {
             return Unmanaged.passRetained(dictionary).toOpaque();
         }
     }
+#endif
 
     return nil;
 }

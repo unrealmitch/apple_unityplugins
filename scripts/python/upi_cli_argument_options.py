@@ -17,6 +17,7 @@ class PluginID:
 class PlatformID:
     IOS = "iOS"
     TVOS = "tvOS"
+    VISIONOS = "visionOS"
     MACOS = "macOS"
     IOS_SIMULATOR = "iPhoneSimulator"
     TVOS_SIMULATOR = "AppleTVSimulator"
