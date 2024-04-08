@@ -268,3 +268,27 @@ public func GKLeaderboard_LoadLeaderboards
         onSuccess(taskId, nil);
     };
 }
+
+@_cdecl("GKScore_Report")
+public func GKScore_Report
+(
+    taskId: Int64,
+    score: Int,
+    leaderboardId: String,
+    onSuccess: @escaping SuccessTaskCallback,
+    onError: @escaping NSErrorCallback
+)
+{
+    let gkScore = GKScore(leaderboardIdentifier: leaderboardId)
+    gkScore.value = Int64(score)
+
+    GKScore.report([gkScore]) { (error) in
+        if let error = error {
+            print("Error submitting score to the Leaderboard: \(error.localizedDescription)")
+            onError(taskId, Unmanaged.passRetained(error as NSError).toOpaque());
+        } else {
+            print("# Score submitted successfully to the Leaderboard.")
+            onSuccess(taskId);
+        }
+    }
+}
