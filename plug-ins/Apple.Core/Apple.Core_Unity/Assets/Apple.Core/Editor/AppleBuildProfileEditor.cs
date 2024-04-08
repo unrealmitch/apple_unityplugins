@@ -20,16 +20,13 @@ namespace Apple.Core
         private SerializedProperty _serializedMinimumOSVersion_iOS;
         private SerializedProperty _serializedMinimumOSVersion_tvOS;
         private SerializedProperty _serializedMinimumOSVersion_macOS;
+        private SerializedProperty _serializedMinimumOSVersion_visionOS;
         private SerializedProperty _serializedAutomateEntitlements;
         private SerializedProperty _serializedDefaultEntitlements;
+        private SerializedProperty _serializedCustomBuildSettings;
 
         private static Dictionary<Editor, bool> _editorFoldouts = new Dictionary<Editor, bool>();
         private static Dictionary<ScriptableObject, Editor> _editors = new Dictionary<ScriptableObject, Editor>();
-
-        private const bool DefaultSetPlatformVisionOsOnSimulator = false;
-        private bool setPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
-        private const string SetPlatformVisionOsOnSimulatorKey = "PlatformVisionOsOnSimulatorKey";
-        private bool previousSetPlatformVisionOsOnSimulator = DefaultSetPlatformVisionOsOnSimulator;
 
         class UIStrings
         {
@@ -52,6 +49,7 @@ namespace Apple.Core
             public const string MinimumOSVersionFieldLabelText_iOS = "Minimum iOS Version";
             public const string MinimumOSVersionFieldLabelText_tvOS = "Minimum tvOS Version";
             public const string MinimumOSVersionFieldLabelText_macOS = "Minimum macOS Version";
+            public const string MinimumOSVersionFieldLabelText_visionOS = "Minimum visionOS Version";
 
             public const string AutomateEntitlementsToggleLabelText = "Automate Entitlements";
             public const string AutomateEntitlementsTooltip = "Automatically add an entitlements file to your Xcode project.";
@@ -78,11 +76,11 @@ namespace Apple.Core
             _serializedMinimumOSVersion_iOS = serializedObject.FindProperty("MinimumOSVersion_iOS");
             _serializedMinimumOSVersion_macOS = serializedObject.FindProperty("MinimumOSVersion_macOS");
             _serializedMinimumOSVersion_tvOS = serializedObject.FindProperty("MinimumOSVersion_tvOS");
+            _serializedMinimumOSVersion_visionOS = serializedObject.FindProperty("MinimumOSVersion_visionOS");
 
             _serializedAutomateEntitlements = serializedObject.FindProperty("AutomateEntitlements");
             _serializedDefaultEntitlements = serializedObject.FindProperty("DefaultEntitlements");
-
-            LoadEditorPrefs();
+            _serializedCustomBuildSettings = serializedObject.FindProperty("customBuildSettings");
         }
 
         /// <summary>
@@ -141,6 +139,12 @@ namespace Apple.Core
             if (_serializedMinimumOSVersion_macOS.stringValue == string.Empty)
             {
                 _serializedMinimumOSVersion_macOS.stringValue = UIStrings.DefaultMinimumMacOSVersionText;
+                serializedObject.ApplyModifiedProperties();
+            }
+            
+            if (_serializedMinimumOSVersion_visionOS.stringValue == string.Empty)
+            {
+                _serializedMinimumOSVersion_visionOS.stringValue = PlayerSettings.VisionOS.targetOSVersionString;
                 serializedObject.ApplyModifiedProperties();
             }
 
@@ -212,9 +216,14 @@ namespace Apple.Core
 
                 var minimumOSVersionLabel_macOS = new GUIContent(UIStrings.MinimumOSVersionFieldLabelText_macOS);
                 EditorGUILayout.PropertyField(_serializedMinimumOSVersion_macOS, minimumOSVersionLabel_macOS, GUILayout.MinWidth(_minLabelWidth));
-
-
-
+                
+                var minimumOSVersionLabel_visionOS = new GUIContent(UIStrings.MinimumOSVersionFieldLabelText_visionOS);
+                EditorGUI.BeginChangeCheck();
+                EditorGUILayout.PropertyField(_serializedMinimumOSVersion_visionOS, minimumOSVersionLabel_visionOS, GUILayout.MinWidth(_minLabelWidth));
+                if (EditorGUI.EndChangeCheck() && _serializedMinimumOSVersion_visionOS.stringValue != string.Empty)
+                {
+                    PlayerSettings.VisionOS.targetOSVersionString = _serializedMinimumOSVersion_visionOS.stringValue;
+                }
             }
 
             EditorGUI.indentLevel--;
@@ -315,33 +324,11 @@ namespace Apple.Core
             
             GUILayout.Label("Custom Kluge Settings", EditorStyles.boldLabel);
             GUILayout.Space(VerticalUIPadding);
-            GUILayout.Label("Set automatic Platform Vision OS with Simulator SDK in XCode Project", EditorStyles.label);
-            setPlatformVisionOsOnSimulator = EditorGUILayout.Toggle("    Set Platform Vision OS", setPlatformVisionOsOnSimulator);
-            
-            if (setPlatformVisionOsOnSimulator != previousSetPlatformVisionOsOnSimulator)
-            {
-                SaveEditorPrefs();
-                previousSetPlatformVisionOsOnSimulator = setPlatformVisionOsOnSimulator;
-            }
+            EditorGUILayout.PropertyField(_serializedCustomBuildSettings, true);
             
             
             serializedObject.ApplyModifiedProperties();
         }
         
-        private void LoadEditorPrefs()
-        {
-            setPlatformVisionOsOnSimulator = EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
-            previousSetPlatformVisionOsOnSimulator = setPlatformVisionOsOnSimulator;
-        }
-        
-        private void SaveEditorPrefs()
-        {
-            EditorPrefs.SetBool(SetPlatformVisionOsOnSimulatorKey, setPlatformVisionOsOnSimulator);
-        }
-        
-        public static bool ShouldSetPlatformVisionOsOnSimulator()
-        {
-            return EditorPrefs.GetBool(SetPlatformVisionOsOnSimulatorKey, DefaultSetPlatformVisionOsOnSimulator);
-        }
     }
 }

@@ -23,12 +23,17 @@ namespace Apple.Core
         public string MinimumOSVersion_iOS = string.Empty;
         public string MinimumOSVersion_tvOS = string.Empty;
         public string MinimumOSVersion_macOS = string.Empty;
+        public string MinimumOSVersion_visionOS = string.Empty;
 
         public bool AppUsesNonExemptEncryption = false;
 
         public bool AutomateEntitlements = true;
         public UnityEngine.Object DefaultEntitlements;
+        
+        public CustomBuildSettings customBuildSettings;
 
+        public bool HasCustomSettings => customBuildSettings != null;
+        
         /// <summary>
         /// Accesses the default build profile, creating it if one isn't available.
         /// </summary>

@@ -378,6 +378,27 @@ namespace Apple.GameKit.Leaderboards
             InteropTasks.TrySetExceptionAndRemove<bool>(taskId, new GameKitException(errorPointer));
         }
         #endregion
+
+        #region Submit Score Legacy (Static)
+        
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GKScore_Report(long taskId, long score, string leaderboardId, SuccessTaskCallback onSuccess, NSErrorTaskCallback onError);
+
+        /// <summary>
+        /// Submits a score to the leaderboard (Legacy)
+        /// Legacy: Don't need to create a GKLeaderboard instance to submit a score.
+        /// </summary>
+        /// <param name="score">The score that the player earns.</param>
+        /// <param name="leaderboardId">ID that Game Center uses to identify this leaderboard.</param>
+        /// <returns></returns>
+        public static Task SubmitScoreDirectly(long score, string leaderboardId)
+        {
+            var tcs = InteropTasks.Create<bool>(out var taskId);
+            GKScore_Report(taskId, score, leaderboardId, OnSubmitScoreSuccess, OnSubmitScoreError);
+            return tcs.Task;
+        }
+        
+        #endregion
         
         #region LoadPreviousOccurrence
         [DllImport(InteropUtility.DLLName)]
@@ -420,16 +441,17 @@ namespace Apple.GameKit.Leaderboards
         /// </summary>
         /// <param name="playerScope">Specifies whether to get scores from friends or all players.</param>
         /// <param name="timeScope">Specifies the time period for the scores. This parameter is applicable to nonrecurring leaderboards only. For recurring leaderboards, pass GKLeaderboard.TimeScope.allTime for this parameter.</param>
-        /// <param name="rankMin">Specifies the range of ranks to use for getting the scores. The minimum rank is 1 and the maximum rank is 100.</param>
-        /// <param name="rankMax">Specifies the range of ranks to use for getting the scores. The minimum rank is 1 and the maximum rank is 100.</param>
+        /// <param name="rankMin">Specifies the range of ranks to use for getting the scores. The minimum rank is 1</param>
+        /// <param name="rankMax">Specifies the range of ranks to use for getting the scores. The minimum rank is 1 and the maximum rank is rankMin+99.</param>
         /// <returns></returns>
         public Task<GKLeaderboardLoadEntriesResponse> LoadEntries(PlayerScope playerScope, TimeScope timeScope, long rankMin, long rankMax)
         {
             var tcs = InteropTasks.Create<GKLeaderboardLoadEntriesResponse>(out var taskId);
             
             // Ensure ranks fall within min & max...
-            rankMin = (long)Mathf.Clamp(rankMin, 1, 100);
-            rankMax = (long)Mathf.Clamp(rankMax, 1, 100);
+            // rankMin = (long)Mathf.Clamp(rankMin, 1, 100);
+            // rankMax = (long)Mathf.Clamp(rankMax, 1, 100);
+            rankMax = Math.Min(rankMax, rankMin+99);
             
             GKLeaderboard_LoadEntries(Pointer, taskId, playerScope, timeScope, rankMin, rankMax, OnLoadEntries, OnLoadEntriesError);
             return tcs.Task;

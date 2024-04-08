@@ -14,6 +14,8 @@ namespace Apple.GameKit.Editor
     {
         public override string DisplayName => "GameKit";
 
+        public bool addArcadeEntitlement = false;
+
         readonly Dictionary<BuildTarget, string> _libraryTable = new Dictionary<BuildTarget, string>
         {
             {BuildTarget.iOS, "GameKitWrapper.framework"},
@@ -23,11 +25,14 @@ namespace Apple.GameKit.Editor
         };
 
 #if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
-        public override void OnProcessEntitlements(AppleBuildProfile _, BuildTarget buildTarget, string _1, PlistDocument entitlements)
+        public override void OnProcessEntitlements(AppleBuildProfile profile, BuildTarget buildTarget, string _1, PlistDocument entitlements)
         {
             if(buildTarget is BuildTarget.StandaloneOSX or BuildTarget.VisionOS)
             {
                 entitlements.root.SetBoolean("com.apple.developer.game-center", true);
+                
+                if(addArcadeEntitlement)
+                    entitlements.root.SetBoolean("com.apple.developer.arcade-operations", true);
             }
         }
 

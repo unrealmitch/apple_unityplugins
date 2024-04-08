@@ -1,4 +1,5 @@
 #if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS || UNITY_STANDALONE_OSX)
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -18,6 +19,7 @@ namespace Apple.Core
         {
             // TODO: Add management for multiple build profiles.
             var appleBuildProfile = AppleBuildProfile.DefaultProfile();
+            var customSettings = appleBuildProfile.customBuildSettings;
 
             // Ensure if we are building an app, that it includes .app at the end...
             if (buildTarget == BuildTarget.StandaloneOSX && !IsXcodeGeneratedMac() && !pathToBuiltProject.EndsWith(".app"))
@@ -64,7 +66,7 @@ namespace Apple.Core
                 string minOSVersionString = string.Empty;
                 switch (buildTarget)
                 {
-                    case BuildTarget.iOS: case BuildTarget.VisionOS:
+                    case BuildTarget.iOS:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_iOS;
                         break;
 
@@ -74,6 +76,10 @@ namespace Apple.Core
 
                     case BuildTarget.StandaloneOSX:
                         minOSVersionString = appleBuildProfile.MinimumOSVersion_macOS;
+                        break;
+                    
+                    case BuildTarget.VisionOS:
+                        minOSVersionString = appleBuildProfile.MinimumOSVersion_visionOS;
                         break;
 
                     default:
@@ -106,6 +112,26 @@ namespace Apple.Core
                         buildStep.Value.OnProcessInfoPlist(appleBuildProfile, buildTarget, pathToBuiltProject, infoPlist);
                     }
                 }
+                
+                //!Hack: Kluge Fix to autoadd some XCode project properties automatically for VisionOS
+                // infoPlist.root.SetBoolean("ITSAppUsesNonExemptEncryption", false);
+                // infoPlist.root.SetBoolean("GCSupportsControllerUserInteraction", false);
+                // infoPlist.root.SetBoolean("UIApplicationExitsOnSuspend", true);
+                // infoPlist.root.SetBoolean("NSApplicationRequiresArcade", true);
+                // infoPlist.root.SetString("NSLocalNetworkUsageDescription", "For access to Game Center and Leaderboards");
+                // infoPlist.root.SetString("NSGKFriendListUsageDescription", "To display Friends on your Game Center Leaderboards");
+
+                if (customSettings is { addCustomKeysInfoPlist: true })
+                {
+                    foreach(var customStringKey in customSettings.customStringKeysInfoPlist)
+                        if(customStringKey.IsEnabled)
+                            infoPlist.root.SetString(customStringKey.key, customStringKey.value);
+                    
+                    foreach(var customBoolKey in customSettings.customBoolKeysInfoPlist)
+                        if(customBoolKey.IsEnabled)
+                            infoPlist.root.SetBoolean(customBoolKey.key, customBoolKey.value);
+                }
+
 
                 infoPlist.WriteToFile(infoPlistPath);
 
@@ -188,11 +214,38 @@ namespace Apple.Core
             if (buildTarget == BuildTarget.VisionOS &&
                 pbxProject != null &&
                 PlayerSettings.VisionOS.sdkVersion == VisionOSSdkVersion.Simulator &&
-                AppleBuildProfileEditor.ShouldSetPlatformVisionOsOnSimulator())
+                appleBuildProfile.customBuildSettings is { setPlatformVisionOsOnSimulator: true })
             {
                 pbxProject.SetBuildProperty(targetGuid, "SUPPORTED_PLATFORMS", "xrsimulator xros");
                 // pbxProject.SetBuildProperty(targetGuid,"SUPPORTED_PLATFORMS","xrsimulator xros visionOS");
             }
+            
+            //Add VisionOS AppIcon
+            if (customSettings is { addAppIcon: true, HasIcons: true })
+            {
+                var iconGuidFront = AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(customSettings.appIconFront));
+                var iconGuidMiddle = AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(customSettings.appIconMiddle));
+                var iconGuidBack = AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(customSettings.appIconBack));
+                
+                XcodePostProcessUtils.SetupVisionOSIcon(
+                    buildPath: pathToBuiltProject,
+                    version: 1,
+                    author: "Xcode",
+                    Tuple.Create("Front", iconGuidFront),
+                    Tuple.Create("Middle", iconGuidMiddle),
+                    Tuple.Create("Back", iconGuidBack)
+                );
+            } 
+            
+            // Add/Update custom build properties in pbxProject file (not in info.plist)
+            if (customSettings is {customBuildProperties: {Count: > 0}})
+                foreach (var customBuildProperty in customSettings.customBuildProperties)
+                    if(customBuildProperty.IsEnabled)
+                        pbxProject.SetBuildProperty(targetGuid, customBuildProperty.key, customBuildProperty.value);
+            
+            //Audio Fix for VisionOS
+            if (buildTarget == BuildTarget.VisionOS && customSettings is { visionOsAudioFix: true })
+                AudioFixVisionOs(pathToBuiltProject);
             
             #region Process Frameworks
 
@@ -447,6 +500,32 @@ namespace Apple.Core
         }
 
         #endregion // Public Utility Methods
+        
+        private static void AudioFixVisionOs(string pathToBuiltProject)
+        {
+            string unityAppControllerPath = Path.Combine(pathToBuiltProject, "Classes/UnityAppController.mm");
+            if (File.Exists(unityAppControllerPath))
+            {
+                string[] lines = File.ReadAllLines(unityAppControllerPath);
+
+                // Find the line with "[AVAudioSession sharedInstance]"
+                int index = Array.FindIndex(lines, line => line.Contains("[AVAudioSession sharedInstance];"));
+                if (index != -1)
+                {
+                    lines[index] += "\n\t// Audio fix for VisionOS/Unity (temporal) - Disable visionOS spatial audio\n\t" + 
+                                    "[audioSession setIntendedSpatialExperience:AVAudioSessionSpatialExperienceBypassed options:@{} error:nil];";
+                    File.WriteAllLines(unityAppControllerPath, lines);
+                }
+                else
+                {
+                    Debug.LogWarning("UnityAppController.mm: Unable to find the line '[AVAudioSession sharedInstance]'.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("UnityAppController.mm not found.");
+            }
+        }
 
     }
 }
