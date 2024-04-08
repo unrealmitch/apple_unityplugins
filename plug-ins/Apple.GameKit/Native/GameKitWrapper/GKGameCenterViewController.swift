@@ -71,12 +71,8 @@ public func GKGameCenterViewController_Present
     let target = Unmanaged<GKGameCenterViewController>.fromOpaque(pointer).takeUnretainedValue();
     _currentPresentingGameCenterDelegate = GameKitUIDelegateHandler(taskId: taskId, onSuccess: onSuccess);
     target.gameCenterDelegate = _currentPresentingGameCenterDelegate;
-    
-#if os(iOS) || os(tvOS) || os(visionOS)
-    let viewController = UIApplication.shared.windows.first!.rootViewController;
-    viewController?.present(target, animated: true);
-#else
-    GKDialogController.shared().parentWindow = NSApplication.shared.keyWindow;
-    GKDialogController.shared().present(target);
-#endif
+
+    if let defaultWindow = UiUtilities.defaultWindow() {
+        UiUtilities.presentViewController(viewController: target)
+    }
 }

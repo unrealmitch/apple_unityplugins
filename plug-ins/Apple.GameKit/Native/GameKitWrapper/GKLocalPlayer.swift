@@ -16,30 +16,24 @@ public func GKLocalPlayer_Authenticate
     onError: @escaping NSErrorCallback
 )
 {
-    if(GKLocalPlayer.local.authenticateHandler != nil) {
+    if (GKLocalPlayer.local.authenticateHandler != nil) {
         onSuccess(taskId, GKLocalPlayer_GetLocal());
         return;
     }
-    
+
     GKLocalPlayer.local.authenticateHandler = { gcAuthVC, error in
-        if(error != nil) {
-            onError(taskId, Unmanaged.passRetained(error! as NSError).toOpaque());
+        // Always show the viewController if provided...
+        if let gcAuthVC = gcAuthVC {
+            UiUtilities.presentViewController(viewController: gcAuthVC);
+        }
+
+        if let error = error {
+            onError(taskId, Unmanaged.passRetained(error as NSError).toOpaque());
             return;
         }
-        
-        // Always show the viewController if provided...
-        if gcAuthVC != nil {
-            #if os(iOS) || os(tvOS) || os(visionOS)
-                let viewController = UIApplication.shared.windows.first!.rootViewController;
-                viewController?.present(gcAuthVC!, animated: true)
-            #else
-                let viewController = NSApplication.shared.keyWindow?.contentViewController;
-                viewController?.presentAsModalWindow(gcAuthVC!)
-            #endif
-        } else {
-            GKLocalPlayer.local.register(_localPlayerListener);
-            onSuccess(taskId, GKLocalPlayer_GetLocal());
-        }
+
+        GKLocalPlayer.local.register(_localPlayerListener);
+        onSuccess(taskId, GKLocalPlayer_GetLocal());
     };
 }
 
